@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE subject SYSTEM "openQuestionary.dtd">
+<subject id="culturageneral" name="culturageneral">
+	<question text="quien la tiene m&#xE1;s grande?">
+		<option answer="yes">el dibu</option>
+		<option>el vocal</option>
+		<option>el guitar</option>
+	</question>
+	<question text="cuantas vidas tiene un gato?">
+		<option answer="yes">una</option>
+		<option>siete</option>
+		<option>aun es un misterio</option>
+	</question>
+	<question text="de que pa&#xED;s es aladino?">
+		<option answer="yes">de china</option>
+		<option>de arabia</option>
+		<option>de agrabad</option>
+	</question>
+	<question text="que oficio ten&#xED;a el papa de pinocho?">
+		<option answer="yes">carpintero</option>
+		<option>amo de casa</option>
+		<option>constructor de marionetas</option>
+	</question>
+	<question text="cual es el planeta que m&#xE1;s se parece a la tierra?">
+		<option answer="yes">venus</option>
+		<option>europa</option>
+		<option>marte</option>
+	</question>
+</subject>
