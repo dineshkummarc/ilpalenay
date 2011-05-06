@@ -1,0 +1,623 @@
+*
+{
+	padding:	0px;
+	margin:		0px;
+}
+
+body
+{
+	background:	#fff;	
+	font-family:	Arial, Verdana;
+}
+
+ul, ol
+{
+	margin-left:	1.6em;	
+}
+
+#container
+{
+	width:		923px;
+	padding-top:	3px;
+	margin:		auto;
+	display:block;
+}
+
+#header
+{
+	border-bottom: 1px solid #000066;
+	padding-bottom:5px;
+}
+
+#divLogin
+{
+	float:		right;
+	text-align:	right;
+}
+
+#menu
+{
+	border-right: 1px dashed #ccccff;
+	padding-right:.6em;
+}
+
+#menu ul {
+	list-style-type:none;
+}
+#menu ul ul {
+	list-style-type:disc;
+	font-size:smaller;
+}
+
+li.MenuThere {
+	background-color:#ffc;
+	border:2px dotted #006;
+	padding:1px;
+}
+
+#main
+{
+	float:		right;
+	width:		700px;
+}
+
+#footer
+{
+	width:		913px;
+	clear:		both;
+	text-align:	center;
+}
+
+#header a
+{
+	font-weight:	bold;
+	text-decoration:none;
+}
+
+#main img
+{
+	display:	block;
+}
+
+#menu ul
+{
+	margin:		0px;
+	padding-left:	0px;
+}
+
+#menu ul ul
+{
+	padding-left:	10px;
+	margin-left:	10px;
+	font-size: smaller;
+}
+
+#menu ul li
+{
+	list-style-type:none;
+}
+
+#menu ul ul li
+{
+	list-style-type:disc;
+}
+
+#menu a
+{
+	text-decoration:none;
+	font-weight:	bold;
+	color:		#335;
+}
+
+#menu a:hover
+{
+	text-decoration:underline;
+}
+
+#menu ul ul a
+{
+	text-decoration:none;
+	font-weight:	normal;
+	color:		#667;
+}
+
+#divAjax
+{
+	position:	absolute;
+	z-index:	100;
+}
+
+.pane
+{
+	background:	white;
+	color:		#222;
+	font-size:	10pt;
+	/*border:		2px black solid;*/
+	padding:	3px;
+	margin:		0px 0px 3px 0px;
+}
+
+.clearer
+{
+	height:		0px;
+	clear:		both;
+}
+
+.center
+{
+	text-align:	center;
+}
+
+.vspace
+{
+	clear:		both;
+	height:		1em;
+	border-bottom:1px dotted #ccc;
+	margin-bottom:.4em;
+}
+
+.txtinput
+{
+	height:		1.2em;
+	border:		1px #CCC inset;
+}
+
+.formheading
+{
+	font-weight:	bold;
+}
+
+.formlabel
+{
+	display:	block;
+	padding:	3px;
+	float:		left;
+	clear:		left;
+	text-align:	right;
+	width:		140px;
+	line-height:	1em;
+}
+
+.formlabel:first-line
+{
+	font-weight:	bold;
+}
+
+.scrollbox
+{
+	font-size:	0.75em;
+	background:	#F4F4F4;
+	border:		1px black solid;
+	padding:	0.5em;
+	height:		160px;
+	overflow:	auto;
+}
+
+.FormRow {
+	margin: 2px 0px;
+}
+
+.FormRowSubmit {
+	text-align:right;
+	margin: 2px 0px;
+}
+
+/* YUI Panel CSS for popups */
+
+
+
+.yui-panel-container {
+	position:absolute;
+	background-color:transparent;
+	z-index:6;
+	visibility:hidden;
+	overflow:visible;
+	width:auto;
+}
+
+.yui-panel-container.focused {
+}
+
+.yui-panel-container.matte {
+	padding:3px;
+	background-color:#FFF;
+}
+
+.yui-panel-container.matte .underlay {
+	display:none;
+}
+
+.yui-panel-container.shadow {
+	padding:0px;
+	background-color:transparent;
+}
+
+.yui-panel-container.shadow .underlay {
+	visibility:inherit;
+	position:absolute;
+	background-color:#000;
+	top:3px;left:3px;
+	z-index:0;
+	width:100%;
+	height:100%;
+    -moz-opacity: 0.12;
+    opacity:.12;
+    filter:alpha(opacity=12);
+	zoom:1;
+}
+
+.yui-panel {
+	visibility:hidden;
+	border-collapse:separate;
+	position:relative;
+	left:0px;top:0px;
+	background-color:#FFF;
+	border:1px solid #000;
+	z-index:1;
+	overflow:hidden;
+}
+
+.yui-panel .hd {
+	background-color:#3d77cb;
+	color:#FFF;
+	font-size:100%;
+	line-height:100%;
+	border:1px solid #FFF;
+	border-bottom:1px solid #000;
+	font-weight:bold;
+	overflow:hidden;
+	padding:4px;
+}
+
+.yui-panel .bd {
+	overflow:hidden;
+	padding:4px;
+
+	font-family:	Arial, Verdana;
+	font-size:	13px;
+}
+
+.yui-panel .bd p {
+	margin:0 0 1em;
+}
+
+.yui-panel .container-close {
+	position:absolute;
+	top:5px;
+	right:4px;
+	z-index:6;
+	height:12px;
+	width:12px;
+	margin:0px;
+	padding:0px;
+	background:url(close12_1.gif) no-repeat;
+	cursor:pointer;
+	visibility:inherit;
+}
+
+.yui-panel .ft {
+	padding:4px;
+	overflow:hidden;
+}
+
+/* Resize Panel CSS */
+.resizepanel .resizehandle {
+	position:absolute;
+	width:13px;
+	height:13px;
+	right:0;
+	bottom:0;
+	margin:0;
+	padding:0;
+	z-index:1;
+	background:url(resize.gif) no-repeat;
+	cursor:se-resize;
+	font-size:2px;
+}
+
+/*Nat's modifications
+#LinkLogin {
+	display:block;
+	float:right;
+	background-color:#000066;
+	color:#ffffff;
+	border:1px solid #ff0000;
+	padding:2px;
+	margin:2px;
+}
+
+#LinkRegister {
+	display:block;
+	float:right;
+	clear:right;
+	background-color:#000066;
+	color:#ffffff;
+	border:1px solid #ff0000;
+	padding:2px;
+	margin:2px;
+}
+
+#LinkAccount {
+	display:block;
+	float:right;
+	clear:right;
+	background-color:#000066;
+	color:#ffffff;
+	border:1px solid #ff0000;
+	padding:2px;
+	margin:2px;
+}*/
+
+#logo {
+	border:none;
+}
+
+label {
+	font-weight:bold;
+}
+
+#menuHeading, #holder .header  {
+	font-weight: bold;
+	background-color:#eeeeee;
+	border:1px solid #006;
+	color:#000066;
+	font-size:1.3em;
+	text-align:center;
+	margin-bottom:.5em;
+}
+
+.NotCaught {
+	font-size: xx-small;
+	color:red;
+	font-weight:bold;
+}
+
+#footer {
+	border-top:1px dashed #006;
+	margin-top:1em;
+	padding-top:1em;
+}
+
+#holder {
+	float:		left;
+	width:		200px;
+}
+
+#holder #webucator {
+	margin:.5em 0em;
+	padding:.5em 0em;
+	font-size:10pt;
+}
+
+#holder #resources {
+	margin:.5em 0em;
+	padding:.5em 0em;
+	font-size:10pt;
+}
+
+#holder #other {
+	margin:.5em 0em;
+	padding:.5em 0em;
+	font-size:10pt;
+}
+
+#footer #Copyright {
+	margin-top:1em;
+}
+
+#print {
+	display:none;
+}
+
+#Register1 {
+	overflow:auto;
+}
+
+#CourseManualTitle h1 {
+	font-family:Verdana;
+	text-align:center;
+	font-size:2em;
+	font-variant:small-caps;
+	letter-spacing:1em;
+	margin-bottom:0px;
+	margin-top:3px;
+}
+
+#Banner {
+	padding:.1em 1em;
+	font-size:9pt;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color:#ffc;
+}
+
+#Banner .Em {
+	font-weight:bold;
+	color:#f60;
+}
+
+#Banner p {
+	margin: .5em 0em;
+}
+
+#Banner a {
+	color:#00f;
+}
+
+#Banner a:visited {
+	color:#00f;
+}
+
+#Banner a:hover {
+	text-decoration:underline;
+}
+
+.BookTitle {
+	text-decoration: underline;
+}
+
+.FootNoteNum a {
+	text-decoration:none;
+	color:#00f;
+} 
+
+.FootNoteNum a:visited {
+	color:#00f;
+} 
+
+.FootNoteNum a:hover {
+	color:#f60;
+} 
+
+#formLogin {
+	margin-bottom:0px;
+}
+
+#extraBlurb {
+	font-size:9pt;
+	text-align:left;
+}
+
+#extraBlurb a {
+	text-decoration:underline;
+	color:blue;
+}
+
+#GoogleAds {
+	margin-left:; /*to make up for the border*/
+	width:919px;
+	background-color:#ffc;
+}
+
+#Banner #GoogleAds {
+	margin-left:; /*to make up for the border*/
+	width:902px;
+	background-color:#ffc;
+}
+
+#GoogleAdsFooter {
+	margin-right:20px;
+	margin-top:10px;
+}
+
+#GoogleExerciseAd1 {
+	float:left;
+	margin-top:-10px;
+	padding-right:10px;
+	padding:0px;
+}
+
+#GoogleExerciseAd2 {
+	margin:5px;
+}
+
+#GoogleExerciseAd3 {
+	float:right;
+	margin-right:10px;
+	margin-top:5px;
+}
+
+#GoogleSearchDiv {
+	float:right;
+	margin-right:20px;
+	margin-top:10px;
+}
+
+#GoogleSearchDiv table, #GoogleSearchDiv td, #GoogleSearchDiv th  {
+	border-size:0px;
+	border-style:none;
+}
+
+#socialBookmarks {
+	height: 18px ;
+	list-style-type: none ;
+	margin: 3px 0px 0px 0px ;
+	overflow: hidden ;
+	padding: 0px 0px 0px 0px ;
+	float: right;
+}
+
+#socialBookmarks li {
+	float: left;
+	height: 18px;
+	margin: 0px 8px 8px 0px;
+	padding: 0px 0px 8px 0px;
+	border: 0px solid #000;
+}
+
+#socialBookmarks a {
+	background-position: top left ;
+	background-repeat: no-repeat ;
+	display: block;
+	font-size: 1px;
+	height: 25px;
+	line-height: 40px;
+	overflow: hidden;
+}
+
+#socialBookmarks a.digg {
+	background-image: url('http://www.coursewarecreation.com/images/diggIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.reddit {
+	background-image: url('http://www.coursewarecreation.com/images/redditIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.yahoo {
+	background-image: url('http://www.coursewarecreation.com/images/yahooMyWebIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.delicious {
+	background-image: url('http://www.coursewarecreation.com/images/deliciousIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.stumbleUpon {
+	background-image: url('http://www.coursewarecreation.com/images/stumbleUponIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.spurl {
+	background-image: url('http://www.coursewarecreation.com/images/spurlIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.furl {
+	background-image: url('http://www.coursewarecreation.com/images/furlIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.magnolia {
+	background-image: url('http://www.coursewarecreation.com/images/magnoliaIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.slashDot {
+	background-image: url('http://www.coursewarecreation.com/images/slashdotIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+
+#socialBookmarks a.misterWong {
+	background-image: url('http://www.coursewarecreation.com/images/misterWongIcon.gif');
+	width: 18px;
+	height: 18px;
+}
+#LastUpdated {
+	text-align:right;
+	width:100%;
+	border-top:1px solid #ff6600;
+	padding-top:5px;
+	margin-top:5px;
+	font-style:italic;
+}

@@ -1,0 +1,328 @@
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb {
+    padding: 8px 0;
+}
+
+img {
+   border:none;
+}
+
+#page {min-width:810px;}
+
+#page-content {
+    position:relative;
+    width:100%;
+    float: left;
+}
+
+.sidebar-item {
+    padding:0;
+    margin-bottom:20px;
+}
+
+.sidebar-item h3 {
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    line-height:1em;
+    font-size:11px !important;
+    text-align:center;
+    background-color:#eee;
+    background:url(/images/box-item-header.gif) no-repeat 0 0;
+    margin:0 !important;
+    padding:5px;
+    position: relative;
+}
+
+.sidebar-item-content {
+    border: 1px solid #999;
+    margin:0;
+    padding:10px;
+    font-size:95%;
+    position:relative;
+}
+
+.sidebar-item-content ul {
+    margin:0 0 0 1.2em;
+    padding:0;
+    font-size:105%;
+}
+
+.sidebar-item-content ul li {
+    padding-top:5px;
+}
+
+.more {
+    text-align:left;
+    padding-left: 11px;
+    background-image: url(/images/icons/arrow.gif);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.clear, hr.clear {
+    font-size:0;
+    clear:left;
+    width:100%;
+    height:0;
+    margin:0;
+    padding:0;
+    background:transparent;
+    border:none;
+    color:#fff;
+}
+
+.aleft {
+    float:left;
+    margin:0 0.5em 0 0.3em;
+}
+
+.tabcontainer {
+ width:176px;
+ padding:0 10px 10px 10px;
+ border-bottom:1px solid #999;
+ background-color:#FFFAE6;
+}
+
+.tabcontainer ul {
+  display:inline;
+  margin:0;
+  padding:0;
+}
+
+.tabcontainer li {
+  display: inline;
+  margin-right: 6px;
+  line-height:1.2em;
+}
+
+.tabbertab {
+  padding-left:10px;
+  padding-right:10px;
+  width:176px;
+  margin:0;
+}
+
+ul.tabbernav li a {
+ text-decoration:none;
+}
+
+ul.tabbernav li.tabberactive a {
+ font-style: italic;
+ color:#000;
+}
+
+.tabberlive .tabbertabhide {
+ display:none;
+}
+
+.tabberlive .tabbertab h2 {
+ display:none;
+}
+
+.tags {
+ padding:0 0 10px 0;
+}
+
+.addtags {
+ padding:10px 10px 6px 10px;
+ margin:0;
+ background-color:#FFFAE6;
+}
+
+.tagcount {
+ color:#666;
+ font-size:95%;
+}
+
+#article-onjava {
+float:left;
+width:67em;
+padding:10px;
+}
+
+#article-mysql{
+float:left;
+width:50em;
+padding:10px;
+}
+
+#article-python{
+float:left;
+width:66em;
+padding:10px;
+}
+
+
+#article {margin-right:205px;padding:10px;min-height:100ex;height:auto 
+!important;height:100ex;}
+#article h2, #contentmiddle #article h2 {color:#000;clear:none;font-size:17px;font-weight:bold;border:none;text-transform:none;margin-top:0;display:block;}
+
+#article table {
+    border-collapse:collapse;
+    empty-cells:show;
+    margin:1em 0 0 1px; /* 1px left margin fixes disappearing left border in FF */
+}
+
+#article .post {
+    padding-bottom:15px;
+    margin-bottom:15px;
+    border-bottom:2px solid #ccc;
+    overflow:hidden;
+}
+
+#article .post-content {
+   clear:left;
+}
+
+#article .post-content-footer {
+    clear:both;
+}
+
+#article .post-byline {
+    font-size:90%;
+    font-style:italic;
+}
+
+#article .post-footer {
+    font-size:90%;
+    margin-top:10px;
+}
+
+#article .post p {
+    margin-bottom:0px;
+}
+
+#article .post blockquote > p:first-child
+{
+    margin-top:0px;
+}
+
+#article table.adtag {
+  clear:right;
+}
+
+#article ul, #article ol {
+  padding-left: 25px
+}
+
+#colored-bar-ad *{
+   color: #fff;
+   padding:0;
+}
+
+div#colored-bar-ad {
+   height:30px; 
+}
+
+#related {width:202px; float: right; padding: 10px 10px 10px 0;} 
+
+
+/*#sponsors {width:160px;position:absolute;top:10px;right:10px;}
+#sponsors iframe {border:none; margin-bottom:1em;}*/
+#footer {height:auto !important;}
+#footer {margin-right:210px !important;}
+
+/* article actions */
+/* listen2 is for the ORN articles */
+.listen, .listen2, .print, .discuss, .subscribe, .intellitxt, .newsletter {
+   width: 160px; 
+   text-align:right;
+   padding-right:22px;
+   display: block;
+   line-height:1.5em;
+   font-size:95%;
+   text-decoration:none;
+}
+
+.listen {
+   background: url(/images/icon_listen_big.gif) no-repeat top right;
+}
+
+.listen2 {
+   background: url(/images/icon_listen_big.gif) no-repeat top right;
+}
+
+.print {
+   background: url(/images/icons/print_18.gif) no-repeat top right;
+}
+
+.discuss {
+   background: url(/images/icons/discuss_18.gif) no-repeat top right;
+}
+
+.subscribe {
+   background: url(/images/icons/rss_18.gif) no-repeat top right;
+}
+
+.intellitxt {
+   background: url(/images/icons/intellitxt_18.gif) no-repeat top right;
+}
+
+.newsletter {
+   background: url(/images/icons/newsletter_18.gif) no-repeat top right;
+}
+
+.delicious {
+   text-decoration:none;
+   background-image:none;
+}
+
+/* comments */
+.rbox {
+        color:#000;
+        background-color:#ccc;
+        line-height:14px;
+        padding-top:0;
+        margin-top:2em;
+}
+.rbcontent {
+        margin: 0 6px;
+        background-color: #ccc;
+        color: #000;
+}
+.rboxtop { background: url(http://www.oreillynet.com/images/gray_tr.gif) no-repeat top right; }
+.rboxtop div { background: url(http://www.oreillynet.com/images/gray_tl.gif) no-repeat top left; }
+.rboxbot { background: url(http://www.oreillynet.com/images/gray_br.gif) no-repeat top right; }
+.rboxbot div { background: url(http://www.oreillynet.com/images/gray_bl.gif) no-repeat top left; }
+.rboxtop, .rboxtop div, .rboxbot, .rboxbot div {
+        height: 6px;
+        font-size: 1px;
+        margin: 0;
+        padding: 0;
+}
+.tb_left {
+        width: 30%;
+        height: 20px;
+        float: left;
+        margin-top:0.5em;
+}
+.tb_right {
+        text-align: right;
+        width: 60%;
+        height: 20px;
+        float: right;
+        margin-top:0.5em;
+}
+div.feedback { margin-top: 1em; }
+.feedback ul {
+        margin: 0 0 0 1em;
+        padding: 0 0 0 1em;
+}
+.feedback li {
+        list-style-image: url(http://www.oreillynet.com/images/bullet-post.gif);
+        margin-left: 0px;
+        padding: 0 0 1em 0;
+}
+.feedback ul ul li {
+        list-style-image: url(http://www.oreillynet.com/images/bullet-reply.gif);
+        margin-left: 0px;
+        padding: 0 0 1em 0;
+}
+.feedback .headline {
+        font-weight:bold;
+}

@@ -1,0 +1,843 @@
+/* store specific in-use */
+#header ul {
+    width:196px;
+}
+
+#animal {
+    float:right;
+    width:120px;
+    height:67px;
+    margin:0;
+    padding:0;
+    background:url(http://www.oreilly.com/images/oreilly/store_hawk.jpg) no-repeat 0 0;
+    font-size:0;
+    text-indent:-9999px;
+}
+
+h2 {
+    font-family: Verdana,helvetica,arial,sans-serif;
+    font-size:30px;
+    font-weight:normal;
+    color:#990000;
+    display:inline;
+    float:left;
+    margin:0;
+    clear:right;
+}
+
+h2.global_header {
+    font-size:38px;
+}
+
+#content_store {
+
+	width: 68em;
+	float: right;
+	margin-top: 0pt;
+	margin-right: 0pt;
+	margin-bottom: 0pt;
+	margin-left: 0pt;
+	padding-top: 2em;
+	padding-right: 2em;
+	padding-bottom: 2em;
+	padding-left: 0pt;
+
+}
+
+.p2 {
+    
+    width: 35em;
+    font-size:11px;
+    color:#222;
+}
+
+
+p.tagline /*h2 + p*/ {
+    font-family: Verdana,helvetica,arial,sans-serif;
+    display:block;
+    width:25em;
+    font-size:13px;
+    color:#333;
+    text-align:right;
+    margin:0.8em 0 0;
+    float:right;
+    clear:none;
+}
+
+#store p.steps {
+    font-family: 'helvetica neue',helvetica,arial,sans-serif;
+    font-size: 14px;
+    color: #666666;
+    border: 1px solid #aaaaaa;
+    width: 500px;
+    padding: 5px;
+}
+
+#store p.steps .current {
+    color: #000000;
+    font-weight:bold;
+}
+
+/*#store hr {
+    margin:0 0 2em;
+}*/
+
+#store #booklist img, #bookstore #booklistfull img {
+/*    margin-right:1em;
+    margin-bottom:.5em;*/
+    float:left;
+}
+
+#store #booklist img.icon, #store #booklist img.aright {
+    float:right;
+}
+
+#store #booklistfull td img {
+    float: none;
+}
+
+#store .txt {
+    display:table;
+}
+
+#booklist {
+    width:48em;
+    float:left;
+}
+
+#booklist ul {
+    margin: 0 0 0 1.2em;
+    padding: 3px 0 10px 0;
+    line-height:1.2em;
+}  
+
+#booklist ul li {
+    padding-top:8px;
+} 
+
+#booklist p {
+    line-height: 14px;
+}
+
+#tabs {
+ text-transform:uppercase;
+ text-decoration:none;
+ font-weight:bold;
+}
+
+#tabs ul {
+ padding: 0 0 7px 0;
+ margin:0;
+ background-image: url(http://www.oreilly.com/images/icons/line_gray.gif);
+ background-repeat:repeat-x;
+ background-position: bottom center;
+}
+
+#tabs ul li {
+ display:inline;
+ list-style:none;
+ padding:0;
+ margin:0;
+}
+
+#tabs ul li a {
+ color:#999;
+ font-size:92%;
+ font-weight:bold;
+ text-decoration:none;
+ margin:0;
+ padding:0 10px 1px 10px;
+}
+
+#tabs ul li a.current {
+ color:#990000;
+ background-image: url(http://www.oreilly.com/images/icons/line_arrow.gif);
+ background-position: bottom center;
+ background-repeat:no-repeat;
+ padding-bottom:7px;
+}
+
+#tabs ul li a:hover {
+ color:#990000;
+}
+
+#contentleft {
+    width:22em;
+    float:left;
+}
+
+#contentright {
+    width:22em;
+    float:right;
+    margin:0.5em 0 0 1em;
+}
+
+.buy
+{
+    color:#000;
+    width:230px;
+    float:right;
+    border: 1px solid #003399;
+    background-color:#99CCFF;
+    padding:0.2em 0.5em;
+    margin:0 0 0.5em 0;
+}
+
+.book-title {
+    font-size: 20px;
+    padding:0;
+    margin:0;
+    display:block;
+}
+
+.subtitle {
+    font-size:12px;
+    font-weight:bold;
+}
+   
+.book-subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    color:#333;
+    clear:left;
+}
+
+.book-series {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.book-details {
+    line-height:1.4em;
+    padding-top:0;
+    margin-top:0;
+}
+
+.prices {
+    font-size:120%;
+}
+
+.special {
+    color:#990000;
+    font-weight:bold;
+}
+
+.specialtitleMake {
+       color:#990000;
+       font-weight:bold;
+       line-height:2.4em;
+       font-size: 120%;
+       padding: 0px 0px 0px 12px;
+}
+
+.specialtitle {
+       color:#990000;
+       font-weight:bold;
+       line-height:2.4em;
+       font-size: 120%;
+       padding: 0px;
+       
+}  
+
+.specialtitle2 {
+       color:#990000;
+       font-weight:bold;
+       line-height:2.4em;
+       font-size: 120%;
+       padding: 0px;
+ 
+}  
+
+
+
+.justred {
+ 	color:#990000;
+
+}
+.details {
+    font-size:95%;
+    text-align:left;
+}
+
+.pick {
+    padding:0.2em 0.5em;
+    margin:0 0 0.5em 0;
+    background-image: none;
+}
+
+.headline {
+    font-weight:bold;
+}
+
+.smalltext {
+    font-size:95%;
+}
+
+.quote {
+    line-height:22px;
+    color:#888;
+    font-size:120%;
+}
+
+.quote_author {
+    line-height:16px;
+    color:#990000;
+    font-weight:normal;
+}
+
+.authorbio {
+    padding-top:0;
+    margin:0;
+}
+
+.authorbio, .authorbio p {
+    color:#666;
+    line-height:2em;
+}
+
+div.actionbox{
+width: 148px;
+	background: url(http://www.oreilly.com/images/actionbox_back.png) no-repeat center top;
+	padding: 12px 25px 0px;
+	min-height: 25px;
+}
+
+div.actionboxhead {
+    background:url(http://www.oreilly.com/images/oreilly/corner_tr.gif) top right no-repeat;
+    padding:15px;
+    padding-left:25px;
+    margin:0;
+    color:#990000;
+    font-weight:bold;
+    font-size:120%;
+}
+
+div.actionboxbody {
+    background:url(http://www.oreilly.com/images/oreilly/boxline_r.gif) top right repeat-y;
+    padding:20px;
+    padding-left:25px;
+    margin:0;
+    margin-top:-2em;
+} 
+
+div.actionboxfooter {
+	background: url(http://www.oreilly.com/images/actionbox_back.png) no-repeat center bottom;
+	height: 25px;
+	margin-bottom: 10px;
+}
+
+#actions {
+	width: 198px;
+	float:right;
+}
+
+
+
+div.tellfriend{
+  width: 130px;
+  text-align:center;
+  /* padding: 4px 0px 3px 70px; For the new look */
+  padding: 4px 0px 3px 24px;
+  min-height: 25px;
+  /* float:center; For the new look */
+  float:right;
+}
+
+div.purchasebox{
+   width: 130px;
+   background: url(http://oreilly.com/images/oreilly/fine_line.gif) top left repeat-y;
+   /* padding: 3px 60px 10px; */
+   /* top, r, bottom, l */
+   /* top, l/r, bottom */
+   padding: 4px 4px 3px 24px;
+   min-height: 25px;
+   float:right;
+}
+
+* html div.purchaseboxtitle{
+    background: url(http://oreilly.com/images/oreilly/fine_line2.gif) no-repeat bottom left;
+    padding: 4px 7px 4px 28px;
+    width: 147px;
+    float:right;
+}
+
+div.purchaseboxtitle{
+     background: url(http://oreilly.com/images/oreilly/fine_line2.gif) no-repeat bottom left;
+     padding: 4px 4px 3px 24px;
+     width: 130px;
+     float:right;
+}
+
+* html div.purchaseboxtitleMake{
+    background: url(http://oreilly.com/images/oreilly/fine_line2.gif) no-repeat bottom left;
+    padding: 4px 7px 4px 28px;
+    width: 147px;
+    float:right;
+}
+
+div.purchaseboxtitleMake{
+    background: url(http://oreilly.com/images/oreilly/fine_line2.gif) no-repeat bottom left;
+    padding: 4px 7px 2px 4px;
+    width: 147px;
+    float:right;
+}
+
+.purchasebox h2{
+
+   font-weight: bold;
+   font-size: 120%;
+   width: 138px;
+   margin: 0px 0px 0.3em;
+   padding: 0px;
+   clear:both;
+   display:block;
+   float:none;
+
+
+}
+
+.purchasebox-button{
+   margin-bottom: 4px;
+   margin-top: 4px;
+
+}
+
+.purchasebox .divider{
+
+  /* border-bottom: 1px solid #CCCCCC; */
+   margin-bottom: 1em;
+   margin-top: 0.2em;
+
+}
+
+.purchasebox .details{
+
+  font-size:85%;
+  text-align:left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.purchasebox h1{
+
+   font-size: 110%;
+   padding: 0px;
+   margin: 0pt;
+   font-weight: bold;
+
+}
+
+
+
+.actionbox h2 {
+	color: #990000;
+	font-weight: bold;
+	font-size: 120%;
+	margin: 0px 0px 0.3em;
+	padding: 0px;
+clear:both;
+display:block;
+float:none;
+}
+.actionbox-button {
+	margin-bottom: 5px;
+	margin-top: 3px;
+}
+.actionbox .divider {
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 1em;
+        /* was margin-top: 0.2em; */
+	/* margin-top: 0.0em; */
+}
+.actionbox .details {
+	font-size:95%;
+	text-align:left;
+	margin: 0px;
+	padding: 0px;
+}
+.actionbox h1 {
+	color: rgb(51, 51, 51);
+	font-size: 110%;
+	padding: 0px;
+	margin: 0pt;
+	font-weight: bold;
+}
+.actionbox .more {
+	text-align:left;
+	background: url(http://www.oreilly.com/images/icons/arrow.gif) no-repeat left;
+	display: block;
+	/* margin: 0.7em 0px 0px; */
+	margin: 0px 0px 0px;
+	padding-left: 12px;
+}
+.actionbox .more2 {
+        text-align:left;
+        background: url(http://www.oreilly.com/images/icons/arrow.gif) no-repeat left;
+        display: block;
+        /* margin: 0.7em 0px 0px; */
+        margin: 0px 0px .5em 0px;
+        padding-left: 12px;
+}
+
+
+
+.shadowbox {
+    float:left;
+    width:310px;
+    background: url(http://oreilly.com/images/oreilly/box_shadow.png) no-repeat bottom right !important;
+    background: url(http://oreilly.com/images/oreilly/box_shadow.gif) no-repeat bottom right;
+    margin: 10px 0 0 10px !important;
+    margin: 10px 0 0 9px;
+}
+
+.shadowboxinner {
+    background: none !important;
+    background: url(http://oreilly.com/images/oreilly/box_shadow_outside.gif) no-repeat left top;
+    padding: 0 !important;
+    padding: 0 10px 10px 0;
+}
+
+.shadowboxborder {
+    border: 1px solid #999;
+    margin:-10px 10px 10px -10px !important;
+    margin:0;
+    background-color:#fff;
+}
+
+.popupheader {
+    padding:5px 15px;
+    margin:0;
+    background: url(http://oreilly.com/images/oreilly/popup_bkg.jpg) repeat-x top left;
+    color:#fff;
+    text-align: left;
+    font-size:16px;
+    font-family: Verdana, sans-serif;
+    font-weight:bold;
+}
+
+.popupinner {
+    background-color:#fff;
+    color:#333;
+    padding:15px;
+    margin:0;
+}
+
+.popupdesc {
+    float:right;
+    width:180px;
+    font-size:12px;
+    font-family: Arial, Helvetica, san-serif;
+    background-color:#fff;
+}
+
+div#cover {
+    width:16em;
+    float:left;
+    padding:2em 0 0 2em;
+}
+
+#bestnumbering ol {
+    margin:0 0 0 1em;
+    padding:0 0 0 1em;
+} 
+
+#bestnumbering li {
+    padding:0.3em 0 0.3em 0;
+    margin: 0 0 1em 1em; 
+    font-size: 16px !important;
+}
+
+#adspace {
+    width:18em;
+    float:right;
+    margin-left:2em;
+}
+
+#adspace ol, #adspace ul {
+    margin:0;
+    padding:0;
+    color:#666;
+}
+
+#adspace li {
+    padding:0;
+    margin:0 0 1em 2em;
+}
+
+#adspace h3 {
+    font-size:13px;
+    /*font-weight:normal;
+    text-transform:uppercase;
+    color:#666;
+    margin:0.5em 0;*/
+}
+
+#adspace h4 {
+    color: #666;
+    font-weight:normal;
+}
+
+table.cart {
+     text-align: center;
+     width: 500px;
+     background-color: #fafafa;
+     border: 1px #aaaaaa solid;
+     border-collapse: collapse;
+     border-spacing: 0px;
+}
+
+table.cart tr.total {
+     background-color: #cecece;
+     text-align: right;
+     border: 1px #aaaaaa solid;
+     font-size: 12px;
+}
+
+table.cart th {
+     background-color: #cecece;
+     padding: 10px;
+     border: 1px #aaaaaa solid;
+     font-size: 12px;
+}     
+
+table.cart td {
+     padding: 10px;
+     border: 1px #aaaaaa solid;
+}
+
+table.cart td.item {
+     text-align:left;
+}
+
+#checkout {
+    width: 500px;
+}
+
+/* added for rough cuts */
+
+#roughcut {
+    margin:0 10px 10px 10px;
+    border:1px solid #000;
+    width:290px;
+    padding:0px;
+}   
+    
+#roughcutheader {
+    height:30px;
+    padding:10px; 
+    padding-bottom:15px;
+    background-color:#000;
+    background-image:url(http://www.oreilly.com/images/roughcuts/roughcuts.gif);
+    background-repeat:no-repeat;
+    background-position:top left;
+    text-align:right;
+}   
+
+#roughcutheader a {
+    color:#fff;
+}
+    
+#roughcutcontent {
+    background-color:#F8F7F5;
+    padding:5px 10px;
+    text-align:left;
+}
+
+body {
+    background-color:#eee;
+}
+
+.thumb_covers_ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+		
+.thumb_covers_li {
+	margin: 15px 30px 15px 0;
+	/* width: 210px; */
+        width: 210px;
+	/* For 2 columns in Cust Interested In: width: 310px; */
+	/* Was Cust Interested In: width: 210px; */
+	float: left;
+	display: block;
+	padding: 0; 
+}			
+
+#actions2 {
+	width: 330px;
+	padding: 22px 0 0 15px; 
+	float: right;
+}
+
+
+
+.actionbox2{
+	width: 290px;
+	background: transparent url(http://oreillynet.com/oreilly/images/actionbox.gif) no-repeat right top;
+	padding: 1px 0 0 15px;
+}
+
+.actionbox2_inside {
+	background: transparent url(http://oreillynet.com/oreilly/images/actionbox.gif) no-repeat left bottom;
+	padding: 0 20px 5px 15px;
+}
+
+
+.actionbox_title_test{
+	padding: 12px 0 0 0;
+	
+	/* used to remove current style */
+	width: 255px;
+}
+
+.red_title{
+	color:#990000;
+	font-weight:bold;
+	line-height:1.4em;
+	font-size: 1.1em;
+	padding: 0;
+}
+
+.divider2 {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 1em;
+	margin-top: 0;
+}
+
+
+.actionbox_button_test {
+	padding: 3px 10px 3px 0;
+	text-align: right;
+	
+	/* used to remove current style */
+	width: 245px;
+	float: none;
+}
+
+.actionbox_button_test p {
+	padding: 5px 0 0 0;
+	margin: 0 50px 0 0;
+	/* margin: 0 110px 0 0;*/
+	/* font-size: 1.0em;*/
+	font-size: .90em; 
+	font-weight: bold;
+}
+
+.greenbox {
+	background: transparent url(http://oreillynet.com/oreilly/images/greenbox.gif) left top no-repeat;
+	padding: 11px 0 0 0;
+	/* padding: 11px 0 0 0;*/
+	margin: 5px 0 5px 0;
+	
+	/* used to remove current style */
+	 width: 255px; 
+}
+
+.greenbox_sm {
+
+  	background: transparent url(http://oreillynet.com/oreilly/images/greenbox_sm.gif) left top no-repeat;
+        padding: 19px 0 0 0;
+        margin: 5px 0 5px 0;
+
+        /* used to remove current style */
+        width: 255px;
+}
+
+.graybox {
+        background: transparent url(http://oreillynet.com/oreilly/images/graybox.gif) left top no-repeat;
+        padding: 4px 0 18px 18px;
+        margin: 0 0 8px 0;
+
+        /* used to remove current style */
+        width: 255px;
+}
+
+.whatis {
+	padding: 0 13px 6px 0;
+	margin: 0;	
+	text-align: right;
+	font-size: .9em;
+}
+
+.whatisrc {
+        padding: 0 13px 6px 0;
+        margin: 0;
+        text-align: center;
+        font-size: .9em;
+}
+
+
+.actionbox_reprint_license {
+	margin: 5px 0 11px 0;
+	padding: 5px 0 20px 0;
+	text-align: center;
+}
+
+.clear_right{
+	clear: right;
+	font-size: 0;
+	line-height: 0;
+}
+
+.specialtitlealert {
+       color:#990000;
+       font-weight:bold;
+       line-height:2.0em;
+       font-size: 120%;
+       padding: 0px;
+
+}
+
+.recommended_div {
+
+	width: 300px;
+	padding-top: 5px;
+	padding-right: 0pt;
+	padding-bottom: 0pt;
+	padding-left: 15px;
+	float: left;
+
+}
+
+.divider3 {
+    
+    border:none;
+    color: #ccc;
+    background-color: #ccc;
+    height: 1px;
+    width:40%;
+    /* clear:both; */
+}
+
+
+/* eBook formats - cat page & popup */
+
+.ebook_formats {
+	font-family: Arial;
+	font-size: 8px;
+}
+
+div.ebook-pop {
+	width: 360px;
+	border: 5px solid #8BC53E;
+	background-color: #FFFFFF;
+	padding: 15px 25px;
+	margin: 10px;
+	overflow: auto;
+}
+
+.ebook-pop h1 {
+    font-family: Verdana,helvetica,arial,sans-serif;
+    font-size:30px;
+    font-weight:normal;
+    color:#990000;
+    display:inline;
+    margin:0;
+    clear:right;
+}
+
+.ebook-pop ul, .ebook-pop li {
+	padding-left: 0px;
+	margin-left: 8px;
+}

@@ -1,0 +1,77 @@
+.tiny {font-size: 10px; font-family: Arial, Helvetica, sans-serif;}
+.tinywhite {font-size: 10px; font-family: Arial, Helvetica, sans-serif; color: #ffffff;}
+.secondary, .secondary table {font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+.intro {font-size: 13px; font-family: Arial, Helvetica, sans-serif;}
+.headline {font-size: 13px; font-weight:bold; font-family: Arial, Helvetica, sans-serif;}
+.navlink {font-size: 12px; font-weight:bold; font-family: Arial, Helvetica, sans-serif; text-decoration: none; color:#000066;}
+.header {font-size: 13px; font-family: Arial, Helvetica, sans-serif; color:#ffffff;}
+.title {font-size: 16px; font-weight:bold; font-family: Arial, Helvetica, sans-serif;}
+.titlewhite {font-size: 15px; font-weight:bold; font-family: Arial, Helvetica, sans-serif; color:#ffffff;}
+.smalltext {font-size: 11px; font-family: Arial, Helvetica, sans-serif;}
+.smalllist {font-size: 11px; font-family: Arial, Helvetica, sans-serif; margin-bottom: 4px; margin-top: 4px;}
+.medlist {font-size: 12px;  font-family: Arial, Helvetica, sans-serif; margin-bottom: 4px; margin-top: 4px;}
+.zeromarg {margin-bottom: 0px; margin-top: 0px;}
+.noline {text-decoration: none;}
+.message {font-size: 13px; font-family: Arial, Helvetica, sans-serif;}
+.pullquote {font-size: 16px; font-weight:bold; font-family: 'Times New Roman',Times,serif;  color: #669900;}
+.xml {color: #009900;}
+.nav {
+    font-size: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+FORM {margin-bottom: 0px; margin-top: 0px;}
+INPUT {margin-bottom: 0px; margin-top: 0px;}
+H1 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 17px;}
+H2 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 17px;}
+H3 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 15px;}
+H4 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 13px; margin-bottom: 0px; margin-top: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;}
+CODE {color: #003366; font-size: 10pt; font-family: Courier New,Courier;}
+/*PRE {font-family: Courier New,Courier; font-size: 10pt; color: #003366; margin-left: 9pt;}*/
+PRE {
+    clear:both;
+    overflow:auto;
+    background-color:#efefef;
+    
+    /*width:100% !important;*/
+    width:600px; /*for IE, which doesn't obey !important or width:100% on pre */
+
+    padding-bottom:0 !important;
+    padding-bottom:1.5em; /* for IE which doesn't make room at the bottom of the pre for a horizontal scrollbar */
+}
+/*added for definitions, which will be used heavily in
+  whatis articles --cp 10/27/05 */
+dt{
+   font-weight: bold;
+}
+
+
+/* added for floating images -jcw 2006-01-20*/
+.left {
+   float:left;
+   margin:0 1em 1em 0;
+}
+
+.right {
+   float:right;
+   margin:0 0 1em 1em;
+}
+
+.center {
+   display:block;
+   clear:both;
+   margin:0 auto 1em;
+}
+
+.image {
+    margin-bottom:1em;
+}
+
+.image p {
+   padding:0;
+   margin:0;
+   font-style:italic;
+}

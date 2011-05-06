@@ -1,0 +1,715 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<title>Model–view–controller - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.16alpha-wmf">
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit">
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit">
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png">
+<link rel="shortcut icon" href="http://en.wikipedia.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="Model-view-controller_files/shared.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Model-view-controller_files/commonPrint.css" type="text/css" media="print">
+<link rel="stylesheet" href="Model-view-controller_files/main.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Model-view-controller_files/main_002.css" type="text/css" media="handheld">
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?243z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?243z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?243z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?243z2" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="Model-view-controller_files/index_003.css" type="text/css" media="all">
+<link rel="stylesheet" href="Model-view-controller_files/index_005.css" type="text/css" media="print">
+<link rel="stylesheet" href="Model-view-controller_files/index_002.css" type="text/css" media="handheld">
+<link rel="stylesheet" href="Model-view-controller_files/index_004.css" type="text/css" media="all">
+<link rel="stylesheet" href="Model-view-controller_files/index.css" type="text/css" media="all">
+<script type="text/javascript">
+var skin="monobook",
+stylepath="/skins-1.5",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://en.wikipedia.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Model–view–controller",
+wgTitle="Model–view–controller",
+wgAction="view",
+wgArticleId=288233,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=323405610,
+wgVersion="1.16alpha-wmf",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
+wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgDBname="enwiki",
+wgSearchNamespaces=[0],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgNotice="",
+wgNoticeLocal="";
+</script>
+<script src="Model-view-controller_files/wikibits.js" type="text/javascript"></script>
+<script src="Model-view-controller_files/ajax.js" type="text/javascript"></script>
+<script src="Model-view-controller_files/mwsuggest.js" type="text/javascript"></script>
+<script type="text/javascript" src="Model-view-controller_files/centralnotice.js"></script><style type="text/css">
+#centralNotice .siteNoticeSmall{display:none;}
+#centralNotice .siteNoticeSmallAnon{display:none;}
+#centralNotice .siteNoticeSmallUser{display:none;}
+#centralNotice.collapsed .siteNoticeBig{display:none;}
+#centralNotice.collapsed .siteNoticeSmall{display:block;}
+#centralNotice.collapsed .siteNoticeSmallUser{display:block;}
+#centralNotice.collapsed .siteNoticeSmallAnon{display:block;}
+#centralNotice.anonnotice .siteNoticeSmallUser{display:none !important;}
+#centralNotice.usernotice .siteNoticeSmallAnon{display:none !important;}
+</style>
+
+
+<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?243z2"></script>
+	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+<script src="Model-view-controller_files/index.php" type="text/javascript"></script><script type="text/javascript" src="Model-view-controller_files/index_002.php"></script>
+
+</head><body class="mediawiki ltr ns-0 ns-subject page-Model–view–controller skin-monobook">
+	<div id="globalWrapper"><div style="position: absolute; z-index: 40; left: 155px; top: 1px; clear: both; float: left; font-size: 90%; font-style: italic; white-space: nowrap;" class="noprint" id="anon-banner">Wikipedia is sustained by people like you. Please <a href="http://wikimediafoundation.org/wiki/Donate/Now/en?utm_source=enwiki_02&amp;utm_medium=anon_donation_banner&amp;utm_campaign=spontaneous_donation" class="extiw" title="foundation:fundraising"><b>donate</b></a> today.</div>
+		<div id="column-content">
+	<div id="content">
+		<a id="top"></a>
+		<div id="siteNotice"><script type="text/javascript">if (wgNotice != '') document.writeln(wgNotice);</script></div>		<h1 id="firstHeading" class="firstHeading">Model–view–controller</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">&nbsp;&nbsp;(Redirected from <a href="http://en.wikipedia.org/w/index.php?title=Model-view-controller&amp;redirect=no" title="Model-view-controller">Model-view-controller</a>)</div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<table class="metadata plainlinks ambox ambox-style" style="">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width: 52px;"><a href="http://en.wikipedia.org/wiki/File:Acap.svg" class="image"><img alt="Acap.svg" src="Model-view-controller_files/36px-Acap.png" height="40" width="36"></a></div>
+</td>
+<td class="mbox-text" style="">This article <b>may require <a href="http://en.wikipedia.org/wiki/Wikipedia:How_to_copy-edit" title="Wikipedia:How to copy-edit">copy-editing</a> for grammar, style, cohesion, tone or spelling</b>. You can assist by <a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit" class="external text" rel="nofollow">editing it</a> now.<small><i>&nbsp;(December 2008)</i></small></td>
+</tr>
+</tbody></table>
+<div class="thumb tright">
+<div class="thumbinner" style="width: 352px;"><a href="http://en.wikipedia.org/wiki/File:ModelViewControllerDiagram.svg" class="image"><img alt="" src="Model-view-controller_files/350px-ModelViewControllerDiagram.png" class="thumbimage" height="165" width="350"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:ModelViewControllerDiagram.svg" class="internal" title="Enlarge"><img src="Model-view-controller_files/magnify-clip.png" alt="" height="11" width="15"></a></div>
+Model-View-Controller concept. Note: The solid line represents a direct <a href="http://en.wikipedia.org/wiki/Association_%28object-oriented_programming%29" title="Association (object-oriented programming)">association</a>, the dashed an indirect <a href="http://en.wikipedia.org/wiki/Association_%28object-oriented_programming%29" title="Association (object-oriented programming)">association</a> (for example) via an <a href="http://en.wikipedia.org/wiki/Observer_pattern" title="Observer pattern">observer</a>.</div>
+</div>
+</div>
+<p><b>Model–View–Controller</b> (<b>MVC</b>) is an <a href="http://en.wikipedia.org/wiki/Architectural_pattern_%28computer_science%29" title="Architectural pattern (computer science)">architectural pattern</a> used in <a href="http://en.wikipedia.org/wiki/Software_engineering" title="Software engineering">software engineering</a>. The pattern isolates <a href="http://en.wikipedia.org/wiki/Business_logic" title="Business logic">business logic</a> from input and <a href="http://en.wikipedia.org/wiki/Presentation" title="Presentation">presentation</a>, permitting <a href="http://en.wikipedia.org/wiki/Separation_of_concerns" title="Separation of concerns">independent development, testing and maintenance of each</a>.</p>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+ <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Description"><span class="tocnumber">1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#History"><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Selected_frameworks"><span class="tocnumber">3</span> <span class="toctext">Selected frameworks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#GUI_frameworks"><span class="tocnumber">3.1</span> <span class="toctext">GUI frameworks</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Combined_frameworks"><span class="tocnumber">3.2</span> <span class="toctext">Combined frameworks</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Java:_Java_Platform.2C_Enterprise_Edition_.28Java_EE.29"><span class="tocnumber">3.2.1</span> <span class="toctext">Java: Java Platform, Enterprise Edition (Java EE)</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#XForms"><span class="tocnumber">3.2.2</span> <span class="toctext">XForms</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Implementations_of_MVC_as_GUI_frameworks"><span class="tocnumber">4</span> <span class="toctext">Implementations of MVC as GUI frameworks</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Implementations_of_MVC_as_web-based_frameworks"><span class="tocnumber">5</span> <span class="toctext">Implementations of MVC as web-based frameworks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#.NET"><span class="tocnumber">5.1</span> <span class="toctext">.NET</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Actionscript"><span class="tocnumber">5.2</span> <span class="toctext">Actionscript</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#ASP"><span class="tocnumber">5.3</span> <span class="toctext">ASP</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#C.2B.2B"><span class="tocnumber">5.4</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#ColdFusion"><span class="tocnumber">5.5</span> <span class="toctext">ColdFusion</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Flex"><span class="tocnumber">5.6</span> <span class="toctext">Flex</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Java"><span class="tocnumber">5.7</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Groovy"><span class="tocnumber">5.8</span> <span class="toctext">Groovy</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#JavaScript"><span class="tocnumber">5.9</span> <span class="toctext">JavaScript</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#ABAP_Objects"><span class="tocnumber">5.10</span> <span class="toctext">ABAP Objects</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Informix_4GL"><span class="tocnumber">5.11</span> <span class="toctext">Informix 4GL</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Lua"><span class="tocnumber">5.12</span> <span class="toctext">Lua</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Perl"><span class="tocnumber">5.13</span> <span class="toctext">Perl</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#PHP"><span class="tocnumber">5.14</span> <span class="toctext">PHP</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Python"><span class="tocnumber">5.15</span> <span class="toctext">Python</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Ruby"><span class="tocnumber">5.16</span> <span class="toctext">Ruby</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Smalltalk"><span class="tocnumber">5.17</span> <span class="toctext">Smalltalk</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#XML"><span class="tocnumber">5.18</span> <span class="toctext">XML</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=1" title="Edit section: Description">edit</a>]</span> <span class="mw-headline" id="Description">Description</span></h2>
+<dl>
+<dt>Model</dt>
+<dd>It is the <a href="http://en.wikipedia.org/wiki/Application_domain" title="Application domain">domain</a>-specific
+representation of the data on which the application operates. Domain
+logic adds meaning to raw data (for example, calculating whether today
+is the user's birthday, or the totals, taxes, and shipping charges for
+shopping cart items). When a model changes its state, it notifies its
+associated views so they can refresh.</dd>
+<dd>Many applications use a persistent storage mechanism (such as a
+database) to store data. MVC does not specifically mention the data
+access layer because it is understood to be underneath or encapsulated
+by the model. Models are not data access objects although in very
+simple apps, with little domain logic, there is no real distinction to
+be made. Also, the ActiveRecord is an accepted design pattern which
+merges domain logic and data access code - a model which knows how to
+persist itself.</dd>
+<dt>View</dt>
+<dd>Renders the model into a form suitable for interaction, typically a <a href="http://en.wikipedia.org/wiki/User_interface" title="User interface">user interface</a> element. Multiple views can exist for a single model for different purposes.</dd>
+<dt>Controller</dt>
+<dd>Receives input and initiates a response by making calls on model objects.</dd>
+</dl>
+<p>An MVC application may be a collection of model/view/controller triplets, each responsible for a different UI element.</p>
+<p>MVC is often seen in <a href="http://en.wikipedia.org/wiki/Web_application" title="Web application">web applications</a> where the view is the <a href="http://en.wikipedia.org/wiki/HTML" title="HTML">HTML</a> or <a href="http://en.wikipedia.org/wiki/XHTML" title="XHTML">XHTML</a>
+generated by the app. The controller receives GET or POST input and
+decides what to do with it, handing over to domain objects (ie the
+model) which contain the business rules and know how to carry out
+specific tasks such as processing a new subscription.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=2" title="Edit section: History">edit</a>]</span> <span class="mw-headline" id="History">History</span></h2>
+<p>MVC was first described in 1979<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> by <a href="http://en.wikipedia.org/wiki/Trygve_Reenskaug" title="Trygve Reenskaug">Trygve Reenskaug</a>, then working on <a href="http://en.wikipedia.org/wiki/Smalltalk" title="Smalltalk">Smalltalk</a> at <a href="http://en.wikipedia.org/wiki/Xerox_PARC" title="Xerox PARC" class="mw-redirect">Xerox PARC</a>.
+The original implementation is described in depth in the influential
+paper "Applications Programming in Smalltalk-80: How to use
+Model–View–Controller".<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></p>
+<p>There have been several derivatives of MVC. For example, <a href="http://en.wikipedia.org/wiki/Model_View_Presenter" title="Model View Presenter" class="mw-redirect">Model View Presenter</a> is used with the <a href="http://en.wikipedia.org/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a><sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup>, and the <a href="http://en.wikipedia.org/wiki/XForms" title="XForms">XForms</a> standard uses a "model-view-controller-connector architecture"<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup>. However, standard MVC remains popular.<sup class="noprint Template-Fact" title="This claim needs references to reliable sources from July 2009" style="white-space: nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed">citation needed</a></i>]</sup></p>
+<p>Though MVC comes in different flavors, control flow is generally as follows:</p>
+<ol>
+<li>The user interacts with the user interface in some way (for example, presses a <a href="http://en.wikipedia.org/wiki/Mouse_%28computing%29#Buttons" title="Mouse (computing)">mouse button</a>).</li>
+<li>The controller handles the input event from the user interface, often via a registered <a href="http://en.wikipedia.org/wiki/Event_handler" title="Event handler">handler</a> or <a href="http://en.wikipedia.org/wiki/Callback_%28computer_science%29" title="Callback (computer science)">callback</a> and converts the event into appropriate user action, understandable for the model.</li>
+<li>The controller notifies the model of the user action, possibly
+resulting in a change in the model's state. (For example, the
+controller updates the user's <a href="http://en.wikipedia.org/wiki/Shopping_cart_software" title="Shopping cart software">shopping cart</a>.)<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup></li>
+<li>A view queries the model in order to generate an appropriate user
+interface (for example, the view lists the shopping cart's contents).
+Note that the view gets its own data from the model. The controller may
+(in some implementations) issue a general instruction to the view to
+render itself. In others, the view is automatically notified by the
+model of changes in state (Observer) which require a screen update.</li>
+<li>The user interface waits for further user interactions, which restarts the cycle.</li>
+</ol>
+<p>Some implementations such as the <a href="http://en.wikipedia.org/wiki/W3C" title="W3C" class="mw-redirect">W3C</a> <a href="http://en.wikipedia.org/wiki/XForms" title="XForms">XForms</a> also use the concept of a <a href="http://en.wikipedia.org/wiki/Dependency_graph" title="Dependency graph">dependency graph</a> to automate the updating of views when data in the model changes.</p>
+<p>By decoupling models and views, MVC helps to reduce the complexity
+in architectural design and to increase flexibility and reuse of <a href="http://en.wikipedia.org/wiki/Source_code" title="Source code">code</a>.<sup class="noprint Template-Fact" title="This claim needs references to reliable sources from January 2009" style="white-space: nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed">citation needed</a></i>]</sup></p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=3" title="Edit section: Selected frameworks">edit</a>]</span> <span class="mw-headline" id="Selected_frameworks">Selected frameworks</span></h2>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=4" title="Edit section: GUI frameworks">edit</a>]</span> <span class="mw-headline" id="GUI_frameworks">GUI frameworks</span></h3>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=5" title="Edit section: Combined frameworks">edit</a>]</span> <span class="mw-headline" id="Combined_frameworks">Combined frameworks</span></h3>
+<h4><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=6" title="Edit section: Java: Java Platform, Enterprise Edition (Java EE)">edit</a>]</span> <span class="mw-headline" id="Java:_Java_Platform.2C_Enterprise_Edition_.28Java_EE.29">Java: Java Platform, Enterprise Edition (Java EE)</span></h4>
+<p>Simple Version implementing <a href="http://en.wikipedia.org/wiki/Java_Servlet" title="Java Servlet">Java Servlets</a> and <a href="http://en.wikipedia.org/wiki/JavaServer_Pages" title="JavaServer Pages">JavaServer Pages</a> from Java EE:</p>
+<dl>
+<dt>Model</dt>
+<dd>The model is a collection of Java <a href="http://en.wikipedia.org/wiki/Class_%28computer_science%29" title="Class (computer science)">classes</a> that form a software application intended to store, and optionally separate, data. A single <a href="http://en.wikipedia.org/wiki/Front_end#Computer_science" title="Front end" class="mw-redirect">front end</a> class that can communicate with any user interface (for example: a console, a <a href="http://en.wikipedia.org/wiki/Graphical_user_interface" title="Graphical user interface">graphical user interface</a>, or a <a href="http://en.wikipedia.org/wiki/Web_application" title="Web application">web application</a>).</dd>
+</dl>
+<dl>
+<dt>View</dt>
+<dd>The view is represented by <a href="http://en.wikipedia.org/wiki/JavaServer_Pages" title="JavaServer Pages">JavaServer Page</a>, with data being transported to the page in the HttpServletRequest or HttpSession.</dd>
+</dl>
+<dl>
+<dt>Controller</dt>
+<dd>The controller <a href="http://en.wikipedia.org/wiki/Java_Servlet" title="Java Servlet">servlet</a>
+communicates with the front end of the model and loads the
+HttpServletRequest or HttpSession with appropriate data, before
+forwarding the HttpServletRequest and Response to the JSP using a
+RequestDispatcher.</dd>
+</dl>
+<p>The Servlet is a Java class, and it communicates and interacts with
+the model but does not need to generate HTML or XHTML output; the JSPs
+do not have to communicate with the model because the Servlet provides
+them with the information—they can concentrate on creating output.</p>
+<p>Unlike the other frameworks, <a href="http://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition" title="Java Platform, Enterprise Edition">Java EE</a> defines a pattern for model objects.</p>
+<dl>
+<dt>Model</dt>
+<dd>The model is commonly represented by <a href="http://en.wikipedia.org/wiki/Entity_bean" title="Entity bean" class="mw-redirect">entity beans</a>, although the model can be created by a servlet using a business object framework such as <a href="http://en.wikipedia.org/wiki/Spring_Framework" title="Spring Framework">Spring</a>.</dd>
+</dl>
+<dl>
+<dt>View</dt>
+<dd>The view in a Java EE application may be represented by a <a href="http://en.wikipedia.org/wiki/JavaServer_Pages" title="JavaServer Pages">JavaServer Page</a>, which may be currently implemented using <a href="http://en.wikipedia.org/wiki/JavaServer_Faces" title="JavaServer Faces">JavaServer Faces</a> Technology (JSF). Alternatively, the code to generate the view may be part of a servlet.</dd>
+</dl>
+<dl>
+<dt>Controller</dt>
+<dd>The controller in a Java EE application may be represented by a servlet, which may be currently implemented using <a href="http://en.wikipedia.org/wiki/JavaServer_Faces" title="JavaServer Faces">JavaServer Faces</a> (JSF).</dd>
+</dl>
+<h4><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=7" title="Edit section: XForms">edit</a>]</span> <span class="mw-headline" id="XForms">XForms</span></h4>
+<p><a href="http://en.wikipedia.org/wiki/XForms" title="XForms">XForms</a>
+is an XML format for the specification of a data processing model for
+XML data and user interface(s) for the XML data, such as web forms.</p>
+<dl>
+<dt>Model</dt>
+</dl>
+<p>XForms stores the Model as XML elements in the browser. They are usually placed in the non-visible <code>&lt;head&gt;</code> elements of a web page.</p>
+<dl>
+<dt>View</dt>
+</dl>
+<p>The Views are XForms controls for screen elements and can be placed
+directly in the visible section of web page. They are usually placed in
+the <code>&lt;body&gt;</code> elements of a web page.</p>
+<p>The model and views are bound together using reference or binding
+statements. These binding statements are used by the XForms dependency
+graph to ensure that the correct views are updated when data in the
+model changes. This means that forms developers do not need to be able
+to understand either the push or pull models of event processing.</p>
+<dl>
+<dt>Controller</dt>
+</dl>
+<p>All mouse events are processed by XForms controls and XML events are dispatched.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=8" title="Edit section: Implementations of MVC as GUI frameworks">edit</a>]</span> <span class="mw-headline" id="Implementations_of_MVC_as_GUI_frameworks">Implementations of MVC as GUI frameworks</span></h2>
+<p>Smalltalk's MVC implementation inspired many other <a href="http://en.wikipedia.org/wiki/Graphical_user_interface" title="Graphical user interface">GUI</a> frameworks, such as the following:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Cocoa_%28API%29" title="Cocoa (API)">Cocoa</a> framework and its GUI part <a href="http://en.wikipedia.org/wiki/Application_Kit" title="Application Kit">AppKit</a>, as a direct descendant of <a href="http://en.wikipedia.org/wiki/OpenStep" title="OpenStep">OpenStep</a>, encourage the use of MVC. <a href="http://en.wikipedia.org/wiki/Interface_Builder" title="Interface Builder">Interface Builder</a>
+constructs Views, and connects them to Controllers via Outlets and
+Actions, although Cocoa tightly-couples the model to the view,
+effectively rendering it not an MVC pattern.</li>
+<li><a href="http://en.wikipedia.org/wiki/GNUstep" title="GNUstep">GNUstep</a>, also based on <a href="http://en.wikipedia.org/wiki/OpenStep" title="OpenStep">OpenStep</a>, encourages MVC as well.</li>
+<li><a href="http://en.wikipedia.org/wiki/GTK%2B" title="GTK+">GTK+</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/JFace" title="JFace">JFace</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library" title="Microsoft Foundation Class Library">MFC</a> (called Document/View architecture here).</li>
+<li><a href="http://en.wikipedia.org/wiki/Composite_UI_Application_Block" title="Composite UI Application Block">Microsoft Composite UI Application Block</a>, part of the <a href="http://en.wikipedia.org/wiki/Microsoft_Enterprise_Library" title="Microsoft Enterprise Library">Microsoft Enterprise Library</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Qt_%28toolkit%29" title="Qt (toolkit)">Qt</a> since Qt4 release.</li>
+<li><a href="http://en.wikipedia.org/wiki/Swing_%28Java%29" title="Swing (Java)">Java Swing</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Adobe_Flex" title="Adobe Flex">Adobe Flex</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Wavemaker" title="Wavemaker">Wavemaker</a> open source, browser-based development tool based on MVC.</li>
+<li><a href="http://en.wikipedia.org/wiki/Windows_Presentation_Foundation" title="Windows Presentation Foundation">WPF</a> uses a similar <a href="http://en.wikipedia.org/wiki/Model-view-viewmodel" title="Model-view-viewmodel" class="mw-redirect">Model–view–viewmodel</a> pattern.</li>
+<li>Visual FoxExpress is a <a href="http://en.wikipedia.org/wiki/Visual_FoxPro" title="Visual FoxPro">Visual FoxPro</a> MVC framework.</li>
+<li><a href="http://en.wikipedia.org/wiki/Tk_%28framework%29" title="Tk (framework)">Tk toolkit</a> Tcl/Tk toolkit.</li>
+</ul>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=9" title="Edit section: Implementations of MVC as web-based frameworks">edit</a>]</span> <span class="mw-headline" id="Implementations_of_MVC_as_web-based_frameworks">Implementations of MVC as web-based frameworks</span></h2>
+<table class="metadata plainlinks ambox ambox-move" style="">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width: 52px;"><a href="http://en.wikipedia.org/wiki/File:Merge-arrow.svg" class="image"><img alt="Merge-arrow.svg" src="Model-view-controller_files/50px-Merge-arrow.png" height="20" width="50"></a></div>
+</td>
+<td class="mbox-text" style="">It has been suggested that this article or section be <a href="http://en.wikipedia.org/wiki/Wikipedia:Merging" title="Wikipedia:Merging">merged</a> into <i><a href="http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks" title="Comparison of web application frameworks">Comparison of web application frameworks</a></i>. (<a href="http://en.wikipedia.org/wiki/Talk:Comparison_of_web_application_frameworks" title="Talk:Comparison of web application frameworks">Discuss</a>)</td>
+</tr>
+</tbody></table>
+<p>In the design of web applications, MVC is implemented by <a href="http://en.wikipedia.org/wiki/Web_template_system" title="Web template system">web template systems</a> as a "View for web" component.</p>
+<p>MVC is typically implemented as a "<a href="http://en.wikipedia.org/wiki/Model_2" title="Model 2">Model 2</a>" architecture in <a href="http://en.wikipedia.org/wiki/Sun_Microsystems" title="Sun Microsystems">Sun</a>
+parlance. Model 2 focuses on efficiently handling and dispatching full
+page form posts and reconstructing the full page via a front
+controller. Complex web applications continue to be more difficult to
+design than traditional applications because of this "full page"
+effect. More recently <a href="http://en.wikipedia.org/wiki/AJAX" title="AJAX" class="mw-redirect">AJAX</a>
+driven frameworks that focus on firing focused UI events at specific UI
+Components on the page are emerging. This is causing MVC to be
+revisited for web application development using traditional desktop
+programming techniques.<sup class="noprint Template-Fact" title="This claim needs references to reliable sources from January 2009" style="white-space: nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed">citation needed</a></i>]</sup></p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=10" title="Edit section: .NET">edit</a>]</span> <span class="mw-headline" id=".NET">.NET</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/ASP.NET_MVC_Framework" title="ASP.NET MVC Framework">ASP.NET MVC Framework</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Maverick.NET" title="Maverick.NET">Maverick.NET</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Monorail_%28.Net%29" title="Monorail (.Net)" class="mw-redirect">Monorail</a> An ActionPack inspired MVC framework from the Castle Project</li>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> Framework for C#</li>
+<li><a href="http://en.wikipedia.org/wiki/Spring_Framework" title="Spring Framework">Spring Framework</a>.NET</li>
+<li><a href="http://viciproject.com/wiki/projects/mvc/home" class="external text" rel="nofollow">Vici MVC</a> (formerly ProMesh.NET) Open source MVC Web Application Framework for .NET 2.0 or higher.</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=11" title="Edit section: Actionscript">edit</a>]</span> <span class="mw-headline" id="Actionscript">Actionscript</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> Framework for Actionscript.</li>
+<li><a href="http://www.flashmvc.com/" class="external text" rel="nofollow">FlashMVC</a>- A lightweight Framework for Actionscript3 aimed at beginners to power users.</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=12" title="Edit section: ASP">edit</a>]</span> <span class="mw-headline" id="ASP">ASP</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/w/index.php?title=ASP_Xtreme_Evolution_%28AXE%29&amp;action=edit&amp;redlink=1" class="new" title="ASP Xtreme Evolution (AXE) (page does not exist)">ASP Xtreme Evolution (AXE)</a></li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=13" title="Edit section: C++">edit</a>]</span> <span class="mw-headline" id="C.2B.2B">C++</span></h3>
+<ul>
+<li><a href="http://cppcms.sourceforge.net/wikipp/en/page/main" class="external text" rel="nofollow">cppcms</a> A C++ Web Development Framework (not CMS) aimed for Rapid Web Application Development.</li>
+<li><a href="http://en.wikipedia.org/wiki/Wt_-_Web_toolkit" title="Wt - Web toolkit">Wt - Web toolkit</a> A library and application server for web applications using a desktop-like event-driven MVC pattern.</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=14" title="Edit section: ColdFusion">edit</a>]</span> <span class="mw-headline" id="ColdFusion">ColdFusion</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Mach-II" title="Mach-II">Mach-II</a> A framework that focuses on trying to ease software development and maintenance</li>
+<li><a href="http://en.wikipedia.org/wiki/Model-Glue" title="Model-Glue">Model-Glue</a>
+Through a simple implementation of Implicit Invocation and
+Model–View–Controller, they allow applications to be well organized
+without sacrificing flexibility.</li>
+<li><a href="http://en.wikipedia.org/wiki/Fusebox_%28programming%29" title="Fusebox (programming)">Fusebox</a>
+Fusebox does not force the Model–View–Controller (MVC) pattern or
+Object-Oriented Programming (OOP) on the developer. However, either or
+both of these development approaches can be used with Fusebox.</li>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> Framework for ColdFusion</li>
+<li><a href="http://www.coldboxframework.com/" class="external text" rel="nofollow">Coldbox</a>
+is an event-driven conventions based MVC ColdFusion Framework with an
+extensive array of patterns for its operations such as Factories,
+Helpers, Workers, etc.</li>
+<li><a href="http://switchboard.riaforge.org/" class="external text" rel="nofollow">Switchboard</a> is a MVC framework with built in authentication, redirecting, and URL routing.</li>
+<li><a href="http://fw1.riaforge.org/" class="external text" rel="nofollow">FW/1</a>
+is intended to require near-zero configuration, letting you build your
+application without worrying about a framework getting in your way.</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=15" title="Edit section: Flex">edit</a>]</span> <span class="mw-headline" id="Flex">Flex</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Cairngorm_%28Flex_framework%29" title="Cairngorm (Flex framework)">Cairngorm</a> one of the primary open source frameworks for application architecture in Adobe Flex.</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=HydraMVC&amp;action=edit&amp;redlink=1" class="new" title="HydraMVC (page does not exist)">HydraMVC</a> Flex framework improving upon PureMVC</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Mate_%28Flex_Framework%29&amp;action=edit&amp;redlink=1" class="new" title="Mate (Flex Framework) (page does not exist)">Mate</a> Architectural framework for Flex development.</li>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> ActionScript 3 MVC framework for Flex, Flash and AIR development.</li>
+<li><a href="http://code.google.com/p/aconcagua-flex/" class="external text" rel="nofollow">Aconcagua</a> is a Flex/AIR framework built to support enterprise application development.</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=16" title="Edit section: Java">edit</a>]</span> <span class="mw-headline" id="Java">Java</span></h3>
+<p>MVC web application frameworks:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Aranea_framework" title="Aranea framework">Aranea</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Apache_Cocoon" title="Apache Cocoon">Cocoon</a></li>
+<li><a href="http://www.inductionframework.org/" class="external text" rel="nofollow">Induction</a></li>
+<li><a href="http://en.wikipedia.org/wiki/JavaServer_Faces" title="JavaServer Faces">JSF</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Oracle_Application_Framework" title="Oracle Application Framework">Oracle Application Framework</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Apache_Sling" title="Apache Sling">Sling</a> Create content based applications on top of JCR. Supported scripting languages are <a href="http://en.wikipedia.org/wiki/JSP" title="JSP">JSP</a>, server-side <a href="http://en.wikipedia.org/wiki/JavaScript" title="JavaScript">JavaScript</a>, <a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29" title="Ruby (programming language)">Ruby</a>, <a href="http://en.wikipedia.org/wiki/Apache_Velocity" title="Apache Velocity">Velocity</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Spring_Framework#Model-view-controller_framework" title="Spring Framework">Spring MVC Framework</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Apache_Struts" title="Apache Struts">Struts</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Stripes_%28framework%29" title="Stripes (framework)">Stripes</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Tapestry_%28programming%29" title="Tapestry (programming)">Tapestry</a></li>
+<li><a href="http://en.wikipedia.org/wiki/WebObjects" title="WebObjects">WebObjects</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Apache_WebWork_2" title="Apache WebWork 2" class="mw-redirect">WebWork</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Wicket_framework" title="Wicket framework" class="mw-redirect">Wicket</a></li>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> Framework for Java</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Longjump.com&amp;action=edit&amp;redlink=1" class="new" title="Longjump.com (page does not exist)">LongJump</a></li>
+<li><a href="http://www.salmonllc.com/" class="external text" rel="nofollow">Sofia</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Struts2" title="Struts2">Struts2</a></li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=17" title="Edit section: Groovy">edit</a>]</span> <span class="mw-headline" id="Groovy">Groovy</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Grails_%28Framework%29" title="Grails (Framework)" class="mw-redirect">Grails</a></li>
+<li><a href="http://griffon.codehaus.org/" class="external text" rel="nofollow">Griffon</a></li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=18" title="Edit section: JavaScript">edit</a>]</span> <span class="mw-headline" id="JavaScript">JavaScript</span></h3>
+<p>MVC web application frameworks:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SproutCore" title="SproutCore">SproutCore</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Wavemaker" title="Wavemaker">Wavemaker</a> WYSIWYG development platform for Ajax web applications<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup></li>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> Framework for JavaScript</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Woozoo&amp;action=edit&amp;redlink=1" class="new" title="Woozoo (page does not exist)">Woozoo</a> MVC Framework for the <a href="http://en.wikipedia.org/wiki/Prototype_JavaScript_Framework" title="Prototype JavaScript Framework">Prototype JavaScript Framework</a></li>
+<li><a href="http://en.wikipedia.org/wiki/JavascriptMVC" title="JavascriptMVC">JavascriptMVC</a> Javascript MVC framework based upon jQuery core.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup></li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=19" title="Edit section: ABAP Objects">edit</a>]</span> <span class="mw-headline" id="ABAP_Objects">ABAP Objects</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SAP_NetWeaver_Application_Server" title="SAP NetWeaver Application Server">Business Server Pages</a> (BSP)</li>
+<li><a href="http://en.wikipedia.org/wiki/Web_Dynpro_ABAP" title="Web Dynpro ABAP" class="mw-redirect">Web Dynpro ABAP</a></li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=20" title="Edit section: Informix 4GL">edit</a>]</span> <span class="mw-headline" id="Informix_4GL">Informix 4GL</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Informix_4GL&amp;action=edit&amp;redlink=1" class="new" title="Informix 4GL (page does not exist)">Informix 4GL</a> MVC models to use for Informix 4GL report and form creation</li>
+<li><a href="http://en.wikipedia.org/wiki/Enterprise_Generation_Language" title="Enterprise Generation Language" class="mw-redirect">EGL</a> — IBM's EGL MVC Implementation</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=21" title="Edit section: Lua">edit</a>]</span> <span class="mw-headline" id="Lua">Lua</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Orbit_%28web_framework%29" title="Orbit (web framework)">Orbit</a></li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=22" title="Edit section: Perl">edit</a>]</span> <span class="mw-headline" id="Perl">Perl</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Catalyst_%28software%29" title="Catalyst (software)">Catalyst</a> An MVC-based avant-garde web framework.</li>
+<li><a href="http://www.onsite.no/" class="external text" rel="nofollow">O2</a> An MVC-based web framework.</li>
+<li><a href="http://en.wikipedia.org/wiki/Maypole_framework" title="Maypole framework">Maypole</a> A useful perl MVC framework</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Gantry_%28software%29&amp;action=edit&amp;redlink=1" class="new" title="Gantry (software) (page does not exist)">Gantry</a> An MVC framework similar to django</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Jifty_%28software%29&amp;action=edit&amp;redlink=1" class="new" title="Jifty (software) (page does not exist)">Jifty</a> the "one true way" for MVC</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=CGI::Application_%28software%29&amp;action=edit&amp;redlink=1" class="new" title="CGI::Application (software) (page does not exist)">CGI::Application</a> Another MVC Web Framework</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=MasonX::MiniMVC_%28software%29&amp;action=edit&amp;redlink=1" class="new" title="MasonX::MiniMVC (software) (page does not exist)">MasonX::MiniMVC</a> MVC Framework</li>
+<li><a href="http://solstice.eplt.washington.edu/" class="external text" rel="nofollow">Solstice</a> Based on the MVC programming paradigm</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=23" title="Edit section: PHP">edit</a>]</span> <span class="mw-headline" id="PHP">PHP</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Agavi&amp;action=edit&amp;redlink=1" class="new" title="Agavi (page does not exist)">Agavi</a> a PHP5 application framework that focuses on sustained quality and correctness.</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Akelos_PHP_Framework&amp;action=edit&amp;redlink=1" class="new" title="Akelos PHP Framework (page does not exist)">Akelos PHP Framework</a> a <a href="http://en.wikipedia.org/wiki/Ruby_on_Rails" title="Ruby on Rails">Ruby on Rails</a> port to <a href="http://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a>4/5..</li>
+<li><a href="http://www.atomikframework.com/" class="external text" rel="nofollow">Atomik Framework</a> micro framework for PHP5. <a href="http://en.wikipedia.org/wiki/Atomik_Framework" title="Atomik Framework">Atomik Framework</a></li>
+<li><a href="http://web.bluewatermvc.org/" class="external text" rel="nofollow">BluewaterMVC</a> A Different Approach to MVC Frameworks.</li>
+<li><a href="http://en.wikipedia.org/wiki/CakePHP" title="CakePHP">CakePHP</a> webapplication framework modeled after the concepts of <a href="http://en.wikipedia.org/wiki/Ruby_on_Rails" title="Ruby on Rails">Ruby on Rails</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/CodeIgniter" title="CodeIgniter" class="mw-redirect">CodeIgniter</a> A PHP MVC framework.</li>
+<li><a href="http://code.google.com/p/codelighter/" class="external text" rel="nofollow">CodeLighter</a> Micro Codeigniter-like MVC PHP5 framework that uses Codeigniter plugins and libraries.</li>
+<li><a href="http://www.concrete5.org/" class="external text" rel="nofollow">Concrete5</a> A PHP MVC framework and CMS platform.</li>
+<li><a href="http://www.dingocode.com/" class="external text" rel="nofollow">Dingo Framework</a> An application framework designed for ease of use and flexibility.</li>
+<li><a href="http://en.wikipedia.org/wiki/Drupal" title="Drupal">Drupal</a> A <a href="http://en.wikipedia.org/wiki/Content_Management_System" title="Content Management System" class="mw-redirect">Content Management System</a> utilizing a version of MVC</li>
+<li><a href="http://europaphp.org/" class="external text" rel="nofollow">EuropaPHP</a> An extremely fast and lightweight PHP5 MVC framework. Compatible with the Zend Framework.</li>
+<li><a href="http://en.wikipedia.org/wiki/Exponent_CMS" title="Exponent CMS">Exponent CMS</a> is web <a href="http://en.wikipedia.org/wiki/Content_Management_System" title="Content Management System" class="mw-redirect">Content Management System</a> web application framework using its own MVC framework modeled after Rails.</li>
+<li><a href="http://en.wikipedia.org/wiki/Fuse_Framework" title="Fuse Framework">FUSE</a> A powerful but easy-to-use PHP 5 Framework for MVC development modeled after the concepts of <a href="http://en.wikipedia.org/wiki/Ruby_on_Rails" title="Ruby on Rails">Ruby on Rails</a>.</li>
+<li><a href="http://flow3.typo3.org/" class="external text" rel="nofollow">FLOW3</a> TYPO3's MVC framework (being developed)</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Jelix_%28web_framework%29&amp;action=edit&amp;redlink=1" class="new" title="Jelix (web framework) (page does not exist)">Jelix (web framework)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Jaws_Project" title="Jaws Project">Jaws</a> is a Framework and Content Management System for building dynamic web sites.</li>
+<li><a href="http://en.wikipedia.org/wiki/Joomla%21" title="Joomla!">Joomla!</a>
+v1.5.x is an open source Content Management System that employs the MVC
+model for its extensions, called components and modules.</li>
+<li><a href="http://kissmvc.com/" class="external text" rel="nofollow">KISSMVC</a> A minimalist but fully flexible PHP MVC framework designed based on the <a href="http://en.wikipedia.org/wiki/KISS_principle" title="KISS principle">KISS principle</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Kohana_%28web_framework%29" title="Kohana (web framework)">Kohana</a> is an open source MVC oriented framework, originally forked from CodeIgniter.</li>
+<li><a href="http://en.wikipedia.org/wiki/Kumbia_PHP_Framework" title="Kumbia PHP Framework">Kumbia PHP Framework</a> is an open source PHP5 MVC framework with ActiveRecord, Routing,...</li>
+<li><a href="http://en.wikipedia.org/wiki/LISA_MVC" title="LISA MVC">LISA MVC</a> is an open source object oriented web application framework.</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Micro_CMS&amp;action=edit&amp;redlink=1" class="new" title="Micro CMS (page does not exist)">Micro CMS</a> Open Source (LGPL) MVC framework and nice and simple CMS in one</li>
+<li><a href="http://en.wikipedia.org/wiki/MODx" title="MODx">MODx</a> Full-featured Open Source OOP MVC/ORB xPDO-based CMS</li>
+<li><a href="http://www.apteno.net/AptitudeCMS/trac/wiki/MVCnPHPProject" class="external text" rel="nofollow">MVCnPHP</a> Fast, open source and only does MVC.</li>
+<li><a href="http://nettephp.com/" class="external text" rel="nofollow">Nette Framework</a> A PHP MVC/MVP framework.</li>
+<li><a href="http://neutron.sourceforge.net/" class="external text" rel="nofollow">Neutron</a> A lightweight open-source PHP5 library featuring a simple MVC routing framework.</li>
+<li><a href="http://en.wikipedia.org/wiki/Odin_Assemble" title="Odin Assemble">Odin Assemble</a> Small footprint <a href="http://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a> based MVC Framework.</li>
+<li><a href="http://www.opencart.com/" class="external text" rel="nofollow">OpenCart</a> Open Source Shopping Cart based on MVC Framework.</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Orinoco_Framework&amp;action=edit&amp;redlink=1" class="new" title="Orinoco Framework (page does not exist)">Orinoco Framework</a> is a full-stack yet lightweight framework written in PHP5. It implements the <a href="http://en.wikipedia.org/wiki/Model_2" title="Model 2">Model 2</a> design paradigm.</li>
+<li><a href="http://mark.schofield.free.fr/articles/php4mvc/index.php" class="external text" rel="nofollow">PHP4MVC</a> A minimal easy-to-use MVC architecture in PHP4.</li>
+<li><a href="http://code.google.com/p/php-faces/" class="external text" rel="nofollow">PHP Faces</a> Open Source Event Driven MVC framework. PDO ORM Framework <a href="http://phpfaces.webmahsulleri.com/" class="external text" rel="nofollow">phpfaces.webmahsulleri.com</a></li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=PHPonTrax&amp;action=edit&amp;redlink=1" class="new" title="PHPonTrax (page does not exist)">PHPonTrax</a> A PHP 5 MVC framework modeled after <a href="http://en.wikipedia.org/wiki/Ruby_on_Rails" title="Ruby on Rails">Ruby on Rails</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/PhpXCore" title="PhpXCore">phpXCore</a> A MVC design pattern based PHP content management framework compatible with PHP4 and PHP5.</li>
+<li><a href="http://pluf.org/" class="external text" rel="nofollow">Pluf</a> PHP WebApp Framework modeled after <a href="http://en.wikipedia.org/wiki/Django_%28web_framework%29" title="Django (web framework)">Django</a> framework.</li>
+<li><a href="http://www.xisc.com/" class="external text" rel="nofollow">PRADO</a> A PHP 5 MVC framework modeled after <a href="http://en.wikipedia.org/wiki/ASP.NET" title="ASP.NET">ASP.NET</a> web forms.</li>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> Framework for PHP</li>
+<li><a href="http://www.qcodo.com/" class="external text" rel="nofollow">Qcodo</a> is an open-source PHP 5 web application framework that also includes a code generator.
+<ul>
+<li><a href="http://qcu.be/" class="external text" rel="nofollow">QCubed</a> is a community fork of Qcodo with more rapid development.</li>
+</ul>
+</li>
+<li><a href="http://code.google.com/p/samstyle-php-framework" class="external text" rel="nofollow">Samstyle PHP Framework</a> is a rapid development for the PHP environment that is easy and fast to use.</li>
+<li><a href="http://en.wikipedia.org/wiki/SilverStripe" title="SilverStripe">SilverStripe</a> contains a fully fledged PHP 5.2 ORM/MVC Framework focused on building websites.</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Solar_%28MVC%29&amp;action=edit&amp;redlink=1" class="new" title="Solar (MVC) (page does not exist)">Solar</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Switch_board_%28framework%29" title="Switch board (framework)">Switch board (framework)</a> PHP 5 MVC Framework with Routing.</li>
+<li><a href="http://en.wikipedia.org/wiki/Symfony_framework" title="Symfony framework" class="mw-redirect">Symfony Framework</a> PHP 5 MVC Framework modeled after the concepts of <a href="http://en.wikipedia.org/wiki/Ruby_on_Rails" title="Ruby on Rails">Ruby on Rails</a>.</li>
+<li><a href="http://www.vork.us/" class="external text" rel="nofollow">Vork</a> PHP 5 MVC Framework designed for rapid development of performance-oriented scalable applications</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Yii_Framework&amp;action=edit&amp;redlink=1" class="new" title="Yii Framework (page does not exist)">Yii PHP Framework</a> A PHP 5, high-performance component-based framework best for developing large-scale Web applications</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=SimpleTools&amp;action=edit&amp;redlink=1" class="new" title="SimpleTools (page does not exist)">SimpleTools</a> An Object Oriented MVC Framework</li>
+<li><a href="http://mvcskel.org/" class="external text" rel="nofollow">MvcSkel</a> web framework for PHP5</li>
+<li><a href="http://en.wikipedia.org/wiki/Zend_Framework" title="Zend Framework">Zend Framework</a> A PHP 5-based MVC framework conceptually similar to <a href="http://en.wikipedia.org/wiki/Ruby_on_Rails" title="Ruby on Rails">Ruby on Rails</a>.</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=ZNF&amp;action=edit&amp;redlink=1" class="new" title="ZNF (page does not exist)">ZNF</a> PHP5 MVC framework for enterprise web applications</li>
+<li><a href="http://en.wikipedia.org/wiki/Zoop_Framework" title="Zoop Framework">Zoop Framework</a> A Mature PHP 4/5 MVC framework.</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=24" title="Edit section: Python">edit</a>]</span> <span class="mw-headline" id="Python">Python</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Django_web_framework" title="Django web framework" class="mw-redirect">Django</a> A complete Python web application framework. Django prefers to call its MVC implementation <i>MTV</i>, for Model-Template-View.</li>
+<li><a href="http://en.wikipedia.org/wiki/Enthought" title="Enthought">Enthought</a> The Enthought Tool Suite brings the Model–view–controller mindset to scientific GUIs and visualization</li>
+<li><a href="http://en.wikipedia.org/wiki/Pylons_%28web_framework%29" title="Pylons (web framework)">Pylons</a>—Python Web Framework</li>
+<li><a href="http://en.wikipedia.org/wiki/TurboGears" title="TurboGears">TurboGears</a> for Python</li>
+<li><a href="http://en.wikipedia.org/wiki/Web2py" title="Web2py">web2py</a>
+A scalable full-stack enterprise level Python agile web development
+framework with support for highly flexible and rapid database-driven
+web application development.</li>
+<li><a href="http://en.wikipedia.org/wiki/Zope" title="Zope">Zope</a> Web application server</li>
+<li><a href="http://en.wikipedia.org/wiki/Plone" title="Plone">Plone</a> Content management system built on top Zope</li>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> Framework for Python</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Pygtkmvc&amp;action=edit&amp;redlink=1" class="new" title="Pygtkmvc (page does not exist)">Pygtkmvc</a> Model-View-Controller (MVC) and the Observer patterns for the PyGTK2 graphic toolkit</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=25" title="Edit section: Ruby">edit</a>]</span> <span class="mw-headline" id="Ruby">Ruby</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Camping_%28microframework%29" title="Camping (microframework)">Camping</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Merb" title="Merb">Merb</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Nitro_%28web_framework%29" title="Nitro (web framework)">Nitro</a></li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Ramaze_%28web_framework%29&amp;action=edit&amp;redlink=1" class="new" title="Ramaze (web framework) (page does not exist)">Ramaze</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Ruby_on_Rails" title="Ruby on Rails">Ruby on Rails</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Monkeybars_Framework" title="Monkeybars Framework">Monkeybars</a></li>
+<li><a href="http://en.wikipedia.org/wiki/PureMVC" title="PureMVC">PureMVC</a> Framework for Ruby.</li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=26" title="Edit section: Smalltalk">edit</a>]</span> <span class="mw-headline" id="Smalltalk">Smalltalk</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/AIDA/Web" title="AIDA/Web">AIDA/Web</a></li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=27" title="Edit section: XML">edit</a>]</span> <span class="mw-headline" id="XML">XML</span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/XForms" title="XForms">XForms</a>—XForms
+has an integrated Model–view–controller architecture with an integral
+dependency graph that frees the programmer from specifically having to
+perform either push or pull operations.</li>
+</ul>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=28" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Trygve_Reenskaug" title="Trygve Reenskaug">Trygve Reenskaug</a>—first formulated the model–view–controller pattern</li>
+<li><a href="http://en.wikipedia.org/wiki/Architectural_pattern_%28computer_science%29" title="Architectural pattern (computer science)">Architectural patterns</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Model_View_Presenter" title="Model View Presenter" class="mw-redirect">Model View Presenter</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Model_1" title="Model 1">Model 1</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Three-tier_%28computing%29" title="Three-tier (computing)" class="mw-redirect">Three-tier (computing)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Observer_pattern" title="Observer pattern">The Observer design pattern</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Template_method_pattern" title="Template method pattern">The Template Method design pattern</a></li>
+<li>The <a href="http://en.wikipedia.org/wiki/Presentation-abstraction-control" title="Presentation-abstraction-control">Presentation-abstraction-control</a> (PAC) pattern</li>
+<li>The <a href="http://en.wikipedia.org/wiki/Naked_objects" title="Naked objects">naked objects</a> pattern, often positioned as the antithesis of MVC, though Reenskaug suggests otherwise</li>
+<li><a href="http://en.wikipedia.org/wiki/Model-view-adapter" title="Model-view-adapter" class="mw-redirect">Model–View–Adapter</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Model_View_ViewModel" title="Model View ViewModel">Model View ViewModel</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Application_View_Controller" title="Application View Controller">Application View Controller</a> an alternative to Model View Controller</li>
+</ul>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=29" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<div class="references-small">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://heim.ifi.uio.no/%7Etrygver/themes/mvc/mvc-index.html" class="external text" rel="nofollow">Trygve M. H. Reenskaug/MVC</a>—XEROX PARC 1978-79</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://st-www.cs.uiuc.edu/users/smarch/st-docs/mvc.html" class="external text" rel="nofollow">How to use Model–View–Controller (MVC)</a></li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation web">Boodhoo, Jean-Paul (August 2006). "<a href="http://msdn.microsoft.com/en-us/magazine/cc188690.aspx" class="external text" rel="nofollow">Design Patterns: Model View Presenter</a>"<span class="printonly">. <a href="http://msdn.microsoft.com/en-us/magazine/cc188690.aspx" class="external free" rel="nofollow">http://msdn.microsoft.com/en-us/magazine/cc188690.aspx</a></span><span class="reference-accessdate">. Retrieved 2009-07-07</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Design+Patterns%3A+Model+View+Presenter&amp;rft.atitle=&amp;rft.aulast=Boodhoo&amp;rft.aufirst=Jean-Paul&amp;rft.au=Boodhoo%2C%26%2332%3BJean-Paul&amp;rft.date=August+2006&amp;rft_id=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fcc188690.aspx&amp;rfr_id=info:sid/en.wikipedia.org:Model%E2%80%93view%E2%80%93controller"><span style="display: none;">&nbsp;</span></span></li>
+<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <span class="citation web">World Wide Web Consortium (December 9, 2008). "<a href="http://www.w3.org/MarkUp/Forms/" class="external text" rel="nofollow">The Forms Working Group</a>"<span class="printonly">. <a href="http://www.w3.org/MarkUp/Forms/" class="external free" rel="nofollow">http://www.w3.org/MarkUp/Forms/</a></span><span class="reference-accessdate">. Retrieved 2009-07-07</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=The+Forms+Working+Group&amp;rft.atitle=&amp;rft.aulast=World+Wide+Web+Consortium&amp;rft.au=World+Wide+Web+Consortium&amp;rft.date=December+9%2C+2008&amp;rft_id=http%3A%2F%2Fwww.w3.org%2FMarkUp%2FForms%2F&amp;rfr_id=info:sid/en.wikipedia.org:Model%E2%80%93view%E2%80%93controller"><span style="display: none;">&nbsp;</span></span></li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> Complex controllers are often structured using the <a href="http://en.wikipedia.org/wiki/Command_pattern" title="Command pattern">command pattern</a> to encapsulate actions and simplify extension.</li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <span class="citation web">"<a href="http://www.infoworld.com/article/08/04/17/16TC-wavemaker-studio_1.html" class="external text" rel="nofollow">Product Review: WaveMaker’s point-and-click Java</a>". <a href="http://en.wikipedia.org/wiki/Infoworld" title="Infoworld" class="mw-redirect">Infoworld</a>. April 24, 2008<span class="printonly">. <a href="http://www.infoworld.com/article/08/04/17/16TC-wavemaker-studio_1.html" class="external free" rel="nofollow">http://www.infoworld.com/article/08/04/17/16TC-wavemaker-studio_1.html</a></span><span class="reference-accessdate">. Retrieved 2008-04-25</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Product+Review%3A+WaveMaker%E2%80%99s+point-and-click+Java&amp;rft.atitle=&amp;rft.date=April+24%2C+2008&amp;rft.pub=%5B%5BInfoworld%5D%5D&amp;rft_id=http%3A%2F%2Fwww.infoworld.com%2Farticle%2F08%2F04%2F17%2F16TC-wavemaker-studio_1.html&amp;rfr_id=info:sid/en.wikipedia.org:Model%E2%80%93view%E2%80%93controller"><span style="display: none;">&nbsp;</span></span></li>
+<li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> <span class="citation web">"<a href="http://www.javascriptmvc.com/" class="external text" rel="nofollow">JavascriptMVC Learning Center</a>"<span class="printonly">. <a href="http://www.javascriptmvc.com/" class="external free" rel="nofollow">http://www.javascriptmvc.com</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=JavascriptMVC+Learning+Center&amp;rft.atitle=&amp;rft_id=http%3A%2F%2Fwww.javascriptmvc.com&amp;rfr_id=info:sid/en.wikipedia.org:Model%E2%80%93view%E2%80%93controller"><span style="display: none;">&nbsp;</span></span></li>
+</ol>
+</div>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit&amp;section=30" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a href="http://java.sun.com/blueprints/patterns/MVC.html" class="external text" rel="nofollow">An overview of the MVC pattern in Java from the Sun website</a></li>
+<li><a href="http://www.codeproject.com/aspnet/ModelViewPresenter.asp" class="external text" rel="nofollow">Model View Presenter with ASP.NET</a> CodeProject article.</li>
+<li><a href="http://www.martinfowler.com/eaaDev/uiArchs.html" class="external text" rel="nofollow">History of the evolution of MVC and derivatives</a> by Martin Fowler.</li>
+<li><a href="http://weblogs.asp.net/scottgu/archive/2007/10/14/asp-net-mvc-framework.aspx" class="external text" rel="nofollow">ASP.NET MVC Framework</a> Microsoft's Scott Guthrie on .NET MVC</li>
+<li><a href="http://download.microsoft.com/download/f/e/b/febedc0c-dd47-4062-ad53-40e34d556a5d/ScottHanselmanIntroToMVC.wmv" class="external text" rel="nofollow">Introduction to the ASP.NET Model View Controller (MVC) Framework</a> Scott Hanselman builds an application step-by-step using the first CTP of the ASP.NET MVC Framework in this Introductory Video</li>
+<li><span class="citation news">Holub, Allen (1999). "<a href="http://www.javaworld.com/javaworld/jw-07-1999/jw-07-toolbox.html" class="external text" rel="nofollow">Building user interfaces for object-oriented systems</a>". Java World<span class="printonly">. <a href="http://www.javaworld.com/javaworld/jw-07-1999/jw-07-toolbox.html" class="external free" rel="nofollow">http://www.javaworld.com/javaworld/jw-07-1999/jw-07-toolbox.html</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Building+user+interfaces+for+object-oriented+systems&amp;rft.atitle=&amp;rft.aulast=Holub&amp;rft.aufirst=Allen&amp;rft.au=Holub%2C%26%2332%3BAllen&amp;rft.date=1999&amp;rft.pub=Java+World&amp;rft_id=http%3A%2F%2Fwww.javaworld.com%2Fjavaworld%2Fjw-07-1999%2Fjw-07-toolbox.html&amp;rfr_id=info:sid/en.wikipedia.org:Model%E2%80%93view%E2%80%93controller"><span style="display: none;">&nbsp;</span></span></li>
+<li>Greer, Derek. "<a href="http://ctrl-shift-b.blogspot.com/2007/08/interactive-application-architecture.html" class="external text" rel="nofollow">Interactive Application Architecture Patterns</a>", Ctrl-Shift-B, 2007.</li>
+<li><a href="http://pclc.pace.edu/%7Ebergin/mvc/mvcgui.html" class="external text" rel="nofollow">Building Graphical User Interfaces with the MVC Pattern in Java</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 3096/1000000
+Post-expand include size: 24301/2048000 bytes
+Template argument size: 8334/2048000 bytes
+Expensive parser function count: 5/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:288233-0!1!0!default!!en!2 and timestamp 20091102031938 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller</a>"</div>
+			<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Software_design_patterns" title="Category:Software design patterns">Software design patterns</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Software_architecture" title="Category:Software architecture">Software architecture</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Wikipedia_articles_needing_copy_edit_from_December_2008" title="Category:Wikipedia articles needing copy edit from December 2008">Wikipedia articles needing copy edit from December 2008</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:All_articles_needing_copy_edit" title="Category:All articles needing copy edit">All articles needing copy edit</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_July_2009" title="Category:Articles with unsourced statements from July 2009">Articles with unsourced statements from July 2009</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_January_2009" title="Category:Articles with unsourced statements from January 2009">Articles with unsourced statements from January 2009</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Articles_to_be_merged_from_September_2008" title="Category:Articles to be merged from September 2008">Articles to be merged from September 2008</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:All_articles_to_be_merged" title="Category:All articles to be merged">All articles to be merged</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul xml:lang="en" lang="en">
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" title="View the content page [alt-shift-c]" accesskey="c">Article</a></li>
+				 <li id="ca-talk"><a href="http://en.wikipedia.org/wiki/Talk:Model%E2%80%93view%E2%80%93controller" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-edit"><a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=edit" title="You can edit this page. 
+Please use the preview button before saving. [alt-shift-e]" accesskey="e">Edit this page</a></li>
+				 <li id="ca-history"><a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;action=history" title="Past versions of this page [alt-shift-h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul xml:lang="en" lang="en">
+				<li id="pt-optin-try"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativeOptIn&amp;from=Model%E2%80%93view%E2%80%93controller" title="Try out new features" class="no-text-transform">Try Beta</a></li>
+				<li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Model%E2%80%93view%E2%80%93controller" title="You are encouraged to log in; however, it is not mandatory. [alt-shift-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5 xml:lang="en" lang="en">Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+				<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+				<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+				<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5 xml:lang="en" lang="en"><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/w/index.php" id="searchform">
+				<input name="title" value="Special:Search" type="hidden">
+				<input autocomplete="off" id="searchInput" title="Search Wikipedia" accesskey="f" value="" name="search">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if one exists" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search Wikipedia for this text" type="submit">
+			</form>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-interaction">
+		<h5 xml:lang="en" lang="en">Interaction</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+				<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate/Now/en?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=spontaneous_donation" title="Support us">Donate to Wikipedia</a></li>
+				<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5 xml:lang="en" lang="en">Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Model%E2%80%93view%E2%80%93controller" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Model%E2%80%93view%E2%80%93controller" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;oldid=323405610" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Model%E2%80%93view%E2%80%93controller&amp;id=323405610" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5 xml:lang="en" lang="en">Languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a href="http://bg.wikipedia.org/wiki/Model-View-Controller">Български</a></li>
+				<li class="interwiki-ca"><a href="http://ca.wikipedia.org/wiki/MVC">Català</a></li>
+				<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Model-view-controller">Česky</a></li>
+				<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Model_View_Controller">Deutsch</a></li>
+				<li class="interwiki-es"><a href="http://es.wikipedia.org/wiki/Modelo_Vista_Controlador">Español</a></li>
+				<li class="interwiki-eo"><a href="http://eo.wikipedia.org/wiki/Modelo-vidigilo-regilo">Esperanto</a></li>
+				<li class="interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D9%85%D8%AF%D9%84-%D9%86%D9%85%D8%A7-%DA%A9%D9%86%D8%AA%D8%B1%D9%84%E2%80%8C%DA%AF%D8%B1">فارسی</a></li>
+				<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Mod%C3%A8le-Vue-Contr%C3%B4leur">Français</a></li>
+				<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8D%B8-%EB%B7%B0-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC">한국어</a></li>
+				<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Model-View-Controller">Italiano</a></li>
+				<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/Model_View_Controller">עברית</a></li>
+				<li class="interwiki-lv"><a href="http://lv.wikipedia.org/wiki/MVC">Latviešu</a></li>
+				<li class="interwiki-hu"><a href="http://hu.wikipedia.org/wiki/Modell-n%C3%A9zet-vez%C3%A9rl%C5%91">Magyar</a></li>
+				<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Model-view-controller-model">Nederlands</a></li>
+				<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/Model_View_Controller">日本語</a></li>
+				<li class="interwiki-no"><a href="http://no.wikipedia.org/wiki/Model-view-controller">‪Norsk (bokmål)‬</a></li>
+				<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/MVC">Polski</a></li>
+				<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/MVC">Português</a></li>
+				<li class="interwiki-ro"><a href="http://ro.wikipedia.org/wiki/Model-view-controller">Română</a></li>
+				<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Model-View-Controller">Русский</a></li>
+				<li class="interwiki-fi"><a href="http://fi.wikipedia.org/wiki/MVC-arkkitehtuuri">Suomi</a></li>
+				<li class="interwiki-sv"><a href="http://sv.wikipedia.org/wiki/Model-View-Controller">Svenska</a></li>
+				<li class="interwiki-ta"><a href="http://ta.wikipedia.org/wiki/%E0%AE%AE%E0%AE%BE%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AE%BF-%E0%AE%95%E0%AE%BE%E0%AE%9F%E0%AF%8D%E0%AE%9A%E0%AE%BF-%E0%AE%95%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AF%81%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BE%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%95%E0%AE%AE%E0%AF%8D">தமிழ்</a></li>
+				<li class="interwiki-th"><a href="http://th.wikipedia.org/wiki/Model-view-controller">ไทย</a></li>
+				<li class="interwiki-tr"><a href="http://tr.wikipedia.org/wiki/Model-view-controller">Türkçe</a></li>
+				<li class="interwiki-uk"><a href="http://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%B2%D0%B8%D0%B4-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%B5%D1%80">Українська</a></li>
+				<li class="interwiki-vi"><a href="http://vi.wikipedia.org/wiki/MVC">Tiếng Việt</a></li>
+				<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/MVC">中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="Model-view-controller_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="Model-view-controller_files/wikimedia-button.png" alt="Wikimedia Foundation" height="31" width="88"></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 2 November 2009 at 03:19.</li>
+					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br>
+Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+					<li id="disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served by srv228 in 0.053 secs. --></body></html>

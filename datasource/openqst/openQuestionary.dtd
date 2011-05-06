@@ -1,0 +1,15 @@
+<!ELEMENT questionaries (questionary*)>
+<!ELEMENT questionary (subject+)>
+<!ATTLIST questionary
+	id ID #REQUIRED
+	name CDATA #REQUIRED>
+<!ELEMENT subject (question*)>
+<!ATTLIST subject
+	id ID #REQUIRED
+	name CDATA #REQUIRED>
+<!ELEMENT question (option+)>
+<!ATTLIST question
+	text CDATA #REQUIRED>
+<!ELEMENT option (#PCDATA)>
+<!ATTLIST option
+	answer (yes|no) "no">

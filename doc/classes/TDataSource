@@ -1,0 +1,42 @@
+Class: TDataSource
+
+Descripción
+TDataSource pretende ser la clase de abstracción de datos, no se deben usar
+varias clases (generalmente se utiliza 1 por controlador) sino que se utilizan
+los diferentes wrappers dentro de las diferentes funciones y mediante hojas XSLT
+hacer las transformaciones pertinentes para los diferentes gestores.
+
+Guidelines
+
+Version 0.0
+-Esquema básico.
+
+Version 0.1
+-Experimentación con el almacenamiento, prueba de las diferentes posibilidades de operación.
+
+Version 0.2
+-Primera version funcional estable, algunas funcionalidades.
+
+Version 0.3
+-Soporte total de las operaciones de AAA con TAAA 0.8
+
+Version 0.4
+-Soporte total de las operaciones del nucleo con TData 0.8 y TCore 0.8
+
+Version 0.5
+-Soporte total de las operaciones del compositor con TComposer 0.8
+
+Version 0.6
+-Soporte total en XML de todas las operaciones en estado 0.8
+
+Version 0.7
+-Soporte total en XML y SQlite
+
+Version 0.8
+-Beta
+
+Version 0.9
+-RC
+
+Version 1
+-Version Final

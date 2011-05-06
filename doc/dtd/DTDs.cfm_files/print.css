@@ -1,0 +1,11 @@
+#container {
+	display:none;
+}
+
+#print {
+	display:block;
+}
+
+.yui-panel {
+	display:none;
+}

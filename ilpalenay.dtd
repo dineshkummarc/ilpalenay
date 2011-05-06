@@ -1,0 +1,79 @@
+<!ELEMENT aaa (xmlfile | mysql | pgsql | sqlite)*>
+<!ATTLIST aaa
+	id ID #REQUIRED
+	path CDATA #IMPLIED>
+
+<!ELEMENT datasource (xmlfile | mysql | pgsql | sqlite)*>
+<!ATTLIST datasource
+	id ID #REQUIRED
+	path CDATA #IMPLIED>
+
+<!ELEMENT xmlfile (user | rule | sessions | states)*>
+<!ATTLIST xmlfile
+	id ID #REQUIRED
+	path CDATA #IMPLIED>
+<!ELEMENT mysql (user | rule | sessions | states)*>
+<!ATTLIST mysql
+	id ID #REQUIRED
+	server CDATA #IMPLIED
+	port CDATA #IMPLIED
+	user CDATA #IMPLIED
+	pass CDATA #IMPLIED
+	dbname CDATA #IMPLIED>
+<!ELEMENT pgsql (user | rule | sessions | states)*>
+<!ATTLIST pgsql
+	id ID #REQUIRED
+	server CDATA #IMPLIED
+	port CDATA #IMPLIED
+	user CDATA #IMPLIED
+	pass CDATA #IMPLIED
+	dbname CDATA #IMPLIED>
+<!ELEMENT sqlite (user | rule | sessions | states)*>
+<!ATTLIST sqlite
+	id ID #REQUIRED
+	path CDATA #IMPLIED>
+
+<!ELEMENT user (#PCDATA)>
+<!ATTLIST user
+	id ID #REQUIRED
+	username CDATA #REQUIRED
+	password CDATA #REQUIRED
+	creation_date CDATA #REQUIRED
+	last_login CDATA #IMPLIED
+	last_logout CDATA #IMPLIED
+	logged CDATA #REQUIRED>
+
+<!ELEMENT rule EMPTY>
+
+<!ELEMENT sessions (session*)>
+<!ATTLIST sessions
+	id ID #REQUIRED>
+<!ELEMENT session EMPTY>
+<!ATTLIST session
+	id ID #REQUIRED
+	begin_date CDATA #REQUIRED
+	livetime CDATA #REQUIRED
+	last_update CDATA #REQUIRED>
+
+<!ELEMENT states (state*)>
+<!ATTLIST states
+	id ID #REQUIRED>
+<!ELEMENT state (var*)>
+<!ATTLIST state
+	id ID #REQUIRED>
+<!ELEMENT var EMPTY>
+<!ATTLIST var
+	name CDATA #REQUIRED
+	value CDATA #REQUIRED>
+
+<!ELEMENT a_state (a_transition*)>
+<!ATTLIST a_state
+	id ID #REQUIRED>
+<!ELEMENT a_transition (an_input | an_element)*>
+<!ATTLIST a_transition
+	to_state CDATA #REQUIRED>
+<!ELEMENT an_input EMPTY>
+<!ATTLIST an_input
+	name CDATA #REQUIRED
+	value CDATA #REQUIRED>
+<!ELEMENT an_element (#PCDATA)>

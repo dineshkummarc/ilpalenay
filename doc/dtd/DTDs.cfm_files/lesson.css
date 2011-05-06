@@ -1,0 +1,211 @@
+/* Styles associated with XSLT transforms of lessons */
+
+#LearnItems {
+	color:#000099;
+	line-height: 13px; 
+	font-size: 11px; 
+	font-family: verdana, arial, sans-serif;
+}
+
+#LearnItems b {
+	color:#00f;
+	text-decoration:underline;
+	font-size:12px;
+}
+
+.Code
+{
+	font-family:	monospace;
+}
+
+.CodeExplanation
+{
+	font-weight:	bold;
+	margin-top: 1em;
+}
+
+.CodeSample {
+	margin: .5em 0em;
+	border-bottom: 1px dotted #006;
+	border-top: 1px dotted #006;
+}
+
+.CodeSampleLabel {
+	font-weight:bold;
+}
+
+.SyntaxBlock {
+	border: 1px dotted #006;
+	padding: .1em 1em;
+	margin: 1em 1em;
+}
+
+.SyntaxBlockHeading {
+	font-weight:	bold;
+}
+
+.SyntaxBlock pre {
+	background-color:#eeeeee;
+	padding:1.5em;
+	margin:.5em;
+	overflow:auto;
+}
+
+h1, h2, h3 {
+	margin-top:1em;
+	margin-bottom:1em;
+}
+
+h1.LessonTitle {
+	font-size:1.3em;
+	color:#006;
+	border-top: none;
+	border: 1px solid #006;
+	background-color:#eee;
+	margin-top:0em;
+	margin-bottom:1em;
+	padding:0em;
+	text-align:center;
+	font-stretch:expanded;
+}
+
+h1 {
+	font-size:1.2em;
+	border-top: 2px double #006;
+	border-bottom: 2px dotted #006;
+	color:#006;
+	padding:.2em;
+	background-color:#eef;
+}
+
+h2 {
+	font-size:1.1em;
+	color:#006;
+	border-top: 1px solid #006;
+	border-bottom: 1px dotted #006;
+	padding:.2em;
+	background-color:#eef;
+	font-style:italic;
+}
+
+h3 {
+	font-size:1em;
+}
+
+#main ol, #main ul {
+	margin:1em 3em;
+}
+
+#main p {
+	margin:.5em;
+}
+
+#main blockquote {
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	background-color:#eef;
+}
+
+#main blockquote p {
+	margin: 1em 2em;
+}
+
+.Exercise {
+	border: 1px dashed #006;
+	padding: .1em 1em;
+	background-color:#eee;
+	margin-top:1em;
+}
+
+.ExerciseTitle {
+
+}
+
+.Exercise .SyntaxBlock pre {
+	background-color:#fff;
+}
+
+.Duration {
+	font-style:italic;
+}
+
+.Instructions {
+
+}
+
+.Instruction {
+
+}
+
+caption {
+	font-weight:bold;
+	background-color:#eee;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	margin-top:1em;
+}
+
+table, td, th {
+	border:1px solid black;
+	padding:2px;
+}
+
+table {
+}
+
+
+.FilePath {
+	text-decoration:underline;
+}
+
+.PageRef {
+	border: 2px dotted #f00;
+	font-style:italic;
+	font-size:9pt;
+}
+
+.BlockImage {
+	display:block;
+	margin:1em;
+}
+
+.Solution {
+	text-align:center;
+	border:1px dotted #009;
+	padding:2px;
+}
+
+.Solution a {
+	text-decoration:none;
+}
+
+.Optional {
+	color:#aa0000;
+}
+
+.Subst {
+	font-style:italic;
+}
+
+
+
+.callout {
+	background-color: #ffff99;
+	border-style: groove;
+	border-width: 3px;
+	border-color: #666699;
+	padding: 1em;
+}
+
+samp {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#009;
+}
+
+kbd {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#090;
+}

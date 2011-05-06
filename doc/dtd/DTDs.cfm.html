@@ -1,0 +1,805 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head> 
+
+
+
+
+<title>XML Tutorial: DTDs</title>
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="courseware creation, technical authoring system, documentation system">
+<meta name="description" content="This website documents Webucator's Courseware Creation System.">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="DTDs.cfm_files/styles.css" media="screen">
+<link rel="stylesheet" type="text/css" href="DTDs.cfm_files/lesson.css" media="screen">
+<link rel="stylesheet" type="text/css" href="DTDs.cfm_files/print.css" media="print">
+</head><body class=""><div style="z-index: 100; height: 5925px; width: 979px; display: none;" id="wait_mask" class="mask">&nbsp;</div><div style="visibility: hidden; left: 368px; top: 271px; z-index: 101;" id="wait_c" class="yui-panel-container shadow"><div style="visibility: inherit; width: 240px;" class="yui-module yui-overlay yui-panel" id="wait"><div style="cursor: auto;" class="hd">Loading</div><div class="bd">Please wait...</div></div><div class="underlay"></div></div><iframe style="border-width: 0pt; position: absolute; visibility: visible; width: 10em; height: 10em; top: -160px; left: -160px;" id="_yuiResizeMonitor" src="data:text/html;charset=utf-8,%3Chtml%3E%3Chead%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3Ewindow.onresize%3Dfunction%28%29%7Bwindow.parent.YAHOO.widget.Module.textResizeEvent.fire%28%29%3B%7D%3Bwindow.parent.YAHOO.widget.Module.textResizeEvent.fire%28%29%3B%3C%2Fscript%3E%3C%2Fhead%3E%3Cbody%3E%3C%2Fbody%3E%3C%2Fhtml%3E"></iframe><div style="left: 216px; top: 271px; z-index: 99;" id="widget_alert_c" class="yui-panel-container yui-dialog yui-simple-dialog shadow"><div style="visibility: inherit; width: 34em;" class="yui-module yui-overlay yui-panel" id="widget_alert"><div style="cursor: auto;" class="hd">Attention Necessary</div><div class="bd"><span class="yui-icon warnicon">&nbsp;</span>Alert body passed to window.alert<form name="frm_widget_alert"><input name="widget_alert" value="" type="hidden"><input name="widget_alert" value="" type="hidden"></form></div><div class="ft"><span class="button-group"><button class="default" type="button">OK</button></span></div></div></div>
+	<div id="container">
+		<div id="header" class="pane">
+	<div id="GoogleSearchDiv">
+		<!-- SiteSearch Google -->
+		
+		<form method="get" action="http://www.google.com/custom" target="_top">
+			<table bgcolor="#ffffff" border="0">
+				<tbody><tr>
+					<td align="left" height="32" nowrap="nowrap" valign="top">&nbsp;</td>
+					<td nowrap="nowrap">
+						<input name="domains" value="www.learn-xml-tutorial.com" type="hidden">
+						<label for="sbi" style="display: none;">Enter your search terms</label>
+						<input name="q" size="31" maxlength="255" value="" id="sbi" type="text">
+						<label for="sbb" style="display: none;">Submit search form</label>
+						<input name="sa" value="Google Search" id="sbb" type="submit">
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td nowrap="nowrap">
+						<table>
+							<tbody><tr>
+								<td>
+									<input name="sitesearch" value="" id="ss0" type="radio">
+									<label for="ss0" title="Search the Web">
+										<font color="#000000" size="-1">Web</font>
+									</label>
+								</td>
+								<td>
+									<input name="sitesearch" value="www.learn-xml-tutorial.com" checked="checked" id="ss1" type="radio">
+									<label for="ss1" title="Search www.learn-xml-tutorial.com">XML Tutorial</label>
+								</td>
+							</tr>
+						</tbody></table>
+						<input name="client" value="pub-9777795180071141" type="hidden">
+						<input name="forid" value="1" type="hidden">
+						<input name="channel" value="4629344926" type="hidden">
+						<input name="ie" value="ISO-8859-1" type="hidden">
+						<input name="oe" value="ISO-8859-1" type="hidden">
+						<input name="safe" value="active" type="hidden">
+						<input name="flav" value="0001" type="hidden">
+						<input name="sig" value="CpBvB7SiV5ftnVDr" type="hidden">
+						<input name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:ffffff;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:50;LW:200;L:http://www.webucator.com/Images/logoSmall.gif;S:http://www.learn-xml-tutorial.com;FORID:1" type="hidden">
+						<input name="hl" value="en" type="hidden">
+					</td>
+				</tr>
+			</tbody></table>
+		</form>
+		
+		<!-- SiteSearch Google -->
+	</div>
+	<a href="http://www.learn-xml-tutorial.com/">
+		<img alt="Webucator Logo" id="logo" src="DTDs.cfm_files/logo.gif">
+	</a>
+	<div class="clearer"></div>
+	<div id="CourseManualTitle">
+		<h1>XML Tutorial</h1>
+	</div>
+	
+	<div id="GoogleAds">
+		<script type="text/javascript">
+			<!--
+				google_ad_client = "pub-9777795180071141";
+				//BannerFirst
+				google_ad_slot = "8700597978";
+				google_ad_width = 728;
+				google_ad_height = 90;
+			//-->
+		</script>
+		<script type="text/javascript" src="DTDs.cfm_files/show_ads.js"></script><script src="DTDs.cfm_files/expansion_embed.js"></script><script src="DTDs.cfm_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="DTDs.cfm_files/ads.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+	</div>
+	
+	<div class="clearer"></div>
+</div>
+
+		<div id="holder">
+			
+<div style="border: 2px dotted rgb(255, 102, 0); margin: 2px; padding: 5px; background-color: rgb(255, 255, 204); text-align: center; font-size: larger; font-weight: bold;">
+	<a href="http://www.webucator.com/ILO/online-training-benefits/index.cfm" style="color: rgb(0, 0, 255); text-decoration: underline;">Watch our 3-minute video to find out 
+	how you can learn XML with a live instructor</a>. 
+</div>
+
+<div id="menu" class="pane">
+	<div xmlns:x="http://www.w3.org/1999/xhtml" id="menuHeading">Table of Contents</div>
+<ul xmlns:x="http://www.w3.org/1999/xhtml">
+			
+			
+
+			
+			
+					<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Basics.cfm">XML Basics</a>
+<ul>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Basics.cfm#h1.1">What is XML?</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Basics.cfm#h1.2">XML Benefits</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Basics.cfm#h1.3">XML in Practice</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Basics.cfm#h1.4">XML Documents</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Basics.cfm#h1.5">Creating a Simple XML File</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Basics.cfm#h1.6">Editing an XML File</a>
+</li>
+</ul>
+</li>
+				
+					<li>
+<a href="http://www.learn-xml-tutorial.com/XHTML-Basics.cfm">Quick Introduction to XHTML</a>
+<ul>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XHTML-Basics.cfm#h1.1">XHTML Benefits</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XHTML-Basics.cfm#h1.2">XHTML vs. HTML</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XHTML-Basics.cfm#h1.3">The DOCTYPE Declaration</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XHTML-Basics.cfm#h1.4">The Document Element</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XHTML-Basics.cfm#h1.5">A Sample XHTML Document</a>
+</li>
+</ul>
+</li>
+				
+					<li>
+<a href="http://www.learn-xml-tutorial.com/DTDs.cfm">DTDs</a>
+<ul>
+<li>
+<a href="http://www.learn-xml-tutorial.com/DTDs.cfm#h1.1">Well-formed vs. Valid</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/DTDs.cfm#h1.2">The Purpose of DTDs</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/DTDs.cfm#h1.3">Creating DTDs</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/DTDs.cfm#h1.4">Validating an XML Document with a DTD</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/DTDs.cfm#h1.5">Writing a DTD</a>
+</li>
+</ul>
+</li>
+				
+					<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Schema-Basics.cfm">XML Schema Basics</a>
+<ul>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Schema-Basics.cfm#h1.1">The Purpose of XML Schema</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Schema-Basics.cfm#h1.2">The Power of XML Schema</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Schema-Basics.cfm#h1.3">A First Look</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XML-Schema-Basics.cfm#h1.4">Validating an XML Instance Document</a>
+</li>
+</ul>
+</li>
+				
+					<li>
+<a href="http://www.learn-xml-tutorial.com/XSLT-Basics.cfm">XSLT Basics</a>
+<ul>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XSLT-Basics.cfm#h1.1">eXtensible Stylesheet Language</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XSLT-Basics.cfm#h1.2">The Transformation Process</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XSLT-Basics.cfm#h1.3">An XSLT Stylesheet</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XSLT-Basics.cfm#h1.4">Output Types</a>
+</li>
+<li>
+<a href="http://www.learn-xml-tutorial.com/XSLT-Basics.cfm#h1.5">Elements and Attributes</a>
+</li>
+</ul>
+</li>
+				
+			
+			</ul>
+
+
+</div>
+<div id="webucator">
+	<div class="header">Webucator Tutorials</div>
+	<ul>
+		<li>
+			<a href="http://www.learn-ajax-tutorial.com/">Ajax Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-coldfusion-tutorial.com/">ColdFusion Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-css-tutorial.com/">CSS Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-html-tutorial.com/">HTML Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-javascript-tutorial.com/">JavaScript Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learnphp-tutorial.com/">PHP Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-xml-schema-tutorial.com/">Schema Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-sql-tutorial.com/">SQL Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-mysql-tutorial.com/">MySQL Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-xml-tutorial.com/">XML Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-xsl-fo-tutorial.com/">XSL-FO Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-xslt-tutorial.com/">XSLT Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.web-accessibility-tutorial.com/">Web Accessibility Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-silverlight-tutorial.com/">Silverlight Tutorial</a>
+		</li>
+		<li>
+			<a href="http://www.learn-java-tutorial.com/">Java Tutorial</a>
+		</li>
+	</ul>
+</div>
+<div id="resources">
+	<div class="header">Webucator Resources</div>
+	<ul>
+		<li>
+			<a href="http://www.webucator.com/Database/Sql.cfm">SQL Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/Net/Windows.cfm">Windows Training</a>
+		</li>
+		
+		<li>
+			<a href="http://www.webucator.com/WebDesign/Html.cfm">HTML Training</a>
+		</li>
+		
+		<li>
+			<a href="http://www.webucator.com/WebDesign/Css.cfm">CSS Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/WebDesign/JavaScript.cfm">JavaScript Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/WebDesign/Ajax.cfm">Ajax Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/WebDev/Php.cfm">PHP Training</a>
+		</li>
+		
+		<li>
+			<a href="http://www.webucator.com/Xml/Xml.cfm">XML Training</a>
+		</li>
+		
+		<li>
+			<a href="http://www.webucator.com/Java/JavaCore.cfm">Java Training</a>
+		</li>
+		
+		<li>
+			<a href="http://www.webucator.com/Adobe/Dreamweaver.cfm">Dreamweaver Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/Adobe/Flash.cfm">Flash Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/Adobe/Flex.cfm">Flex Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/Adobe/Photoshop.cfm">Photoshop Training</a>
+		</li>
+		
+		<li>
+			<a href="http://www.webucator.com/Adobe/Captivate.cfm">Captivate Training</a>
+		</li>
+		
+		<li>
+			<a href="http://www.webucator.com/Database/MSQ301.cfm">SSRS Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/Database/MSQ302.cfm">SSAS Training</a>
+		</li>
+		<li>
+			<a href="http://www.webucator.com/Database/MSQ303.cfm">SSIS Training</a>
+		</li>
+		
+		<li>
+			<a href="http://www.webucator.com/Net/Silverlight.cfm">Silverlight Training</a>
+		</li>
+	</ul>
+</div> 
+			<script type="text/javascript">
+				<!--
+					google_ad_client = "pub-9777795180071141";
+		
+					//Menu Categories
+					google_ad_slot = "1048779434";
+					google_ad_width = 200;
+					google_ad_height = 90;
+					//-->
+			</script>
+			<script type="text/javascript" src="DTDs.cfm_files/show_ads.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 200px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 200px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="DTDs.cfm_files/ads_002.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="90" scrolling="no" width="200"></iframe></ins></ins>
+			
+			
+		</div>
+		<div id="main" class="pane">
+			<ul id="socialBookmarks" class="socialBookmarksList">
+	<li>Bookmark this page: </li>
+	<li><a href="http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;title=Webucator+Courseware+Tutorial" title="Add To Digg" class="digg" rel="external" target="_blank">Add To Digg</a></li>
+
+	<li><a href="http://reddit.com/submit?url=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;title=Webucator+Courseware+Tutorial" title="Add to reddit" class="reddit" target="_blank">Add to reddit</a></li>
+	<li><a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;t=Webucator+Courseware+Tutorial" title="Add to Yahoo! My Web" class="yahoo" target="_blank">Add to Yahoo! My Web</a></li>
+	<li><a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;title=Webucator+Courseware+Tutorial" title="Add To Del.icio.us" class="delicious" target="_blank">Add To Del.icio.us</a></li>
+	<li><a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;title=Webucator+Courseware+Tutorial" title="Add to Stumble Upon" class="stumbleUpon" target="_blank">Add to Stumble Upon</a></li>
+	<li><a href="http://www.spurl.net/spurl.php?url=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;title=Webucator+Courseware+Tutorial" title="Add to Spurl.net" class="spurl" target="_blank">Add to Spurl</a></li>
+	<li><a href="http://www.furl.net/storeIt.jsp?u=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;t=Webucator+Courseware+Tutorial" title="Add to Furl" class="furl" target="_blank">Add to Furl</a></li>
+
+	<li><a href="http://ma.gnolia.com/bookmarklet/add?url=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;title=Webucator+Courseware+Tutorial" title="Add to Ma.gnolia" class="magnolia" target="_blank">Add to Ma.gnolia</a></li>
+	<li><a href="http://slashdot.org/bookmark.pl?url=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;title=Webucator+Courseware+Tutorial" title="Add to Slashdot" class="slashDot" target="_blank">Add to Slashdot</a></li>
+	<li><a href="http://www.mister-wong.com/index.cfm?action=addurl&amp;bm_url=http%3A%2F%2Fwww.coursewarecreation.com%2Findex.cfm&amp;bm_description=Webucator+Courseware+Tutorial" title="Add to Mister Wong" class="misterWong" target="_blank">Add to Mister Wong</a></li>
+</ul>
+			<br style="clear: both;">
+			<div xmlns:cw="http://www.webucator.com/Schemas/Courseware" xmlns:x="http://www.w3.org/1999/xhtml">
+<h1 id="LessonTitle">DTDs</h1>
+	
+	
+		
+			<div id="LearnItems">
+<b>In this lesson of the XML tutorial, you will learn...</b>
+<ol>
+				<li>The difference between well-formed and valid XML documents.</li>
+				<li>The purpose of DTDs.</li>
+				<li>To create internal and external DTDs.</li>
+				<li>To validate an XML document according to a DTD.</li>
+				<li>The limitations of DTDs.</li>
+			</ol>
+
+<div class="GoogleAds468">
+<script type="text/javascript">
+<!--
+google_ad_client = "pub-9777795180071141";
+//468x60, created 12/8/07
+google_ad_slot = "4628421237";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script src="DTDs.cfm_files/show_ads.js" type="text/javascript">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 60px; position: relative; visibility: visible; width: 468px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 60px; position: relative; visibility: visible; width: 468px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame3" marginheight="0" marginwidth="0" name="google_ads_frame" src="DTDs.cfm_files/ads_003.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="60" scrolling="no" width="468"></iframe></ins></ins>
+</div>
+
+</div>
+			<h1 id="h1.1">Well-formed vs. Valid</h1>
+			<p>A well-formed XML document is one that follows the syntax rules described in <a href="#XmlSyntaxRules">"XML Syntax Rules"</a>.
+A valid XML document is one that conforms to a specified structure. For
+an XML document to be validated, it must be checked against a schema,
+which is a document that defines the structure for a class of XML
+documents. XML documents that are not intended to conform to a schema
+can be well-formed, but they cannot be valid.</p>
+			<h1 id="h1.2">The Purpose of DTDs</h1>
+			<p>A
+Document Type Definition (DTD) is a type of schema. The purpose of DTDs
+is to provide a framework for validating XML documents. By defining a
+structure that XML documents must conform to, DTDs allow different
+organizations to create shareable data files.</p>
+			<p>Imagine, for
+example, a company that creates technical courseware and sells it to
+technical training companies. Those companies may want to display the
+outlines for that courseware on their websites, but they do not want to
+display it in the same way as every other company who buys the
+courseware. By providing the course outlines in a predefined XML
+format, the courseware vendor makes it possible for the training
+companies to write programs to read those XML files and transform them
+into HTML pages with their own formatting styles (perhaps using XSLT or
+CSS). If the XML files had no predefined structure, it would be very
+difficult to write such programs.</p>
+			<h1 id="h1.3">Creating DTDs</h1>
+			<p>DTDs
+are simple text files that can be created with any basic text editor.
+Although they look a little cryptic at first, they are not terribly
+complicated once you get used to them.</p>
+			<p>A DTD outlines what
+elements can be in an XML document and the attributes and subelements
+that they can take. Let's start by taking a look at a complete DTD and
+then dissecting it.</p>
+			<div class="CodeSample">
+<h2 class="CodeSampleLabel">Code Sample: DTDs/Demos/Beatles.dtd</h2>
+<div class="bd" style="overflow: auto; background-color: rgb(238, 238, 238);">
+<div>
+<pre>&lt;!ELEMENT beatles (beatle+)&gt;
+&lt;!ELEMENT beatle (name)&gt;
+&lt;!ATTLIST beatle
+ link CDATA #IMPLIED
+ real (yes|no) "yes"&gt;
+&lt;!ELEMENT name (firstname, lastname)&gt;
+&lt;!ELEMENT firstname (#PCDATA)&gt;
+&lt;!ELEMENT lastname (#PCDATA)&gt;
+</pre>
+</div>
+</div>
+</div>
+			<h2 id="h2.1">The Document Element</h2>
+			<p>When creating a DTD, the first step is to define the document element.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT beatles (beatle+)&gt;</pre>
+</div>
+			<p>The element declaration above states that the <span class="Code">beatles</span> element must contain one or more beatle elements.</p>
+			<h3 id="h3.1">Child Elements</h3>
+			<p>When
+defining child elements in DTDs, you can specify how many times those
+elements can appear by adding a modifier after the element name. If no
+modifier is added, the element must appear once and only once. The
+other options are shown in the table below.</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Modifier</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<span class="Code">?</span>
+						</td>
+						<td>Zero or one times.</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="Code">+</span>
+						</td>
+						<td>One or more times.</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="Code">*</span>
+						</td>
+						<td>Zero or more times.</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>It is not possible to specify a range of times that an element may appear (e.g, 2-4 appearances).</p>
+			<h2 id="h2.2">Other Elements</h2>
+			<p>The other elements are declared in the same way as the document element - with the <span class="Code">&lt;!ELEMENT&gt;</span> declaration. The Beatles DTD declares four additional elements.</p>
+			<p>Each <span class="Code">beatle</span> element must contain a child element name, which must appear once and only once.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT beatle (name)&gt;</pre>
+</div>
+			<p>Each <span class="Code">name</span> element must contain a <span class="Code">firstname</span> and <span class="Code">lastname</span> element, which each must appear once and only once and in that order.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT name (firstname, lastname)&gt;</pre>
+</div>
+			<p>Some elements contain only text. This is declared in a DTD as <span class="Code">#PCDATA</span>. PCDATA stands for parsed character data, meaning that the data will be parsed for XML tags and entities. The <span class="Code">firstname</span> and <span class="Code">lastname</span> elements contain only text.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT firstname (#PCDATA)&gt;
+&lt;!ELEMENT lastname (#PCDATA)&gt;</pre>
+</div>
+			<h2 id="h2.3">Choice of Elements</h2>
+			<p>It is also
+possible to indicate that one of several elements may appear as a child
+element. For example, the declaration below indicates that an img
+element may have a child element name or a child element id, but not
+both.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT img (name|id)&gt;</pre>
+</div>
+			<h2 id="h2.4">Empty Elements</h2>
+			<p>Empty elements are declared as follows.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT img EMPTY&gt;</pre>
+</div>
+			<h2 id="h2.5">Mixed Content</h2>
+			<p>Sometimes elements can
+have elements and text intermingled. For example, the following
+declaration is for a body element that may contain text in addition to
+any number of <span class="Code">link</span> and <span class="Code">img</span> elements.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT body (#PCDATA | link | img)*&gt;</pre>
+</div>
+			<h2 id="h2.6">Location of Modifier</h2>
+			<p>The location of
+modifiers in a declaration is important. If the modifier is outside of
+a set of parentheses, it applies to the group; whereas, if the modifier
+is immediately next to an element name, it applies only to that
+element. The following examples illustrate.</p>
+			<p>In the example below, the body element can have any number of interspersed child link and img elements.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT body (link | img)*&gt;</pre>
+</div>
+			<p>In the example below, the <span class="Code">body</span> element can have any number of child <span class="Code">link</span> elements or any number of child img elements, but it cannot have both <span class="Code">link</span> and <span class="Code">img</span> elements.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT body (link* | img*)&gt;</pre>
+</div>
+			<p>In the example below, the <span class="Code">body</span> element can have any number of child <span class="Code">link</span> and <span class="Code">img</span> elements, but they must come in pairs, with the <span class="Code">link</span> element preceding the <span class="Code">img</span> element.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT body (link, img)*&gt;</pre>
+</div>
+			<p>In the example below, the <span class="Code">body</span> element can have any number of child <span class="Code">link</span> elements followed by any number of child <span class="Code">img</span> elements.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT body (link*, img*)&gt;</pre>
+</div>
+			<h2 id="h2.7">Using Parentheses for Complex Declarations</h2>
+			<p>Element declarations can be more complex than the examples above. For example, you can specify that a <span class="Code">person</span> element either contains a single <span class="Code">name</span> element or a <span class="Code">firstname</span> and <span class="Code">lastname</span> element. To group elements, wrap them in parentheses as shown below.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ELEMENT person (name | (firstname,lastname))&gt;</pre>
+</div>
+			<h2 id="h2.8">Declaring Attributes</h2>
+			<p>Attributes are declared using the <span class="Code">&lt;!ATTLIST &gt;</span> declaration. The syntax is shown below.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ATTLIST ElementName
+ AttributeName AttributeType State DefaultValue?
+ AttributeName AttributeType State DefaultValue?&gt;</pre>
+</div>
+			<ul>
+				<li>
+					<span class="Code">ElementName</span> is the name of the element taking the attributes.</li>
+				<li>
+					<span class="Code">AttributeName</span> is the name of the attribute.</li>
+				<li>
+					<span class="Code">AttributeType</span> is the type of data that the attribute value may hold. Although there are many types, the most common are <span class="Code">CDATA</span> (unparsed character data) and <span class="Code">ID</span> (a unique identifier). A list of options can also be given for the attribute type.</li>
+				<li>
+					<span class="Code">DefaultValue</span> is the value of the attribute if it is not included in the element.</li>
+				<li>
+					<span class="Code">State</span> can be one of three values: <span class="Code">#REQUIRED</span>, <span class="Code">#FIXED</span> (set value), and <span class="Code">#IMPLIED</span> (optional).</li>
+			</ul>
+			<p>The <span class="Code">beatle</span> element has two possible attributes: <span class="Code">link</span>, which is optional and may contain any valid XML text, and <span class="Code">real</span>, which defaults to <span class="Code">yes</span> if it is not included.</p>
+			<div class="SyntaxBlock">
+<pre>&lt;!ATTLIST beatle
+ link CDATA #IMPLIED
+ real (yes|no) "yes"&gt;</pre>
+</div>
+			<h1 id="h1.4">Validating an XML Document with a DTD</h1>
+			<p>The <span class="Code">DOCTYPE</span> declaration in an XML document specifies the DTD to which it should conform. In the code sample below, the <span class="Code">DOCTYPE</span> declaration indicates the file should be validated against Beatles.dtd in the same directory.</p>
+			<div class="CodeSample">
+<h2 class="CodeSampleLabel">Code Sample: DTDs/Demos/Beatles.xml</h2>
+<div class="bd" style="overflow: auto; background-color: rgb(238, 238, 238);">
+<div>
+<pre>&lt;?xml version="1.0"?&gt;<b>
+&lt;!DOCTYPE beatles SYSTEM "Beatles.dtd"&gt;</b>
+&lt;beatles&gt;
+ &lt;beatle link="http://www.paulmccartney.com"&gt;
+  &lt;name&gt;
+   &lt;firstname&gt;Paul&lt;/firstname&gt;
+   &lt;lastname&gt;McCartney&lt;/lastname&gt;
+  &lt;/name&gt;
+ &lt;/beatle&gt;
+ &lt;beatle link="http://www.johnlennon.com"&gt;
+  &lt;name&gt;
+   &lt;firstname&gt;John&lt;/firstname&gt;
+   &lt;lastname&gt;Lennon&lt;/lastname&gt;
+  &lt;/name&gt;
+ &lt;/beatle&gt;
+ &lt;beatle link="http://www.georgeharrison.com"&gt;
+  &lt;name&gt;
+   &lt;firstname&gt;George&lt;/firstname&gt;
+   &lt;lastname&gt;Harrison&lt;/lastname&gt;
+  &lt;/name&gt;
+ &lt;/beatle&gt;
+ &lt;beatle link="http://www.ringostarr.com"&gt;
+  &lt;name&gt;
+   &lt;firstname&gt;Ringo&lt;/firstname&gt;
+   &lt;lastname&gt;Starr&lt;/lastname&gt;
+  &lt;/name&gt;
+ &lt;/beatle&gt;
+ &lt;beatle link="http://www.webucator.com" real="no"&gt;
+  &lt;name&gt;
+   &lt;firstname&gt;Nat&lt;/firstname&gt;
+   &lt;lastname&gt;Dunn&lt;/lastname&gt;
+  &lt;/name&gt;
+ &lt;/beatle&gt;
+&lt;/beatles&gt;
+</pre>
+</div>
+</div>
+</div>
+			<div class="Exercise">
+				<h2 class="ExerciseTitle" id="h1.5">Exercise: Writing a DTD</h2>
+
+<div id="GoogleExerciseAd1">
+<script type="text/javascript">
+<!--
+google_ad_client = "pub-9777795180071141";
+/* ExerciseSquare */
+google_ad_slot = "1369990587";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script src="DTDs.cfm_files/show_ads.js" type="text/javascript">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 250px; position: relative; visibility: visible; width: 250px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 250px; position: relative; visibility: visible; width: 250px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame4" marginheight="0" marginwidth="0" name="google_ads_frame" src="DTDs.cfm_files/ads_004.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="250" scrolling="no" width="250"></iframe></ins></ins>
+</div>
+
+				<div class="Duration">Duration: 60 to 90 minutes.</div>
+				<p>In
+this exercise, you will write a DTD for the business letter shown
+below. You will then give your DTD to another student, who will mark up
+the business letter as a valid XML document according to your DTD.
+Likewise, you will markup the business letter according to someone
+else's DTD. Make sure that the XML file contains a DOCTYPE declaration.</p>
+				<p>Both documents should be saved in the <span onclick="alert('This file is not available in this free online tutorial.  For more info on getting training, please email sales@webucator.com.')" style="cursor: pointer; color: blue;" class="FilePath">DTDs/Exercises</span> folder. To test whether the XML file is valid, visit <a xmlns="http://www.w3.org/1999/xhtml" href="http://www.softwareadjuvant.com/services/validate/validate.html" shape="rect">http://www.softwareadjuvant.com/services/validate/validate.html</a> and upload your XML document and DTD.</p>
+				<div class="CodeSample">
+<h2 class="CodeSampleLabel">Code Sample: DTDs/Exercises/BusinessLetter.txt</h2>
+<div class="bd" style="overflow: auto; background-color: rgb(238, 238, 238);">
+<div>
+<pre>November 29, 2005
+
+Joshua Lockwood
+Lockwood &amp; Lockwood
+291 Broadway Ave.
+New York, NY 10007
+United States
+
+Dear Mr. Lockwood:
+
+Along with this letter, I have enclosed the following items:
+
+ - two original, execution copies of the Webucator Master Services Agreement
+ - two original, execution copies of the Webucator Premier Support for 
+  Developers Services Description between 
+  Lockwood &amp; Lockwood and Webucator, Inc.
+ 
+Please sign and return all four original, execution copies to me at your
+earliest convenience.  Upon receipt of the executed copies, we will 
+immediately return a fully executed, original copy of both agreements to you.
+
+Please send all four original, execution copies to my attention as follows:
+
+ Webucator, Inc.
+ 4933 Jamesville Rd.
+ Jamesville, NY 13078  USA
+ Attn: Bill Smith
+ 
+If you have any questions, feel free to call me at 800-555-1000 x123 
+or e-mail me at bsmith@webucator.com.
+
+Best regards,
+
+Bill Smith
+VP, Operations
+</pre>
+</div>
+</div>
+</div>
+			<div class="clearer">
+<!--spacer-->
+</div>
+</div>
+			<div id="Conclusion">
+<h1>DTDs Conclusion</h1>
+				<p>In this lesson of the XML tutorial, you learned to created DTDs to validate XML documents.</p>
+			</div>
+		
+	
+<div id="EndNote">To continue to learn XML go to the <a href="#menuHeading">top of this page</a> and click on the next lesson in this XML Tutorial's Table of Contents.</div>
+</div>
+
+
+		</div>
+		<div id="footer" class="pane">
+	
+	
+	<div id="Copyright">
+		<p>All material in this DTDs is copyright 2009 Webucator.  
+		The purpose of this website is to help you learn XML on your own and use of the website 
+		implies your agreement to our 
+		<a href="http://www.learn-xml-tutorial.com/tos.cfm" target="tos">XML Tutorial Terms of Service</a>.</p>
+	</div>
+	
+</div>
+	</div>
+
+
+	
+<div id="print">
+	<h1>Use of <u>http://www.learn-xml-tutorial.com</u> (Website) implies agreement to the following:</h1>
+
+	<h2>Copyright Information</h2>
+	
+	<p>All pages and graphics on Website are the property of <a href="http://www.webucator.com/">Webucator, Inc.</a> unless otherwise specified.</p>
+	
+	<p>None of the content on Website may be redistributed or reproduced in any way, shape, or form without written
+	permission from <a href="http://www.webucator.com/">Webucator, Inc.</a></p>
+	<h2>No Printing or saving of pages or content on Website</h2>
+	<p>This content may not be printed or saved. It is for online use only.</p>
+	<hr>
+	<h2>Linking to Website</h2>
+	<p>You may link to any of the pages on Website; however, you may not include the content in a <code>frame</code> or <code>iframe</code> without written permission from <a href="http://www.webucator.com/">Webucator, Inc.</a></p>
+	
+	<hr>
+	<h2>Warranties</h2>
+	<p>Website is provided without warranty of any kind. There are no guarantees
+	that use of the site will not be subject to interruptions. All direct or
+	indirect risk related to use of the site is borne entirely by the user. All code and explanations
+	provided on this site are provided without warranties to correctness, performance,
+	fitness, merchantability, and/or any other warranty (whether expressed or
+	implied).</p>
+	<hr>
+	<h2>For individual private use only</h2>
+	<p>You
+agree not to use this online manual to deliver or receive training. If
+you are delivering or attending a class that is making use of this
+online manual, you are in violation of our terms of service. Please
+report any abuse to <a href="mailto:courseware@webucator.com">courseware@webucator.com</a>.  If you would like to deliver or receive training using this manual, please fill out the form at <a href="http://www.webucator.com/Contact.cfm">http://www.webucator.com/Contact.cfm</a></p>
+
+</div>
+
+<script src="DTDs.cfm_files/urchin.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="DTDs.cfm_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2769312-25");
+pageTracker._trackPageview();
+</script>	
+	
+
+
+<script type="text/javascript" src="DTDs.cfm_files/yahoo-min.js"></script>
+<script type="text/javascript" src="DTDs.cfm_files/event-min.js"></script>
+<script type="text/javascript" src="DTDs.cfm_files/dom-min.js"></script>
+<script type="text/javascript" src="DTDs.cfm_files/connection-min.js"></script>
+<script type="text/javascript" src="DTDs.cfm_files/animation-min.js"></script>
+<script type="text/javascript" src="DTDs.cfm_files/container-min.js"></script>
+<script type="text/javascript" src="DTDs.cfm_files/dragdrop-min.js"></script>
+<script type="text/javascript" src="DTDs.cfm_files/resize.js"></script>
+<!--<script type="text/javascript" src="scripts/menu.js"></script>-->
+<script type="text/javascript" src="DTDs.cfm_files/main.js"></script>
+<script type="text/javascript">
+	//window.alert replacement using YUI
+	YAHOO.namespace("widget.alert");
+	var handleOK = function() {
+		this.hide();
+	};
+	YAHOO.widget.alert.dlg = new YAHOO.widget.SimpleDialog("widget_alert", {
+	  visible: false,
+	  width: "34em",
+	  close: false,
+	  fixedcenter: true,
+	  modal: true,
+	  draggable: false,
+	  zindex: 99,
+	  icon: YAHOO.widget.SimpleDialog.ICON_WARN,
+	  buttons: [{ text: 'OK', handler: handleOK, isDefault: true }]
+	});
+	YAHOO.widget.alert.dlg.setHeader("Attention Necessary");
+	YAHOO.widget.alert.dlg.setBody('Alert body passed to window.alert'); // Bug, must have body when rendered
+	YAHOO.widget.alert.dlg.render(document.body);
+	var kl2 = new YAHOO.util.KeyListener(document, { keys:32 },  							
+			{ 	fn: handleOK,
+				scope: YAHOO.widget.alert.dlg,
+				correctScope: true } );
+	YAHOO.widget.alert.dlg.cfg.queueProperty("keylisteners", kl2);
+	window.alert = function(str) {
+		YAHOO.widget.alert.dlg.setBody('<p style="margin-top: 0; margin-left: 30px;">' + str + '</p>');
+		YAHOO.widget.alert.dlg.cfg.queueProperty('icon', YAHOO.widget.SimpleDialog.ICON_WARN);
+		YAHOO.widget.alert.dlg.render(document.body);
+		YAHOO.widget.alert.dlg.show();
+	}
+	
+	var fileBlurb="The files for this online tutorial are available at <a href='http://www.webucator.com/help/supportWiki/index.cfm/XML10a#Class_Files' target='newwin'>http://www.webucator.com/help/supportWiki/index.cfm/XML10a#Class_Files</a>.<br/><br/>For more info on getting training, please email sales@webucator.com.";
+</script>
+</body></html>

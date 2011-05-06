@@ -1,0 +1,216 @@
+#header ul {
+    width:196px;
+}
+
+#about #animal, #tim #animal {
+    float:left;
+    width:100px;
+    height:67px;
+    margin:0;
+    padding:0;
+    background:url(/images/oreilly/about_polar_bear.jpg) no-repeat 0 0;
+    font-size:0;
+    text-indent:-9999px;
+}
+
+#about h2 {
+    font-family: Verdana,helvetica,arial,sans-serif;
+    font-size:30px;
+    font-weight:normal;
+    color:#990000;
+    display:inline;
+    float:left;
+    margin:0;
+    clear:right;
+    line-height:120%;
+}
+
+#about h2.global_header {
+    font-size:38px;
+}
+
+p.tagline /*h2 + p*/ {
+    font-family: Verdana,helvetica,arial,sans-serif;
+    display:block;
+    width:20em;
+    font-size:14px;
+    color:#333;
+    text-align:right;
+    margin:0.8em 0 0 0;
+    float:right;
+    clear:none;
+    line-height:100%;
+}
+
+a.nav3, a.nav3:visited, a.nav3:hover, a.navtab,a.navtab:visited,a.navtab:hover {
+    color: white;
+    text-decoration:none;
+}
+
+.clear, hr.clear {
+    height:0 !important;
+}
+
+#content ul { 
+    margin:0 0 0 1em;
+    padding:0 0 0 1em;
+   list-style-image: url('/images/icons/arrow.gif');
+    line-height:1.5em;
+}
+
+#content li {
+    padding:0;
+    margin: 0;
+}
+
+#article ul {
+    list-style-image:none; 
+}
+
+#article .headline {
+    font-size: 12px;
+    font-weight:bold;
+}
+
+ul.sellingpoints {
+    color:#666;
+    font-weight:bold;
+    line-height:1.7em;
+    list-style-position: inside;
+}
+
+/* middle and right content used for ug pages */
+#middle_content {
+    width:72%; 
+    float:left;
+    display:inline;
+}
+
+#middle_content h3, h3.subheading {
+    color:#333;
+    font-size:16px;
+    font-weight:normal;
+    line-height:1.2em;
+} 
+
+#middle_content .content-box h3 {
+    text-align:left;
+    padding-left:12px;
+}
+
+img.authorphoto {
+    float:left;
+    padding-right:10px;
+}
+
+.author-title {
+    font-family:Garamond,times,serif; 
+    font-size:40px;
+    line-height:35px;
+    color:#666666;
+    padding:0;
+    margin:0;
+    display:block;
+}
+
+h3.subheading {
+    font-size:20px;
+    color:#666;
+}
+
+#right_content {
+    width:35%;
+    float:right;
+    margin-left:2em;
+    display:inline;
+}
+
+#right_content label {
+    color:#990000;
+} 
+
+.cbox {
+    line-height:20px;
+}
+
+.article-heading {
+    clear:left;
+    font-size:13px;
+    font-weight:bold;
+}
+
+#article {
+    width:50em;
+    float:left;
+}
+
+#adspace {
+    width:16em;
+    float:right;
+    margin-left:1em;
+} 
+
+/*added  for article formatting of email newsletters --cp 04/21/06*/
+div.newsletter{
+    white-space: pre;
+} 
+
+.intelliTxt h2 {
+    color:#000;
+    display:block;
+    font-size:24px;
+}
+
+div.profiles {
+    width:48%;
+    float:left;
+}
+
+div.separator {
+    padding:10px;
+    border-bottom:1px solid #999;
+}
+
+div.profiles .authorname, .searchresults .authorname {
+    font-weight:bold;
+    color:#990000;
+    padding:0;
+    margin:0;
+}
+div.profiles .authorlead, .searchresults .authorlead {
+    text-align:left;
+    padding:3px 0;
+    margin:0;
+}
+div.profiles .authordesc {
+   margin-left:61px;
+}
+
+.searchresults .authorresult {
+    float:left;
+    width:154px;
+    margin:10px;
+    padding:5px;
+    border-right:1px solid #999;
+    border:1px solid #999;
+}
+
+.searchresults font {
+    clear:both;
+    display:block;
+    margin-left:10px;
+}
+
+div.searchresults div.content-box-body b {
+    margin-left:10px;
+    font-size:12px;
+    display:block;
+}
+
+div.searchresults div.content-box-body {
+    padding:10px 0 0 10px;
+}
+
+body {
+    background-color:#eee;
+}

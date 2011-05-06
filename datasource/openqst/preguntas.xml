@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE questionaries SYSTEM "openQuestionary.dtd">
+<questionaries>
+	<questionary id="paralavida" name="Para la Vida">
+		<subject name="Cultura General" id="culturageneral"/>
+		<subject name="Matem&#xE1;tica B&#xE1;sica" id="matematicabasica"/>
+	</questionary>
+</questionaries>

@@ -1,0 +1,43 @@
+Class: TAAA
+
+Descripción:
+TAAA pretende ser la clase que implementa los servicios AAA. Debe realizar todas
+las operaciones AAA y los chequeos en las operaciones y los eventos dentro del
+nucleo.
+
+Guidelines
+
+Version 0.0
+-Esquema básico.
+
+Version 0.1
+-Experimentacion con el sistema AAA.
+
+Version 0.2
+-Primera version funcional estable. Features basicas, algunas funcionalidades.
+
+Version 0.3
+-Implementar todas las funciones básicas: añadir, modificar, eliminar roles, etc.
+
+Version 0.4
+-Extensión de funcionalidades, según vallan siendo necesarias.
+
+Version 0.5
+-Implementar reglas, cargar y almacenar las ACLs.
+
+Version 0.6
+-Implementar la seguridad modular, de forma que se puedan registrar nuevos
+objetos. Ser´a necesario para la seguridad en los agregados del framework.
+
+Version 0.7
+-Implementar la identificación por todos los medios (POST,GET,COOKIE,HTTP)
+
+Version 0.8
+-Beta
+
+Version 0.9
+-RC
+
+Version 1
+-Version Final
+ 

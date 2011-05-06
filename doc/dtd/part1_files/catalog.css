@@ -1,0 +1,199 @@
+body {
+/*    behavior:url("http://oreilly.com/csshover.htc"); */
+/* temporarily removed */
+}
+
+.buybuttonswidget h2, .buybuttonswidget .product_title { display:none; }
+
+#photoauthor {
+    width:38em;
+    float:left;
+}
+    
+ul#browsebook,li.coverimage {
+    display:block;
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+ul#browsebook {
+    width:180px;
+    list-style:none;
+}
+
+ul#flyout {
+    width:400px;
+    list-style:none;
+    border: 1px solid #000;
+    background-color:#fff;
+    padding:10px;
+}
+
+li.flyoutdetails, li.coverimage {
+    position:relative;
+    z-index:9;
+}
+
+li.coverimage {
+    text-align:center;
+}
+
+ul#flyout {
+    text-align:left;
+}
+
+li.coverimage ul {
+    position:absolute;
+    left:120px; /* IE */
+    top:170px;
+}       
+
+li.coverimage>ul { 
+    left:140px; 
+} /* others */
+
+/* regular hovers */
+li.coverimage:hover { 
+    z-index:10; 
+}     
+        
+li.coverimage ul {
+    display:none;
+}
+
+li.coverimage:hover ul {
+    display:block;
+}
+
+.feedback ul {
+        margin: 0 0 0 1em;
+        padding: 0 0 0 1em;
+}
+.feedback li {
+        list-style-image: url(http://www.oreillynet.com/images/bullet-post.gif);
+        margin-left: 0px;
+        padding:0;
+}
+.feedback ul ul li {
+        list-style-image: url(http://www.oreillynet.com/images/bullet-reply.gif);
+        margin-left: 0px;
+        padding:0;
+}
+.tb_right {
+   display:none;
+}
+#reviews ul {
+   margin:0;
+   padding:0 0 12px 0;
+}
+#reviews ul ul {
+   padding:12px 0 0 0;
+}
+#reviews li {
+   list-style-type:none;
+   padding:0;
+   margin:0;
+}
+#store hr {
+    margin:1.5em 0 1.5em 0;
+    /* width: 70%; */
+    align: left;
+    margin: 1.5em 0 1.5em 0;
+    clear:left;
+}
+
+.rollup {
+    padding-left:12px !important;
+    background:#fff url(/images/icons/arrow.gif) no-repeat left center;
+}
+
+.rolldown {
+    padding-left:12px !important;
+    background:#F6F6F6 url(/images/icons/arrow_down.gif) no-repeat left center;
+}
+
+#reviewsButton.rolldown {
+    display:none;
+} 
+
+#mediareviewsButton.rolldown {
+    display:none;
+}
+
+#fulldesc {
+    padding-bottom:10px;
+}
+
+#storepromotions {
+    background:#000 url(/images/oreilly/bg_nav.gif) repeat-x 0 0;
+    margin:0;
+    padding:0;
+}
+
+#storepromotions ul, {
+    list-style:none;
+    margin:0;
+    padding:0;
+    overflow:auto;
+}
+
+#storepromotions ul li {
+    float:left;
+    display:inline-table;
+}
+
+#storepromotions ul li a {
+    display:block;
+    line-height:30px;
+    padding:0 1em;
+    text-decoration:none;
+    font-size:12px;
+    color:#fff;
+    float:left;
+    border-right:1px solid #000;
+    margin:2px 0;
+}
+
+#errata .minortechnical {
+   background-color:#dddddd;
+   padding:10px;
+   margin:3px;
+}
+#errata .serioustechnical {
+   background-color:#ffddff;
+   padding:10px;
+   margin:3px;
+}
+#errata .typo {
+   background-color:#ccffcc;
+   padding:10px;
+   margin:3px;
+}
+#errata .language {
+   background-color:#cceeff;
+   padding:10px;
+   margin:3px;
+}
+#errata .question {
+   background-color:#ffcc99;
+   padding:10px;
+   margin:3px;
+}
+
+#errata th {
+   background-color:#666;
+   color:#ffffff;
+}
+
+#praise blockquote {
+   margin:15px 0;
+   padding:0 10px;
+}
+#praise .quote {
+   color:#000000;
+}
+#praise .quote_author {
+   color:#000000;
+   font-style: italic; 
+}

@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<title>UML state machine - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.16alpha-wmf" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=UML_state_machine&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=UML_state_machine&amp;action=edit" />
+<link rel="stylesheet" type="text/css" href="/w/extensions/UsabilityInitiative/css/combined.min.css?16" />
+<link rel="stylesheet" type="text/css" href="/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2" />
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/skins-1.5/common/shared.css?248z2" type="text/css" media="screen" />
+<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?248z2" type="text/css" media="print" />
+<link rel="stylesheet" href="/skins-1.5/monobook/main.css?248z2" type="text/css" media="screen" />
+<link rel="stylesheet" href="/skins-1.5/chick/main.css?248z2" type="text/css" media="handheld" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?248z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?248z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?248z2" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?248z2" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" media="all" />
+<script type="text/javascript">
+var skin="monobook",
+stylepath="/skins-1.5",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://en.wikipedia.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="UML_state_machine",
+wgTitle="UML state machine",
+wgAction="view",
+wgArticleId=23959612,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=328251756,
+wgVersion="1.16alpha-wmf",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
+wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgDBname="enwiki",
+wgSearchNamespaces=[0],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgTrackingToken="729f7ad92b4fe04cdda79e3dea863acc",
+wgClickTrackingIsThrottled=true,
+wgNotice="",
+wgNoticeLocal="";
+</script>
+<script src="/skins-1.5/common/wikibits.js?urid=248z2_1254880607" type="text/javascript"></script>
+<script src="/skins-1.5/common/ajax.js?urid=248z2" type="text/javascript"></script>
+<script src="/skins-1.5/common/mwsuggest.js?urid=248z2" type="text/javascript"></script>
+<script type="text/javascript" src="/w/extensions/UsabilityInitiative/js/js2.combined.min.js?8"></script>
+<script type="text/javascript" src="/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?68"></script>
+<script type="text/javascript" src="/w/extensions/UsabilityInitiative/CollapsibleTabs/CollapsibleTabs.js?9"></script>
+<script type="text/javascript" src="/w/extensions/UsabilityInitiative/ClickTracking/ClickTracking.js?3"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?248z2"></script>
+
+<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?248z2"></script>
+	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=248z2_319406805" type="text/javascript"></script>
+
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-UML_state_machine skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a id="top"></a>
+		<div id="siteNotice"><script type='text/javascript'>if (wgNotice != '') document.writeln(wgNotice);</script></div>		<h1 id="firstHeading" class="firstHeading">UML state machine</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<div class="dablink">For a general introduction, see <a href="/wiki/State_diagram" title="State diagram">State diagram</a>.</div>
+<table class="metadata plainlinks ambox ambox-style" style="">
+<tr>
+<td class="mbox-image">
+<div style="width: 52px;"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/40px-Edit-clear.svg.png" width="40" height="40" /></div>
+</td>
+<td class="mbox-text" style="">This article <b>may be too technical for most readers to understand</b>. Please <a href="http://en.wikipedia.org/w/index.php?title=UML_state_machine&amp;action=edit" class="external text" rel="nofollow">improve</a> this article to <a href="/wiki/Wikipedia:Make_technical_articles_accessible" title="Wikipedia:Make technical articles accessible">make it accessible to non-experts</a>, without removing the technical details. <small><i>(September 2009)</i></small></td>
+</tr>
+</table>
+<p><b>UML state machine</b><sup id="cite_ref-UML2_2_0-0" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>, known also as <b>UML statechart</b>, is an object-based variant of <a href="/wiki/State_diagram#Harel_statechart" title="State diagram">Harel statechart</a> <sup id="cite_ref-Harel87_1-0" class="reference"><a href="#cite_note-Harel87-1"><span>[</span>2<span>]</span></a></sup> adapted and extended by the <a href="/wiki/Unified_Modeling_Language" title="Unified Modeling Language">Unified Modeling Language</a> . UML state machines overcome the main the limitations of traditional <a href="/wiki/Finite_state_machines" title="Finite state machines" class="mw-redirect">finite state machines</a> while retaining their main benefits. UML statecharts introduce the new concepts of <a href="#Hierarchically_Nested_States">hierarchically nested states</a> and <a href="#Orthogonal_Regions">orthogonal regions</a>, while extending the notion of <a href="#Actions_and_Transitions">actions</a>. UML state machines have the characteristics of both <a href="/wiki/Mealy_machine" title="Mealy machine">Mealy machines</a> and <a href="/wiki/Moore_machine" title="Moore machine">Moore machines</a>. They support <a href="#Actions_and_Transitions">actions</a> that depend on both the state of the system and the triggering <a href="#Events">event</a>, as in Mealy machines, as well as <a href="#Entry_and_Exit_Actions">entry and exit actions</a>, which are associated with states rather than transitions, as in Moore machines.</p>
+<p>The term "UML state machine" can refer to two kinds of state machines: <i>behavioral state machines</i> and <i>protocol state machines</i>. Behavioral state machines can be used to model the behavior of individual entities (e.g., class instances). Protocol state machines are used to express usage protocols and can be used to specify the legal usage scenarios of classifiers, interfaces, and ports<sup id="cite_ref-UML2_2_0-1" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>.</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Basic_State_Machine_Concepts"><span class="tocnumber">1</span> <span class="toctext">Basic State Machine Concepts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Basic_UML_State_Diagrams"><span class="tocnumber">1.1</span> <span class="toctext">Basic UML State Diagrams</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Events"><span class="tocnumber">1.2</span> <span class="toctext">Events</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#States"><span class="tocnumber">1.3</span> <span class="toctext">States</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Extended_States"><span class="tocnumber">1.4</span> <span class="toctext">Extended States</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Guard_Conditions"><span class="tocnumber">1.5</span> <span class="toctext">Guard Conditions</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Actions_and_Transitions"><span class="tocnumber">1.6</span> <span class="toctext">Actions and Transitions</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Run-to-Completion_Execution_Model"><span class="tocnumber">1.7</span> <span class="toctext">Run-to-Completion Execution Model</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#UML_Extensions_to_the_Traditional_FSM_Formalism"><span class="tocnumber">2</span> <span class="toctext">UML Extensions to the Traditional FSM Formalism</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Hierarchically_Nested_States"><span class="tocnumber">2.1</span> <span class="toctext">Hierarchically Nested States</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Orthogonal_Regions"><span class="tocnumber">2.2</span> <span class="toctext">Orthogonal Regions</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Entry_and_Exit_Actions"><span class="tocnumber">2.3</span> <span class="toctext">Entry and Exit Actions</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Internal_Transitions"><span class="tocnumber">2.4</span> <span class="toctext">Internal Transitions</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Transition_Execution_Sequence"><span class="tocnumber">2.5</span> <span class="toctext">Transition Execution Sequence</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Local_versus_External_Transitions"><span class="tocnumber">2.6</span> <span class="toctext">Local versus External Transitions</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Event_Deferral"><span class="tocnumber">2.7</span> <span class="toctext">Event Deferral</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#The_Limitations_of_the_UML_State_Machines"><span class="tocnumber">3</span> <span class="toctext">The Limitations of the UML State Machines</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<h2><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=1" title="Edit section: Basic State Machine Concepts">edit</a>]</span> <span class="mw-headline" id="Basic_State_Machine_Concepts">Basic State Machine Concepts</span></h2>
+<p>Many software systems are <a href="/wiki/Event-driven" title="Event-driven">event-driven</a>, which means that they continuously wait for the occurrence of some external or internal <b><a href="#Events">event</a></b> such as a mouse click, a button press, a time tick, or an arrival of a data packet. After recognizing the event, such systems react by performing the appropriate computation that may include manipulating the hardware or generating “soft” events that trigger other internal software components. (That’s why event-driven systems are alternatively called <b>reactive systems</b>.) Once the event handling is complete, the system goes back to waiting for the next event.</p>
+<p>The response to an event generally depends on both the type of the event and on the internal <b><a href="#States">state</a></b> of the system and can include a change of state leading to a <b><a href="#Actions_and_Transitions">state transition</a></b>. The pattern of events, states, and state transitions among those states can be abstracted and represented as a <b><a href="/wiki/Finite_state_machine" title="Finite state machine" class="mw-redirect">finite state machine</a></b> (FSM).</p>
+<p>The concept of an FSM is important in programming because it makes the event handling explicitly dependent on both the event-type and on the state of the system. When used correctly, a state machine can drastically cut down the number of execution paths through the code, simplify the conditions tested at each branching point, and simplify the switching between different modes of execution<sup id="cite_ref-Samek08_2-0" class="reference"><a href="#cite_note-Samek08-2"><span>[</span>3<span>]</span></a></sup>.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=2" title="Edit section: Basic UML State Diagrams">edit</a>]</span> <span class="mw-headline" id="Basic_UML_State_Diagrams">Basic UML State Diagrams</span></h3>
+<p>UML preserve the general form of the <a href="/wiki/State_diagram" title="State diagram">traditional state diagrams</a>. The UML state diagrams are <a href="/wiki/State_diagram#Directed_graph" title="State diagram">directed graphs</a> in which nodes denote states and connectors denote state transitions. For example, Figure 1 shows a UML state diagram corresponding to the computer keyboard state machine. In UML, states are represented as rounded rectangles labeled with state names. The transitions, represented as arrows, are labeled with the triggering events followed optionally by the list of executed actions. The <b>initial transition</b> originates from the solid circle and specifies the default state when the system first begins. Every state diagram should have such a transition, which should not be labeled, since it is not triggered by an event. The initial transition can have associated actions.</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig1.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/45/UML_state_machine_Fig1.png/540px-UML_state_machine_Fig1.png" width="540" height="215" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig1.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Figure 1: UML state diagram representing the computer keyboard state machine</div>
+</div>
+</div>
+</div>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=3" title="Edit section: Events">edit</a>]</span> <span class="mw-headline" id="Events">Events</span></h3>
+<p>In the most general terms, an <b>event</b> is an occurrence in time and space that has significance to the system. Strictly speaking, in the UML specification<sup id="cite_ref-UML2_2_0-2" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>. For example, Keystroke is an event for the keyboard, but each press of a key is not an event but a concrete instance of the Keystroke event. Another event of interest for the keyboard might be Power-on, but turning the power on tomorrow at 10:05:36 will be just an instance of the Power-on event.</p>
+<p>An event can have associated <b>parameters</b>, allowing the event instance to convey not only the occurrence of some interesting incident but also quantitative information regarding that occurrence. For example, the Keystroke event generated by pressing a key on a computer keyboard has associated parameters that convey the character scan code as well as the status of the Shift, Ctrl, and Alt keys.</p>
+<p>An event instance outlives the instantaneous occurrence that generated it and might convey this occurrence to one or more state machines. Once generated, the event instance goes through a processing life cycle that can consist of up to three stages. First, the event instance is received when it is accepted and waiting for processing (e.g., it is placed on the <a href="/wiki/Message_queue" title="Message queue">event queue</a>). Later, the event instance is dispatched to the state machine, at which point it becomes the current event. Finally, it is consumed when the state machine finishes processing the event instance. A consumed event instance is no longer available for processing.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=4" title="Edit section: States">edit</a>]</span> <span class="mw-headline" id="States">States</span></h3>
+<p>A <b>state</b> captures the relevant aspects of the system’s history very efficiently. For example, when you strike a key on a keyboard, the character code generated will be either an uppercase or a lowercase character, depending on whether the Caps Lock is active. Therefore, the keyboard’s behavior can be divided into two states: the “default” state and the “caps_locked” state. (Most keyboards actually have an LED that indicates that the keyboard is in the “caps_locked” state.) The behavior of a keyboard depends only on certain aspects of its history, namely whether the Caps Lock key has been pressed, but not, for example, on how many and exactly which other keys have been pressed previously. A state can abstract away all possible (but irrelevant) event sequences and capture only the relevant ones.</p>
+<p>To relate this concept to programming, this means that instead of recording the event history in a multitude of variables, flags, and convoluted logic, you rely mainly on just one <i>state variable</i> that can assume only a limited number of a priori determined values (e.g., two values in case of the keyboard). The value of the state variable crisply defines the current state of the system at any given time. The concept of state reduces the problem of identifying the execution context in the code to testing just the state variable instead of many variables, thus eliminating a lot of conditional logic. Moreover, switching between different states is vastly simplified as well, because you need to reassign just one state variable instead of changing multiple variables in a self-consistent manner.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=5" title="Edit section: Extended States">edit</a>]</span> <span class="mw-headline" id="Extended_States">Extended States</span></h3>
+<p>One possible interpretation of state for software systems is that each state represents one distinct set of valid values of the whole program memory. Even for simple programs with only a few elementary variables, this interpretation leads to an astronomical number of states. For example, a single 32-bit integer could contribute to over 4 billion different states. Clearly, this interpretation is not practical, so program variables are commonly dissociated from states. Rather, the complete condition of the system (called the <b>extended state</b>) is the combination of a qualitative aspect (the state) and the quantitative aspects (the extended state variables). In this interpretation, a change of variable does not always imply a change of the qualitative aspects of the system behavior and therefore does not lead to a change of state<sup id="cite_ref-ROOM94_3-0" class="reference"><a href="#cite_note-ROOM94-3"><span>[</span>4<span>]</span></a></sup>.</p>
+<p>State machines supplemented with variables are called <b>extended state machines</b> and UML state machines belong to this category. Extended state machines can apply the underlying formalism to much more complex problems than is practical without including extended state variables. For instance, suppose the behavior of the keyboard depends on the number of characters typed on it so far and that after, say, 1,000 keystrokes, the keyboard breaks down and enters the final state. To model this behavior in a state machine without memory, you would need to introduce 1,000 states (e.g., pressing a key in state stroke123 would lead to state stroke124, and so on), which is clearly an impractical proposition. Alternatively, you could construct an extended state machine with a key_count down-counter variable. The counter would be initialized to 1,000 and decremented by every keystroke without changing state. When the counter reached zero, the state machine would enter the final state.</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig2.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/c/c1/UML_state_machine_Fig2.png/540px-UML_state_machine_Fig2.png" width="540" height="222" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig2.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Figure 2: Extended state machine of “cheap keyboard” with extended state variable key_count and various guard conditions</div>
+</div>
+</div>
+</div>
+<p>The state diagram from Figure 2 is an example of an extended state machine, in which the complete condition of the system (called the extended state) is the combination of a qualitative aspect—the “state”—and the quantitative aspects—the extended state variables (such as the down-counter <code>key_count</code>). In extended state machines, a change of a variable does not always imply a change of the qualitative aspects of the system behavior and therefore does not always lead to a change of state.</p>
+<p>The obvious advantage of extended state machines is flexibility. For example, extending the lifespan of the “cheap keyboard” from 1,000 to 10,000 keystrokes would not complicate the extended state machine at all. The only modification required would be changing the initialization value of the <code>key_count</code> down-counter in the initial transition.</p>
+<p>This flexibility of extended state machines comes with a price, however, because of the complex coupling between the “qualitative” and the “quantitative” aspects of the extended state. The coupling occurs through the guard conditions attached to transitions, as shown in Figure 2.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=6" title="Edit section: Guard Conditions">edit</a>]</span> <span class="mw-headline" id="Guard_Conditions">Guard Conditions</span></h3>
+<p><b>Guard conditions</b> (or simply guards) are <a href="/wiki/Boolean_function" title="Boolean function">Boolean expressions</a> evaluated dynamically based on the value of <a href="#Extended_States">extended state variables</a> and <a href="#Events">event parameters</a>. Guard conditions affect the behavior of a state machine by enabling actions or transitions only when they evaluate to TRUE and disabling them when they evaluate to FALSE. In the UML notation, guard conditions are shown in square brackets (e.g., <code>[key_count == 0]</code> in Figure 2).</p>
+<p>The need for guards is the immediate consequence of adding memory <a href="#Extended_States">extended state variables</a> to the state machine formalism. Used sparingly, extended state variables and guards make up an incredibly powerful mechanism that can immensely simplify designs. But don’t let the fancy name (“guard”) and the concise UML notation fool you. When you actually code an extended state machine, the guards become the same IFs and ELSEs that you wanted to eliminate by using the state machine in the first place. Too many of them, and you’ll find yourself back in square one (“<a href="/wiki/Spaghetti_code" title="Spaghetti code">spaghetti code</a>”), where the guards effectively take over handling of all the relevant conditions in the system.</p>
+<p>Indeed, abuse of extended state variables and guards is the primary mechanism of <a href="/wiki/Software_rot" title="Software rot">architectural decay</a> in designs based on state machines. Usually, in the day-to-day battle, it seems very tempting, especially to programmers new to state machine formalism, to add yet another extended state variable and yet another guard condition (another IF or an ELSE) rather than to factor out the related behavior into a new qualitative aspect of the system—the state. From experience in the trenches, the likelihood of such an architectural decay is directly proportional to the overhead (actual or perceived) involved in adding or removing states (which relates to the actual strategy used for implementing UML state machines.)</p>
+<p>One of the main challenges in becoming an effective state machine designer is to develop a sense for which parts of the behavior should be captured as the “qualitative” aspects (the “state”) and which elements are better left as the “quantitative” aspects (extended state variables). In general, you should actively look for opportunities to capture the event history (what happened) as the “state” of the system, instead of storing this information in extended state variables. For example, a state machine representing the behavior of a pocket calculator might use an extended state variable <code>DecimalFlag</code> to remember that the user entered the decimal point to avoid entering multiple decimal points in the same number. However, a better solution is to observe that entering a decimal point really leads to a distinct state “entering_the_fractional_part_of_a_number,” in which the calculator ignores decimal points. This solution is superior for a number of reasons. The lesser reason is that it eliminates one extended state variable and the need to initialize and test it. The more important reason is that the state-based solution is more robust because the context information is used very locally (only in this particular state) and is discarded as soon as it becomes irrelevant. Once the number is correctly entered, it doesn’t really matter for the subsequent operation of the calculator whether that number had a decimal point. The state machine moves on to another state and automatically “forgets” the previous context. The <code>DecimalFlag</code> extended state variable, on the other hand, “lays around” well past the time the information becomes irrelevant (and perhaps outdated!). Worse, you must not forget to reset <code>DecimalFlag</code> before entering another number or the flag will incorrectly indicate that indeed the user once entered the decimal point, but perhaps this happened in the context of the <i>previous</i> number.</p>
+<p>Capturing behavior as the quantitative “state” has its disadvantages and limitations, too. First, the state and transition topology in a state machine must be static and fixed at <a href="/wiki/Compile_time" title="Compile time">compile time</a>, which can be too limiting and inflexible. Sure, you can easily devise “state machines” that would modify themselves at runtime (this is what often actually happens when you try to recode “<a href="/wiki/Spaghetti_code" title="Spaghetti code">spaghetti code</a>” as a state machine). However, this is like writing <a href="/wiki/Self-modifying_code" title="Self-modifying code">self-modifying code</a>, which indeed was done in the early days of programming but was quickly dismissed as a generally bad idea. Consequently, “state” can capture only static aspects of the behavior that are known a priori and are unlikely to change in the future.</p>
+<p>For example, it’s fine to capture the entry of a decimal point in the calculator as a separate state “entering_the_fractional_part_of_a_number,” because a number can have only one fractional part, which is both known a priori and is not likely to change in the future. However, implementing the “cheap keyboard” without extended state variables and guard conditions would be practically impossible. This example points to the main weakness of the quantitative “state,” which simply cannot store too much information (such as the wide range of keystroke counts). Extended state variables and guards are thus a mechanism for adding extra runtime flexibility to state machines<sup id="cite_ref-Samek03d_4-0" class="reference"><a href="#cite_note-Samek03d-4"><span>[</span>5<span>]</span></a></sup>.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=7" title="Edit section: Actions and Transitions">edit</a>]</span> <span class="mw-headline" id="Actions_and_Transitions">Actions and Transitions</span></h3>
+<p>When an <a href="#Events">event instance</a> is dispatched, the state machine responds by performing <b>actions</b>, such as changing a variable, performing I/O, invoking a function, generating another event instance, or changing to another state. Any parameter values associated with the current event are available to all actions directly caused by that event.</p>
+<p>Switching from one state to another is called <b>state transition</b>, and the event that causes it is called the triggering event, or simply the <b>trigger</b>. In the keyboard example, if the keyboard is in the “default” state when the CapsLock key is pressed, the keyboard will enter the “caps_locked” state. However, if the keyboard is already in the “caps_locked” state, pressing CapsLock will cause a different transition—from the “caps_locked” to the “default” state. In both cases, pressing CapsLock is the triggering event.</p>
+<p>In <a href="#Extended_States">extended state machines</a>, a transition can have a <a href="#Guard_Conditions">guard</a>, which means that the transition can “fire” only if the guard evaluates to TRUE. A state can have many transitions in response to the same trigger, as long as they have nonoverlapping guards; however, this situation could create problems in the sequence of evaluation of the guards when the common trigger occurs. The UML specification<sup id="cite_ref-UML2_2_0-3" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup> intentionally does not stipulate any particular order; rather, UML puts the burden on the designer to devise guards in such a way that the order of their evaluation does not matter. Practically, this means that guard expressions should have no side effects, at least none that would alter evaluation of other guards having the same trigger.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=8" title="Edit section: Run-to-Completion Execution Model">edit</a>]</span> <span class="mw-headline" id="Run-to-Completion_Execution_Model">Run-to-Completion Execution Model</span></h3>
+<p>All state machine formalisms, including UML state machines, universally assume that a state machine completes processing of each event before it can start processing the next event. This model of execution is called <b>run to completion</b>, or RTC.</p>
+<p>In the RTC model, the system processes events in discrete, indivisible RTC steps. New incoming events cannot interrupt the processing of the current event and must be stored (typically in an <a href="/wiki/Message_queue" title="Message queue">event queue</a>) until the state machine becomes idle again. These semantics completely avoid any internal concurrency issues within a single state machine. The RTC model also gets around the conceptual problem of processing actions associated with transitions, where the state machine is not in a well-defined state (is between two states) for the duration of the action. During event processing, the system is unresponsive (unobservable), so the ill-defined state during that time has no practical significance.</p>
+<p>Note, however, that RTC does not mean that a state machine has to monopolize the CPU until the RTC step is complete<sup id="cite_ref-UML2_2_0-4" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>. The <a href="/wiki/Preemption_(computing)" title="Preemption (computing)">preemption</a> restriction only applies to the task context of the state machine that is already busy processing events. In a <a href="/wiki/Computer_multitasking" title="Computer multitasking">multitasking environment</a>, other tasks (not related to the task context of the busy state machine) can be running, possibly preempting the currently executing state machine. As long as other state machines do not share variables or other resources with each other, there are no <a href="/wiki/Thread_(computer_science)#Concurrency_and_data_structures" title="Thread (computer science)">concurrency hazards</a>.</p>
+<p>The key advantage of RTC processing is simplicity. Its biggest disadvantage is that the responsiveness of a state machine is determined by its longest RTC step. Achieving short RTC steps can often significantly complicate real-time designs.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=9" title="Edit section: UML Extensions to the Traditional FSM Formalism">edit</a>]</span> <span class="mw-headline" id="UML_Extensions_to_the_Traditional_FSM_Formalism">UML Extensions to the Traditional FSM Formalism</span></h2>
+<p>Though the <a href="/wiki/Finite_state_machine" title="Finite state machine" class="mw-redirect">traditional FSMs</a> are an excellent tool for tackling smaller problems, it’s also generally known that they tend to become unmanageable, even for moderately involved systems. Due to the phenomenon known as <b>state and transition explosion</b>, the complexity of a traditional FSM tends to grow much faster than the complexity of the system it describes. This happens because the traditional state machine formalism inflicts repetitions. For example, if you try to represent the behavior of a simple pocket calculator with a traditional FSM, you’ll immediately notice that many events (e.g., the Clear or Off button presses) are handled identically in many states. A conventional FSM shown in the figure below, has no means of capturing such a commonality and requires <i>repeating</i> the same actions and transitions in many states. What’s missing in the traditional state machines is the mechanism for factoring out the common behavior in order to share it across many states.</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig2a.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/2/2f/UML_state_machine_Fig2a.png/540px-UML_state_machine_Fig2a.png" width="540" height="195" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig2a.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+A pocket calculator (left) and the traditional state machine with multiple transitions Clear and Off (right)</div>
+</div>
+</div>
+</div>
+<p>UML state machines addresses exactly this shortcoming of the conventional FSMs. They provide a number of features for eliminating the repetitions so that the complexity of a UML state machine no longer explodes but tends to faithfully represent the complexity of the reactive system it describes. Obviously, these features are very interesting to software developers, because only they make the whole state machine approach truly applicable to real-life problems.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=10" title="Edit section: Hierarchically Nested States">edit</a>]</span> <span class="mw-headline" id="Hierarchically_Nested_States">Hierarchically Nested States</span></h3>
+<p>The most important innovation of UML state machines over the <a href="/wiki/Finite_state_machine" title="Finite state machine" class="mw-redirect">traditional FSMs</a> is the introduction of <b>hierarchically nested states</b> (that is why statecharts are also called <b>hierarchical state machines</b>, or <b>HSM</b>s). The semantics associated with state nesting are as follows (see Figure 3): If a system is in the nested state, for example “result” (called the <b>substate</b>), it also (implicitly) is in the surrounding state “on” (called the <b>superstate</b>). This state machine will attempt to handle any event in the context of the substate, which conceptually is at the lower level of the hierarchy. However, if the substate “result” does not prescribe how to handle the event, the event is not quietly discarded as in a traditional “flat” state machine; rather, it is automatically handled at the higher level context of the superstate “on”. This is what is meant by the system being in state “result” as well as “on”. Of course, state nesting is not limited to one level only, and the simple rule of event processing applies recursively to any level of nesting.</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig2b.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/a/a6/UML_state_machine_Fig2b.png/540px-UML_state_machine_Fig2b.png" width="540" height="191" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig2b.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Figure 3: A pocket calculator (left) and the UML state machine with state nesting (right)</div>
+</div>
+</div>
+</div>
+<p>States that contain other states are called <i>composite states</i>; conversely, states without internal structure are called <i>simple states</i>. A nested state is called a <i>direct substate</i> when it is not contained by any other state; otherwise, it is referred to as a <i>transitively nested substate</i>.</p>
+<p>Because the internal structure of a composite state can be arbitrarily complex, any hierarchical state machine can be viewed as an internal structure of some (higher-level) composite state. It is conceptually convenient to define one composite state as the ultimate root of state machine hierarchy. In the UML specification<sup id="cite_ref-UML2_2_0-5" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>, every state machine has a <b>top state</b> (the abstract root of every state machine hierarchy), which contains all the other elements of the entire state machine. The graphical rendering of this all-enclosing top state is optional.</p>
+<p>As you can see, the semantics of hierarchical state decomposition are designed to facilitate reusing of behavior. The substates (nested states) need only define the differences from the superstates (surrounding states). A substate can easily inherit<sup id="cite_ref-Samek03b_5-0" class="reference"><a href="#cite_note-Samek03b-5"><span>[</span>6<span>]</span></a></sup> the common behavior from its superstate(s) by simply ignoring commonly handled events, which are then automatically handled by higher-level states. In other words, hierarchical state nesting enables <b>programming by difference</b><sup id="cite_ref-Samek03c_6-0" class="reference"><a href="#cite_note-Samek03c-6"><span>[</span>7<span>]</span></a></sup>.</p>
+<p>The aspect of state hierarchy emphasized most often is <a href="/wiki/Abstraction" title="Abstraction">abstraction</a>—an old and powerful technique for coping with complexity. Instead of facing all aspects of a complex system at the same time, it is often possible to ignore (abstract away) some parts of the system. Hierarchical states are an ideal mechanism for hiding internal details because the designer can easily zoom out or zoom in to hide or show nested states.</p>
+<p>However, the composite states don’t simply hide complexity; they also actively reduce it through the powerful mechanism of hierarchical event processing. Without such reuse, even a moderate increase in system complexity often leads to an explosive increase in the number of states and transitions. For example, the hierarchial state machine representing the pocket calculator (Figure 3) avoids repeating the transitions Clear and Off in virtually every state. Avoiding repetitions allows HSMs to grow proportionally to system complexity. As the modeled system grows, the opportunity for reuse also increases and thus counteracts the explosive increase in states and transitions typical for traditional FSMs.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=11" title="Edit section: Orthogonal Regions">edit</a>]</span> <span class="mw-headline" id="Orthogonal_Regions">Orthogonal Regions</span></h3>
+<p>Hierarchical state decomposition can be viewed as exclusive-OR operation applied to states. For example, if a system is in the “on” superstate (Figure 3), it means that it’s either in “operand1” substate OR the "operand2" substate OR the “opEntered” substate OR the “result” substate. That is why the “on” superstate is called an OR-state.</p>
+<p>UML statecharts also introduce the complementary AND-decomposition. Such decomposition means that a composite state can contain two or more orthogonal regions (orthogonal means independent in this context) and that being in such a composite state entails being in all its orthogonal regions simultaneously<sup id="cite_ref-Harel98_7-0" class="reference"><a href="#cite_note-Harel98-7"><span>[</span>8<span>]</span></a></sup>.</p>
+<p>Orthogonal regions address the frequent problem of a combinatorial increase in the number of states when the behavior of a system is fragmented into independent, concurrently active parts. For example, apart from the main keypad, a computer keyboard has an independent numeric keypad. From the previous discussion, recall the two states of the main keypad already identified: “default” and “caps_locked” (see Figure1). The numeric keypad also can be in two states—“numbers” and “arrows”—depending on whether Num Lock is active. The complete state space of the keyboard in the standard decomposition is the cross-product of the two components (main keypad and numeric keypad) and consists of four states: “default–numbers,” “default–arrows,” “caps_locked–numbers,” and “caps_locked–arrows.” However, this is unnatural because the behavior of the numeric keypad does not depend on the state of the main keypad and vice versa. Orthogonal regions allow you to avoid mixing the independent behaviors as a cross-product and, instead, to keep them separate, as shown in Figure 4.</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig4.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/a/aa/UML_state_machine_Fig4.png/540px-UML_state_machine_Fig4.png" width="540" height="180" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig4.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Figure 4: Two orthogonal regions (main keypad and numeric keypad) of a computer keyboard</div>
+</div>
+</div>
+</div>
+<p>Note that if the orthogonal regions are fully independent of each other, their combined complexity is simply additive, which means that the number of independent states needed to model the system is simply the sum <i>k + l + m + ...</i>, where <i>k, l, m, ...</i> denote numbers of OR-states in each orthogonal region. The general case of mutual dependency, on the other hand, results in multiplicative complexity, so in general, the number of states needed is the product <i>k × l × m × ...</i>.</p>
+<p>In most real-life situations, however, orthogonal regions are only approximately orthogonal (i.e., they are not independent). Therefore, UML statecharts provide a number of ways for orthogonal regions to communicate and synchronize their behaviors. From these rich sets of (sometimes complex) mechanisms, perhaps the most important is that orthogonal regions can coordinate their behaviors by sending event instances to each other.</p>
+<p>Even though orthogonal regions imply independence of execution (i.e., some kind of concurrency), the UML specification does not require that a separate thread of execution be assigned to each orthogonal region (although it can be implemented that way). In fact, most commonly, orthogonal regions execute within the same thread<sup id="cite_ref-Douglass99_8-0" class="reference"><a href="#cite_note-Douglass99-8"><span>[</span>9<span>]</span></a></sup>. The UML specification only requires that the designer not rely on any particular order in which an event instance will be dispatched to the involved orthogonal regions.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=12" title="Edit section: Entry and Exit Actions">edit</a>]</span> <span class="mw-headline" id="Entry_and_Exit_Actions">Entry and Exit Actions</span></h3>
+<p>Every state in a UML statechart can have optional <b>entry actions</b>, which are executed upon entry to a state, as well as optional <b>exit actions</b>, which are executed upon exit from a state. Entry and exit actions are associated with states, not transitions. Regardless of how a state is entered or exited, all its entry and exit actions will be executed. Because of this characteristic, statecharts behave like <a href="/wiki/Moore_machine" title="Moore machine">Moore machines</a>. The UML notation for state entry and exit actions is to place the reserved word “entry” (or “exit”) in the state right below the name compartment, followed by the forward slash and the list of arbitrary actions (see Figure 5).</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig5.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/2/20/UML_state_machine_Fig5.png/540px-UML_state_machine_Fig5.png" width="540" height="214" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig5.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Figure 5: Toaster oven state machine with entry and exit actions</div>
+</div>
+</div>
+</div>
+<p>The value of entry and exit actions is that they provide means for <i>guaranteed initialization and cleanup</i>, very much like class constructors and destructors in OOP. For example, consider the “door_open” state from Figure 5, which corresponds to the toaster oven behavior while the door is open. This state has a very important safety-critical requirement: Always disable the heater when the door is open. Additionally, while the door is open, the internal lamp illuminating the oven should light up.</p>
+<p>Of course, you could model such behavior by adding appropriate actions (disabling the heater and turning on the light) to every transition path leading to the “door_open” state (the user may open the door at any time during “baking” or “toasting” or when the oven is not used at all). You also should not forget to extinguish the internal lamp with every transition leaving the “door_open” state. However, such a solution would cause the repetition of actions in many transitions. More important, such an approach is error-prone in view of changes to the state machine (e.g., the next programmer working on a new feature, such as top-browning, might simply forget to disable the heater on transition to “door_open”).</p>
+<p>Entry and exit actions allow you to implement the desired behavior in a much safer, simpler, and more intuitive way. As shown in Figure 5, you could specify that the exit action from “heating” disables the heater, the entry action to “door_open” lights up the oven lamp, and the exit action from “door_open” extinguishes the lamp. The use of entry and exit action is superior to placing actions on transitions because it avoids repetitions of those actions on transitions and eliminates the basic safety hazard of leaving the heater on while the door is open. The semantics of exit actions guarantees that, regardless of the transition path, the heater will be disabled when the toaster is not in the “heating” state.</p>
+<p>Because entry actions are executed automatically whenever an associated state is entered, they often determine the conditions of operation or the identity of the state, very much as a class constructor determines the identity of the object being constructed. For example, the identity of the “heating” state is determined by the fact that the heater is turned on. This condition must be established before entering any substate of “heating” because entry actions to a substate of “heating,” like “toasting,” rely on proper initialization of the “heating” superstate and perform only the differences from this initialization. Consequently, the order of execution of entry actions must always proceed from the outermost state to the innermost state (top-down).</p>
+<p>Not surprisingly, this order is analogous to the order in which class constructors are invoked. Construction of a class always starts at the very root of the class hierarchy and follows through all inheritance levels down to the class being instantiated. The execution of exit actions, which corresponds to destructor invocation, proceeds in the exact reverse order (bottom-up).</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=13" title="Edit section: Internal Transitions">edit</a>]</span> <span class="mw-headline" id="Internal_Transitions">Internal Transitions</span></h3>
+<p>Very commonly, an event causes only some internal actions to execute but does not lead to a change of state (state transition). In this case, all actions executed comprise the <b>internal transition</b>. For example, when you type on your keyboard, it responds by generating different character codes. However, unless you hit the Caps Lock key, the state of the keyboard does not change (no state transition occurs). In UML, this situation should be modeled with internal transitions, as shown in Figure 6. The UML notation for internal transitions follows the general syntax used for exit (or entry) actions, except instead of the word entry (or exit)the internal transition is labeled with the triggering event (e.g., see the internal transition triggered by the ANY_KEY event in Figure 6).</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig6.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/c/cb/UML_state_machine_Fig6.png/540px-UML_state_machine_Fig6.png" width="540" height="204" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig6.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Figure 6: UML state diagram of the keyboard state machine with internal transitions</div>
+</div>
+</div>
+</div>
+<p>In the absence of entry and exit actions, internal transitions would be identical to <b>self-transitions</b> (transitions in which the target state is the same as the source state). In fact, in a classical <a href="/wiki/Mealy_machine" title="Mealy machine">Mealy machine</a>, actions are associated exclusively with state transitions, so the only way to execute actions without changing state is through a self-transition (depicted as a directed loop in Figure 1 from the top of this article). However, in the presence of entry and exit actions, as in UML statecharts, a self-transition involves the execution of exit and entry actions and therefore it is distinctively different from an internal transition.</p>
+<p>In contrast to a self-transition, no entry or exit actions are ever executed as a result of an internal transition, even if the internal transition is inherited from a higher level of the hierarchy than the currently active state. Internal transitions inherited from superstates at any level of nesting act as if they were defined directly in the currently active state.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=14" title="Edit section: Transition Execution Sequence">edit</a>]</span> <span class="mw-headline" id="Transition_Execution_Sequence">Transition Execution Sequence</span></h3>
+<p>State nesting combined with entry and exit actions significantly complicates the state transition semantics in HSMs compared to the traditional FSMs. When dealing with <a href="#Hierarchically_Nested_States">hierarchically nested states</a> and <a href="#Orthogonal_Regions">orthogonal regions</a>, the simple term <i>current state</i> can be quite confusing. In an HSM, more than one state can be active at once. If the state machine is in a leaf state that is contained in a composite state (which is possibly contained in a higher-level composite state, and so on), all the composite states that either directly or transitively contain the leaf state are also active. Furthermore, because some of the composite states in this hierarchy might have orthogonal regions, the current active state is actually represented by a tree of states starting with the single top state at the root down to individual simple states at the leaves. The UML specification refers to such a state tree as state configuration<sup id="cite_ref-UML2_2_0-6" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>.</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig7.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/2/2e/UML_state_machine_Fig7.png/540px-UML_state_machine_Fig7.png" width="540" height="187" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig7.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Figure 7: State roles in a state transition</div>
+</div>
+</div>
+</div>
+<p>In UML, a state transition can directly connect any two states. These two states, which may be composite, are designated as the <b>main source</b> and the <b>main target</b> of a transition. Figure 7 shows a simple transition example and explains the state roles in that transition. The UML specification prescribes that taking a state transition involves executing the following actions in the following sequence (see Section 15.3.14 in <i>OMG Unified Modeling Language (OMG UML), Infrastructure Version 2.2</i><sup id="cite_ref-UML2_2_0-7" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>):</p>
+<ol>
+<li>Evaluate the guard condition associated with the transition and perform the following steps only if the guard evaluates to TRUE.</li>
+<li>Exit the source state configuration.</li>
+<li>Execute the actions associated with the transition.</li>
+<li>Enter the target state configuration.</li>
+</ol>
+<p>The transition sequence is easy to interpret in the simple case of both the main source and the main target nesting at the same level. For example, transition T1 shown in Figure 7 causes the evaluation of the guard g(); followed by the sequence of actions: <code>a(); b(); t(); c(); d();</code> and <code>e()</code>, assuming that the guard <code>g()</code> evaluates to TRUE.</p>
+<p>However, in the general case of source and target states nested at different levels of the state hierarchy, it might not be immediately obvious how many levels of nesting need to be exited. The UML specification<sup id="cite_ref-UML2_2_0-8" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup> prescribes that a transition involves exiting all nested states from the current active state (which might be a direct or transitive substate of the main source state) up to, but not including, the <b>least common ancestor</b> (LCA) state of the main source and main target states. As the name indicates, the LCA is the lowest composite state that is simultaneously a superstate (ancestor) of both the source and the target states. As described before, the order of execution of exit actions is always from the most deeply nested state (the current active state) up the hierarchy to the LCA but without exiting the LCA. For instance, the LCA(s1,s2) of states “s1” and “s2” shown in Figure 7 is state “s.”</p>
+<p>Entering the target state configuration commences from the level where the exit actions left off (i.e., from inside the LCA). As described before, entry actions must be executed starting from the highest-level state down the state hierarchy to the main target state. If the main target state is composite, the UML semantics prescribes to “drill” into its submachine recursively using the local initial transitions. The target state configuration is completely entered only after encountering a leaf state that has no initial transitions.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=15" title="Edit section: Local versus External Transitions">edit</a>]</span> <span class="mw-headline" id="Local_versus_External_Transitions">Local versus External Transitions</span></h3>
+<p>Before UML 2<sup id="cite_ref-UML2_2_0-9" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>, the only transition semantics in use was the <b>external transition</b>, in which the main source of the transition is always exited and the main target of the transition is always entered. UML 2 preserved the “external transition” semantics for backward compatibility, but also introduced also a new kind of transition called <b>local transition</b> (see Section 15.3.15 in <i>OMG Unified Modeling Language (OMG UML), Infrastructure Version 2.2</i><sup id="cite_ref-UML2_2_0-10" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup>). For many transition topologies, external and local transitions are actually identical. However, a local transition doesn’t cause exit from the main source state if the main target state is a substate of the main source. In addition, local state transition doesn’t cause exit and reentry to the target state if the main target is a superstate of the main source state.</p>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:542px;"><a href="/wiki/File:UML_state_machine_Fig8.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/a/ac/UML_state_machine_Fig8.png/540px-UML_state_machine_Fig8.png" width="540" height="189" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:UML_state_machine_Fig8.png" class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Figure 8: Local (a) versus external transitions (b). QP implements only the local transitions</div>
+</div>
+</div>
+</div>
+<p>Figure 8 contrasts local (a) and external (b) transitions. In the top row, you see the case of the main source containing the target. The local transition does not cause exit from the source, while the external transition causes exit and re-entry to the source. In the bottom row of Figure 8, you see the case of the target containing the source. The local transition does not cause entry to the target, whereas the external transition causes exit and reentry to the target.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=16" title="Edit section: Event Deferral">edit</a>]</span> <span class="mw-headline" id="Event_Deferral">Event Deferral</span></h3>
+<p>Sometimes an event arrives at a particularly inconvenient time, when a state machine is in a state that cannot handle the event. In many cases, the nature of the event is such that it can be postponed (within limits) until the system enters another state, in which it is much better prepared to handle the original event.</p>
+<p>UML state machines provide a special mechanism for <b>deferring events</b> in states. In every state, you can include a clause <code>deferred / [event list]</code>. If an event in the current state’s deferred event list occurs, the event will be saved (deferred) for future processing until a state is entered that does not list the event in its deferred event list. Upon entry to such state, the UML state machine will automatically recall any saved event(s) that are no longer deferred and process them as if they have just arrived.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=17" title="Edit section: The Limitations of the UML State Machines">edit</a>]</span> <span class="mw-headline" id="The_Limitations_of_the_UML_State_Machines">The Limitations of the UML State Machines</span></h2>
+<p>Harel statecharts, which are the precursors of UML state machines, have been invented as “a visual formalism for complex systems”<sup id="cite_ref-Harel87_1-1" class="reference"><a href="#cite_note-Harel87-1"><span>[</span>2<span>]</span></a></sup>, so from their inception, they have been inseparably associated with graphical representation in the form of state diagrams. However, it is important to understand that the concept of UML state machine transcends any particular notation, graphical or textual. The UML specification<sup id="cite_ref-UML2_2_0-11" class="reference"><a href="#cite_note-UML2_2-0"><span>[</span>1<span>]</span></a></sup> makes this distinction apparent by clearly separating state machine semantics from the notation.</p>
+<p>However, the notation of UML statecharts is not purely visual. Any nontrivial state machine requires a large amount of textual information (e.g., the specification of actions and guards). The exact syntax of action and guard expressions isn’t defined in the UML specification, so many people use either structured English or, more formally, expressions in an implementation language such as <a href="/wiki/C" title="C">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, or <a href="/wiki/Java" title="Java">Java</a><sup id="cite_ref-Douglass99b_9-0" class="reference"><a href="#cite_note-Douglass99b-9"><span>[</span>10<span>]</span></a></sup>. In practice, this means that UML statechart notation depends heavily on the specific <a href="/wiki/Programming_language" title="Programming language">programming language</a>.</p>
+<p>Nevertheless, most of the statecharts semantics are heavily biased toward graphical notation. For example, state diagrams poorly represent the sequence of processing, be it order of evaluation of <a href="#Guard_Conditions">guards</a> or order of dispatching events to <a href="#Orthogonal_Regions">orthogonal regions</a>. The UML specification sidesteps these problems by putting the burden on the designer not to rely on any particular sequencing. But, when you actually implement UML state machines, you will always have full control over the order of execution, so the restrictions imposed by UML semantics will be unnecessarily restrictive. Similarly, statechart diagrams require a lot of plumbing gear (pseudostates, like joins, forks, junctions, choicepoints, etc.) to represent the flow of control graphically. These elements are essentially the old <a href="/wiki/Flowchart" title="Flowchart">flowchart</a> in disguise, which structured programming techniques proved far less significant a long time ago. In other words, these elements of the graphical notation do not add much value in representing flow of control as compared to plain <a href="/wiki/Structured_programming" title="Structured programming">structured code</a>.</p>
+<p>The UML notation and semantics are really geared toward computerized <a href="/wiki/UML_tools" title="UML tools" class="mw-redirect">UML tools</a>. A UML state machine, as represented in a tool, is a not just the state diagram, but rather a mixture of graphical and textual representation that precisely captures both the state topology and the actions. The users of the tool can get several complementary views of the same state machine, both visual and textual, whereas the generated code is just one of the many available views.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=UML_state_machine&amp;action=edit&amp;section=18" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<div class="references-small">
+<ol class="references">
+<li id="cite_note-UML2_2-0">^ <a href="#cite_ref-UML2_2_0-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-UML2_2_0-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-UML2_2_0-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-UML2_2_0-3"><sup><i><b>d</b></i></sup></a> <a href="#cite_ref-UML2_2_0-4"><sup><i><b>e</b></i></sup></a> <a href="#cite_ref-UML2_2_0-5"><sup><i><b>f</b></i></sup></a> <a href="#cite_ref-UML2_2_0-6"><sup><i><b>g</b></i></sup></a> <a href="#cite_ref-UML2_2_0-7"><sup><i><b>h</b></i></sup></a> <a href="#cite_ref-UML2_2_0-8"><sup><i><b>i</b></i></sup></a> <a href="#cite_ref-UML2_2_0-9"><sup><i><b>j</b></i></sup></a> <a href="#cite_ref-UML2_2_0-10"><sup><i><b>k</b></i></sup></a> <a href="#cite_ref-UML2_2_0-11"><sup><i><b>l</b></i></sup></a> <span class="citation web">OMG (February 2009). "<a href="http://www.omg.org/spec/UML/2.2/Superstructure/PDF" class="external text" rel="nofollow">OMG Unified Modeling Language (OMG UML), Superstructure Version 2.2</a>"<span class="printonly">. <a href="http://www.omg.org/spec/UML/2.2/Superstructure/PDF" class="external free" rel="nofollow">http://www.omg.org/spec/UML/2.2/Superstructure/PDF</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=OMG+Unified+Modeling+Language+%28OMG+UML%29%2C+Superstructure+Version+2.2&amp;rft.atitle=&amp;rft.aulast=OMG&amp;rft.au=OMG&amp;rft.date=February+2009&amp;rft_id=http%3A%2F%2Fwww.omg.org%2Fspec%2FUML%2F2.2%2FSuperstructure%2FPDF&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Harel87-1">^ <a href="#cite_ref-Harel87_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Harel87_1-1"><sup><i><b>b</b></i></sup></a> <span class="citation web">Harel, David (1987). "<a href="http://www.wisdom.weizmann.ac.il/~dharel/SCANNED.PAPERS/Statecharts.pdf" class="external text" rel="nofollow">Statecharts: A Visual Formalism for Complex Systems</a>"<span class="printonly">. <a href="http://www.wisdom.weizmann.ac.il/~dharel/SCANNED.PAPERS/Statecharts.pdf" class="external free" rel="nofollow">http://www.wisdom.weizmann.ac.il/~dharel/SCANNED.PAPERS/Statecharts.pdf</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Statecharts%3A+A+Visual+Formalism+for+Complex+Systems&amp;rft.atitle=&amp;rft.aulast=Harel%2C+David&amp;rft.au=Harel%2C+David&amp;rft.date=1987&amp;rft_id=http%3A%2F%2Fwww.wisdom.weizmann.ac.il%2F%7Edharel%2FSCANNED.PAPERS%2FStatecharts.pdf&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Samek08-2"><b><a href="#cite_ref-Samek08_2-0">^</a></b> <span class="citation book">Samek, Miro (2008). <i>Practical UML Statecharts in C/C++, Second Edition: Event-Driven Programming for Embedded Systems</i>. Newnes. p.&#160;728. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a> <a href="/wiki/Special:BookSources/978-0-7506-8706-5" title="Special:BookSources/978-0-7506-8706-5">978-0-7506-8706-5</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Practical+UML+Statecharts+in+C%2FC%2B%2B%2C+Second+Edition%3A+Event-Driven+Programming+for+Embedded+Systems&amp;rft.aulast=Samek&amp;rft.aufirst=Miro&amp;rft.au=Samek%2C%26%2332%3BMiro&amp;rft.date=2008&amp;rft.pages=p.%26nbsp%3B728&amp;rft.pub=Newnes&amp;rft.isbn=978-0-7506-8706-5&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-ROOM94-3"><b><a href="#cite_ref-ROOM94_3-0">^</a></b> <span class="citation book">Selic, Bran; Gullekson, Garth; Ward, Paul T. (1994). <i>Real-Time Object-Oriented Modeling</i>. John Wiley &amp; Sons. p.&#160;525. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a> <a href="/wiki/Special:BookSources/0-471-59917-4" title="Special:BookSources/0-471-59917-4">0-471-59917-4</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Real-Time+Object-Oriented+Modeling&amp;rft.aulast=Selic&amp;rft.aufirst=Bran&amp;rft.au=Selic%2C%26%2332%3BBran&amp;rft.au=Gullekson%2C%26%2332%3BGarth&amp;rft.au=Ward%2C%26%2332%3BPaul+T.&amp;rft.date=1994&amp;rft.pages=p.%26nbsp%3B525&amp;rft.pub=John+Wiley+%26+Sons&amp;rft.isbn=0-471-59917-4&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Samek03d-4"><b><a href="#cite_ref-Samek03d_4-0">^</a></b> <span class="citation web">Samek, Miro (August 2003). "<a href="http://www.ddj.com/cpp/184401737" class="external text" rel="nofollow">Back to Basics</a>". C/C++ Users Journal, The Embedded Angle column<span class="printonly">. <a href="http://www.ddj.com/cpp/184401737" class="external free" rel="nofollow">http://www.ddj.com/cpp/184401737</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Back+to+Basics&amp;rft.atitle=&amp;rft.aulast=Samek%2C+Miro&amp;rft.au=Samek%2C+Miro&amp;rft.date=August+2003&amp;rft.pub=C%2FC%2B%2B+Users+Journal%2C+The+Embedded+Angle+column&amp;rft_id=http%3A%2F%2Fwww.ddj.com%2Fcpp%2F184401737&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Samek03b-5"><b><a href="#cite_ref-Samek03b_5-0">^</a></b> <span class="citation web">Samek, Miro (April 2003). "<a href="http://www.ddj.com/cpp/184401643" class="external text" rel="nofollow">Who Moved My State?</a>". C/C++ Users Journal, The Embedded Angle column<span class="printonly">. <a href="http://www.ddj.com/cpp/184401643" class="external free" rel="nofollow">http://www.ddj.com/cpp/184401643</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Who+Moved+My+State%3F&amp;rft.atitle=&amp;rft.aulast=Samek%2C+Miro&amp;rft.au=Samek%2C+Miro&amp;rft.date=April+2003&amp;rft.pub=C%2FC%2B%2B+Users+Journal%2C+The+Embedded+Angle+column&amp;rft_id=http%3A%2F%2Fwww.ddj.com%2Fcpp%2F184401643&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Samek03c-6"><b><a href="#cite_ref-Samek03c_6-0">^</a></b> <span class="citation web">Samek, Miro (June 2003). "<a href="http://www.ddj.com/cpp/184401665" class="external text" rel="nofollow">Dèjà Vu</a>". C/C++ Users Journal, The Embedded Angle column<span class="printonly">. <a href="http://www.ddj.com/cpp/184401665" class="external free" rel="nofollow">http://www.ddj.com/cpp/184401665</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=D%C3%A8j%C3%A0+Vu&amp;rft.atitle=&amp;rft.aulast=Samek%2C+Miro&amp;rft.au=Samek%2C+Miro&amp;rft.date=June+2003&amp;rft.pub=C%2FC%2B%2B+Users+Journal%2C+The+Embedded+Angle+column&amp;rft_id=http%3A%2F%2Fwww.ddj.com%2Fcpp%2F184401665&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Harel98-7"><b><a href="#cite_ref-Harel98_7-0">^</a></b> <span class="citation book">Harel, David; Politi, Michal (1998). <i>Modeling Reactive Systems with Statecharts, the STATEMATE Approach</i>. McGraw-Hill. p.&#160;258. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a> <a href="/wiki/Special:BookSources/0-07-026205-5" title="Special:BookSources/0-07-026205-5">0-07-026205-5</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Modeling+Reactive+Systems+with+Statecharts%2C+the+STATEMATE+Approach&amp;rft.aulast=Harel&amp;rft.aufirst=David&amp;rft.au=Harel%2C%26%2332%3BDavid&amp;rft.au=Politi%2C%26%2332%3BMichal&amp;rft.date=1998&amp;rft.pages=p.%26nbsp%3B258&amp;rft.pub=McGraw-Hill&amp;rft.isbn=0-07-026205-5&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Douglass99-8"><b><a href="#cite_ref-Douglass99_8-0">^</a></b> <span class="citation book">Douglass, Bruce Powel (1999). <i>Doing Hard Time: Developing Real-Time Systems with UML, Objects, Frameworks, and Patterns</i>. Addison Wesley. p.&#160;749. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a> <a href="/wiki/Special:BookSources/0-201-49837-5" title="Special:BookSources/0-201-49837-5">0-201-49837-5</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Doing+Hard+Time%3A+Developing+Real-Time+Systems+with+UML%2C+Objects%2C+Frameworks%2C+and+Patterns&amp;rft.aulast=Douglass&amp;rft.aufirst=Bruce+Powel&amp;rft.au=Douglass%2C%26%2332%3BBruce+Powel&amp;rft.date=1999&amp;rft.pages=p.%26nbsp%3B749&amp;rft.pub=Addison+Wesley&amp;rft.isbn=0-201-49837-5&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Douglass99b-9"><b><a href="#cite_ref-Douglass99b_9-0">^</a></b> <span class="citation web">Douglass, Bruce Powel (January 1999). "<a href="http://www.embedded.com/1999/9901/9901feat1.htm" class="external text" rel="nofollow">UML Statecharts</a>". Embedded Systems Programming<span class="printonly">. <a href="http://www.embedded.com/1999/9901/9901feat1.htm" class="external free" rel="nofollow">http://www.embedded.com/1999/9901/9901feat1.htm</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=UML+Statecharts&amp;rft.atitle=&amp;rft.aulast=Douglass%2C+Bruce+Powel&amp;rft.au=Douglass%2C+Bruce+Powel&amp;rft.date=January+1999&amp;rft.pub=Embedded+Systems+Programming&amp;rft_id=http%3A%2F%2Fwww.embedded.com%2F1999%2F9901%2F9901feat1.htm&amp;rfr_id=info:sid/en.wikipedia.org:UML_state_machine"><span style="display: none;">&#160;</span></span></li>
+</ol>
+</div>
+<table class="navbox">
+<tr>
+<th colspan="4">
+<div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;; font-size:xx-small; float:left; text-align:left; width:6em;"><a href="/wiki/Template:Formal_languages_and_grammars" title="Template:Formal languages and grammars"><span title="View this template" style="">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:Formal_languages_and_grammars" title="Template talk:Formal languages and grammars"><span title="Discuss this template" style="">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:Formal_languages_and_grammars&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";">e</span></a></div>
+<span style="font-size:110%;"><a href="/wiki/Automata_theory" title="Automata theory">Automata theory</a>: <a href="/wiki/Formal_language" title="Formal language">formal languages</a> and <a href="/wiki/Formal_grammar" title="Formal grammar">formal grammars</a></span></th>
+</tr>
+<tr>
+<th><a href="/wiki/Chomsky_hierarchy" title="Chomsky hierarchy">Chomsky hierarchy</a></th>
+<th><a href="/wiki/Formal_grammar" title="Formal grammar">Grammars</a></th>
+<th><a href="/wiki/Formal_language" title="Formal language">Languages</a></th>
+<th>Minimal <a href="/wiki/Finite-state_machine" title="Finite-state machine">automaton</a></th>
+</tr>
+<tr class="navbox-list navbox-odd">
+<td>Type-0</td>
+<td><a href="/wiki/Unrestricted_grammar" title="Unrestricted grammar">Unrestricted</a></td>
+<td><a href="/wiki/Recursively_enumerable_language" title="Recursively enumerable language">Recursively enumerable</a></td>
+<td><a href="/wiki/Turing_machine" title="Turing machine">Turing machine</a></td>
+</tr>
+<tr class="navbox-list navbox-even">
+<td>n/a</td>
+<td>(no common name)</td>
+<td><a href="/wiki/Recursive_language" title="Recursive language">Recursive</a></td>
+<td><a href="/wiki/Machine_that_always_halts" title="Machine that always halts">Decider</a></td>
+</tr>
+<tr class="navbox-list navbox-odd">
+<td>Type-1</td>
+<td><a href="/wiki/Context-sensitive_grammar" title="Context-sensitive grammar">Context-sensitive</a></td>
+<td><a href="/wiki/Context-sensitive_language" title="Context-sensitive language">Context-sensitive</a></td>
+<td><a href="/wiki/Linear_bounded_automaton" title="Linear bounded automaton">Linear-bounded</a></td>
+</tr>
+<tr class="navbox-list navbox-even">
+<td>n/a</td>
+<td><a href="/wiki/Indexed_grammar" title="Indexed grammar">Indexed</a></td>
+<td><a href="/wiki/Indexed_language" title="Indexed language">Indexed</a></td>
+<td><a href="/wiki/Nested_stack_automaton" title="Nested stack automaton">Nested stack</a></td>
+</tr>
+<tr class="navbox-list navbox-odd">
+<td>n/a</td>
+<td><a href="/wiki/Tree-adjoining_grammar" title="Tree-adjoining grammar">Tree-adjoining</a> etc.</td>
+<td>(<a href="/wiki/Mildly_context-sensitive_language" title="Mildly context-sensitive language">Mildly context-sensitive</a>)</td>
+<td><a href="/wiki/Embedded_pushdown_automaton" title="Embedded pushdown automaton">Embedded pushdown</a></td>
+</tr>
+<tr class="navbox-list navbox-even">
+<td>Type-2</td>
+<td><a href="/wiki/Context-free_grammar" title="Context-free grammar">Context-free</a></td>
+<td><a href="/wiki/Context-free_language" title="Context-free language">Context-free</a></td>
+<td><a href="/wiki/Pushdown_automaton" title="Pushdown automaton">Nondeterministic pushdown</a></td>
+</tr>
+<tr class="navbox-list navbox-odd">
+<td>n/a</td>
+<td><a href="/wiki/Deterministic_context-free_grammar" title="Deterministic context-free grammar">Deterministic context-free</a></td>
+<td><a href="/wiki/Deterministic_context-free_language" title="Deterministic context-free language">Deterministic context-free</a></td>
+<td><a href="/wiki/Deterministic_pushdown_automaton" title="Deterministic pushdown automaton">Deterministic pushdown</a></td>
+</tr>
+<tr class="navbox-list navbox-even">
+<td>Type-3</td>
+<td><a href="/wiki/Regular_grammar" title="Regular grammar">Regular</a></td>
+<td><a href="/wiki/Regular_language" title="Regular language">Regular</a></td>
+<td><a href="/wiki/Finite_state_machine" title="Finite state machine" class="mw-redirect">Finite</a></td>
+</tr>
+<tr class="navbox-list navbox-odd">
+<td>n/a</td>
+<td>n/a</td>
+<td><a href="/wiki/Star-free_language" title="Star-free language">Star-free</a></td>
+<td><a href="/wiki/Aperiodic_finite_state_automaton" title="Aperiodic finite state automaton">Aperiodic finite</a></td>
+</tr>
+<tr>
+<td colspan="4" class="navbox-abovebelow"><small>Each category of languages or grammars is a <a href="/wiki/Subset" title="Subset">proper subset</a> of the category directly above it.<br />
+Any automaton in each category has an equivalent automaton in the category directly above it.</small></td>
+</tr>
+</table>
+<table class="navbox" cellspacing="0" style=";">
+<tr>
+<td style="padding:2px;">
+<table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
+<tr>
+<th style=";" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">
+<div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;;border:none;; font-size:xx-small;"><a href="/wiki/Template:UML" title="Template:UML"><span title="View this template" style=";;border:none;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:UML" title="Template talk:UML"><span title="Discuss this template" style=";;border:none;">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:UML&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";;border:none;;">e</span></a></div>
+</div>
+<span class="" style="font-size:110%;"><a href="/wiki/Unified_Modeling_Language" title="Unified Modeling Language">Unified Modeling Language</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Actors</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><i>Organizations</i>: <a href="/wiki/Object_Management_Group" title="Object Management Group">Object Management Group</a>&#160;• <a href="/wiki/Category:UML_Partners" title="Category:UML Partners">UML Partners</a>&#160;• <i>Persons</i>: <a href="/wiki/Grady_Booch" title="Grady Booch">Grady Booch</a>&#160;• <a href="/wiki/Ivar_Jacobson" title="Ivar Jacobson">Ivar Jacobson</a>&#160;• <a href="/wiki/James_Rumbaugh" title="James Rumbaugh">James Rumbaugh</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Concepts</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<p><i>Object oriented:</i> <a href="/wiki/Object-oriented_programming" title="Object-oriented programming">Object-oriented programming</a>&#160;• <a href="/wiki/Object-oriented_analysis_and_design" title="Object-oriented analysis and design">Object-oriented analysis and design</a></p>
+<p><i>Structure</i>: <a href="/wiki/Actor_(UML)" title="Actor (UML)">Actor</a>&#160;• <a href="/wiki/Attribute_(computing)" title="Attribute (computing)">Attribute</a>&#160;• <a href="/wiki/Artifact_(UML)" title="Artifact (UML)">Artifact</a>&#160;• <a href="/wiki/Class_(computer_science)" title="Class (computer science)">Class</a>&#160;• <a href="/wiki/Component_(UML)" title="Component (UML)">Component</a>&#160;• <a href="/wiki/Interface_(computer_science)" title="Interface (computer science)">Interface</a>&#160;• <a href="/wiki/Object_(computer_science)" title="Object (computer science)">Object</a>&#160;• <a href="/wiki/Package_(UML)" title="Package (UML)">Package</a></p>
+<p><i>Behavior</i>: <a href="/wiki/Activity_(UML)" title="Activity (UML)">Activity</a>&#160;• <a href="/wiki/Event_(UML)" title="Event (UML)">Event</a>&#160;• <a href="/wiki/Message_passing" title="Message passing">Message</a>&#160;• <a href="/wiki/Method_(computer_science)" title="Method (computer science)">Method</a>&#160;• <a href="/wiki/State_(computer_science)" title="State (computer science)">State</a>&#160;• <a href="/wiki/Use_case" title="Use case">Use&#160;case</a></p>
+<p><i>Relationships</i>: <a href="/wiki/Aggregation_(object-oriented_programming)" title="Aggregation (object-oriented programming)" class="mw-redirect">Aggregation</a>&#160;• <a href="/wiki/Association_(object-oriented_programming)" title="Association (object-oriented programming)">Association</a>&#160;• <a href="/wiki/Object_composition" title="Object composition">Composition</a>&#160;• <a href="/wiki/Coupling_(computer_science)" title="Coupling (computer science)">Dependency</a>&#160;• <a href="/wiki/Generalization" title="Generalization">Generalization</a> (or <a href="/wiki/Inheritance_(computer_science)" title="Inheritance (computer science)" class="mw-redirect">Inheritance</a>)</p>
+<i>Extensibility</i>: <a href="/wiki/Profile_(UML)" title="Profile (UML)">Profile</a>&#160;• <a href="/wiki/Stereotype_(UML)" title="Stereotype (UML)">Stereotype</a>&#160;• <i>Other concepts</i>: <a href="/wiki/Class_diagram#Multiplicity" title="Class diagram">Multiplicity</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Structure diagrams</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Class_diagram" title="Class diagram">Class diagram</a>&#160;• <a href="/wiki/Component_diagram" title="Component diagram">Component diagram</a>&#160;• <a href="/wiki/Composite_structure_diagram" title="Composite structure diagram">Composite structure diagram</a>&#160;• <a href="/wiki/Deployment_diagram" title="Deployment diagram">Deployment diagram</a>&#160;• <a href="/wiki/Object_diagram" title="Object diagram">Object diagram</a>&#160;• <a href="/wiki/Package_diagram" title="Package diagram">Package diagram</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Behavior diagrams</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Activity_diagram" title="Activity diagram">Activity diagram</a>&#160;• <strong class="selflink">State Machine diagram</strong>&#160;• <a href="/wiki/Use_case_diagram" title="Use case diagram">Use case diagram</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Interaction diagrams</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Communication_diagram" title="Communication diagram">Communication diagram</a>&#160;• <a href="/wiki/Sequence_diagram" title="Sequence diagram">Sequence diagram</a>&#160;• <a href="/wiki/Interaction_overview_diagram" title="Interaction overview diagram">Interaction overview diagram</a>&#160;• <a href="/wiki/Timing_diagram_(Unified_Modeling_Language)" title="Timing diagram (Unified Modeling Language)">Timing diagram</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";;">Other topics</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Glossary_of_Unified_Modeling_Language_terms" title="Glossary of Unified Modeling Language terms">Glossary of UML terms</a>&#160;• <a href="/wiki/IBM_Rational_Unified_Process" title="IBM Rational Unified Process">Rational Unified Process</a>&#160;• <a href="/wiki/List_of_Unified_Modeling_Language_tools" title="List of Unified Modeling Language tools">List of UML tools</a>&#160;• <a href="/wiki/Systems_Modeling_Language" title="Systems Modeling Language">Systems Modeling Language</a>&#160;• <a href="/wiki/UML_colors" title="UML colors">UML colors</a>&#160;• <a href="/wiki/XML_Metadata_Interchange" title="XML Metadata Interchange">XMI</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 6171/1000000
+Post-expand include size: 56556/2048000 bytes
+Template argument size: 17931/2048000 bytes
+Expensive parser function count: 2/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:23959612-0!1!0!default!!en!2 and timestamp 20091127192724 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/UML_state_machine">http://en.wikipedia.org/wiki/UML_state_machine</a>"</div>
+			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Automata" title="Category:Automata">Automata</a></span> | <span dir='ltr'><a href="/wiki/Category:Computational_models" title="Category:Computational models">Computational models</a></span> | <span dir='ltr'><a href="/wiki/Category:Digital_electronics" title="Category:Digital electronics">Digital electronics</a></span> | <span dir='ltr'><a href="/wiki/Category:Formal_methods" title="Category:Formal methods">Formal methods</a></span> | <span dir='ltr'><a href="/wiki/Category:UML_diagrams" title="Category:UML diagrams">UML diagrams</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:Wikipedia_articles_that_are_too_technical" title="Category:Wikipedia articles that are too technical">Wikipedia articles that are too technical</a></span> | <span dir='ltr'><a href="/wiki/Category:Articles_needing_expert_attention_from_September_2009" title="Category:Articles needing expert attention from September 2009">Articles needing expert attention from September 2009</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul lang="en" xml:lang="en">
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/UML_state_machine" title="View the content page [c]" accesskey="c">Article</a></li>
+				 <li id="ca-talk"><a href="/wiki/Talk:UML_state_machine" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-edit"><a href="/w/index.php?title=UML_state_machine&amp;action=edit" title="You can edit this page. &#10;Please use the preview button before saving. [e]" accesskey="e">Edit this page</a></li>
+				 <li id="ca-history"><a href="/w/index.php?title=UML_state_machine&amp;action=history" title="Past versions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul lang="en" xml:lang="en">
+				<li id="pt-optin-try"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativeOptIn&amp;from=UML_state_machine" title="Try out new features" class="no-text-transform">Try Beta</a></li>
+				<li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=UML_state_machine" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="/wiki/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5 lang="en" xml:lang="en">Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+				<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+				<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5 lang="en" xml:lang="en"><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/w/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search Wikipedia" accesskey="f" value="" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if one exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search Wikipedia for this text" />
+			</form>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-interaction'>
+		<h5 lang="en" xml:lang="en">Interaction</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+				<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Support_Wikipedia/en" title="Support us">Donate to Wikipedia</a></li>
+				<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5 lang="en" xml:lang="en">Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/UML_state_machine" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/UML_state_machine" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/w/index.php?title=UML_state_machine&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=UML_state_machine&amp;oldid=328251756" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=UML_state_machine&amp;id=328251756" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5 lang="en" xml:lang="en">Languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B0">Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 27 November 2009 at 19:27.</li>
+					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
+Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li><li><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+					<li id="disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served by srv192 in 0.043 secs. --></body></html>

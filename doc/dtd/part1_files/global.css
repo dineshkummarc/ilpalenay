@@ -1,0 +1,22 @@
+.topic {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 38px;
+      font-style: normal;
+      font-weight: normal;
+      color: CC0033;
+      position: relative;
+      left: 20px;
+      top: 10px;
+}
+
+a img {
+      border-width:0px;
+}
+
+#leaderboard {
+    background-color: #efefef;
+    height: 94px;
+    text-align: center;
+    padding: 5px 0 15px 0;
+    margin: 0 1px;    clear: both;
+}       
