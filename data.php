@@ -3,14 +3,14 @@
 include_once('defaults.php');
 include_once('config.php');
 
-class TData {
+class Data {
 
 private $thesource, $datasource;
 public $state,$ok;
 
 function __construct(){
 	$this->thesource=new DOMImplementation;
-	$this->datasource=new TDataSource(Default_DataSource_XMLFile_Path);
+	$this->datasource=new DataSource(Default_DataSource_XMLFile_Path);
 // 	$this->state=$this->thesource->createDocument();
 }
 

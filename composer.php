@@ -1,6 +1,6 @@
 <?php
 
-class TComposer {
+class Composer {
 
 private $thesource,$head;
 public $ok,$document,$body;

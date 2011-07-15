@@ -1,11 +1,11 @@
 <?php
 
 define('SystemDTD','http://localhost/ilpalenay/ilpalenay.dtd');
-define('AAA_Secret','secret/aaa.xml');
-define('DataSource','secret/data_source.xml');
+define('AAA_Config','file:///xampp/htdocs/ilpalenay/secret/aaa.xml');
+define('DataSource','secret\data_source.xml');
 define('TreeDescriptor','data_tree.xml');
 
-define('BaseDir','/home/irving/trabajo/ilpalenay/');
+define('BaseDir','/xampp/htdocs/ilpalenay/');
 
 define('Cookie_ID_Name','ilpalenay_id');
 define('Cookie_SID_Name','ilpalenay_sid');

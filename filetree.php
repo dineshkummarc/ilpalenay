@@ -3,7 +3,7 @@
 include_once('defaults.php');
 include_once('config.php');
 
-class TFileTree {
+class FileTree {
 	
 private $thesource, $treedescriptor, $basedir;
 public $tree, $ok;
@@ -43,7 +43,7 @@ private function newSecretDatasource($path){
 
 function checkFreshInstall(){
 	if(!file_exists(Default_AAA_XMLFile_Path)) $this->newSecretAAA(Default_AAA_XMLFile_Path);
-	$datasource=new TDataSource(Default_AAA_XMLFile_Path);
+	$datasource=new DataSource(Default_AAA_XMLFile_Path);
 	$sources=$datasource->getSources();
 	if(!isset($sources['users0'])){
 	      $users=array('type'=>'xmlfile','id'=>'users0','path'=>Default_Users_XMLFile_Path);
@@ -58,7 +58,7 @@ function checkFreshInstall(){
 	      $datasource->addSource($sessions);
 	}
 	if(!file_exists(Default_DataSource_XMLFile_Path)) $this->newSecretDatasource(Default_DataSource_XMLFile_Path);
-	$datasource=new TDataSource(Default_DataSource_XMLFile_Path);
+	$datasource=new DataSource(Default_DataSource_XMLFile_Path);
 	$sources=$datasource->getSources();
 	if(!isset($sources['sessions'])){
 	      $states=array('type'=>'xmlfile','id'=>'sessions','path'=>Default_State_XMLFile_Path);

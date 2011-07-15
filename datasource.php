@@ -2,7 +2,7 @@
 
 /*
 ---------------------------
-TDataSource.class.php
+DataSource.class.php
 ---------------------------
 Version 0.2.1.0
 
@@ -15,7 +15,7 @@ hacer las transformaciones pertinentes para los diferentes gestores.
 include_once('defaults.php');
 include_once('config.php');
 
-class TDataSource {
+class DataSource {
 	
 private $thesource, $basedir, $path, $secret, $hasChange;
 public $sources, $ok;

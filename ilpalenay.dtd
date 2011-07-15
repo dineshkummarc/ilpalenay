@@ -1,39 +1,36 @@
-<!ELEMENT aaa (xmlfile | mysql | pgsql | sqlite)*>
+<!ELEMENT aaa (users | rules)*>
 <!ATTLIST aaa
 	id ID #REQUIRED
-	path CDATA #IMPLIED>
-
-<!ELEMENT datasource (xmlfile | mysql | pgsql | sqlite)*>
+	path CDATA #IMPLIED
+	server CDATA #IMPLIED
+	port CDATA #IMPLIED
+	user CDATA #IMPLIED
+	pass CDATA #IMPLIED
+	dbname CDATA #IMPLIED>
+	
+<!ELEMENT datasource (states)>
 <!ATTLIST datasource
 	id ID #REQUIRED
 	path CDATA #IMPLIED>
 
-<!ELEMENT xmlfile (user | rule | sessions | states)*>
-<!ATTLIST xmlfile
+<!ELEMENT users (user)*>
+<!ATTLIST users
 	id ID #REQUIRED
 	path CDATA #IMPLIED>
-<!ELEMENT mysql (user | rule | sessions | states)*>
-<!ATTLIST mysql
+<!ELEMENT rules (rule)*>
+<!ATTLIST rules
 	id ID #REQUIRED
-	server CDATA #IMPLIED
-	port CDATA #IMPLIED
-	user CDATA #IMPLIED
-	pass CDATA #IMPLIED
-	dbname CDATA #IMPLIED>
-<!ELEMENT pgsql (user | rule | sessions | states)*>
-<!ATTLIST pgsql
+	path CDATA #IMPLIED>
+<!ELEMENT sessions (session*)>
+<!ATTLIST sessions
 	id ID #REQUIRED
-	server CDATA #IMPLIED
-	port CDATA #IMPLIED
-	user CDATA #IMPLIED
-	pass CDATA #IMPLIED
-	dbname CDATA #IMPLIED>
-<!ELEMENT sqlite (user | rule | sessions | states)*>
-<!ATTLIST sqlite
+	path CDATA #IMPLIED>
+<!ELEMENT states (state*)>
+<!ATTLIST states
 	id ID #REQUIRED
 	path CDATA #IMPLIED>
 
-<!ELEMENT user (#PCDATA)>
+<!ELEMENT user (session)*>
 <!ATTLIST user
 	id ID #REQUIRED
 	username CDATA #REQUIRED
@@ -45,9 +42,6 @@
 
 <!ELEMENT rule EMPTY>
 
-<!ELEMENT sessions (session*)>
-<!ATTLIST sessions
-	id ID #REQUIRED>
 <!ELEMENT session EMPTY>
 <!ATTLIST session
 	id ID #REQUIRED
@@ -55,9 +49,6 @@
 	livetime CDATA #REQUIRED
 	last_update CDATA #REQUIRED>
 
-<!ELEMENT states (state*)>
-<!ATTLIST states
-	id ID #REQUIRED>
 <!ELEMENT state (var*)>
 <!ATTLIST state
 	id ID #REQUIRED>
