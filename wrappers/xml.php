@@ -4,18 +4,17 @@
 ---------------------------
 xml.php
 ---------------------------
-Version 0.0.0.1
+Version 0.0.0.2
 
 Wrapper for the XML store method.
 */
 
 class StoreXML {
 
-	private $thesource, $path, $document, $hasChanged;
-	public $ok;
+	private $thesource, $path, $sync, $document, $ok;
 	
 	function __construct($path){
-		$this->hasChanged=False;
+		$this->sync=False;
 		$this->path=$path;
 		if(file_exists($this->path)){
 			$this->thesource=new DOMImplementation;
@@ -26,17 +25,30 @@ class StoreXML {
 	}
 
 	function __destruct(){
-		if($this->hasChanged){
+		if($this->sync){
 			$this->document->save($this->path);
 			}
 	}
 
 	function createStore($document){
 		$this->document=$document;
-		$this->hasChanged=True;
+		$this->sync=True;
 	}
 	
-	function loadUser($userid){
+	function dropUser($user_id){
+		$parent=$this->document->getElementsByTagName('users')->item(0);
+		$user=$this->document->getElementById($user_id);
+		if($parent&&$user)
+			if($user->parentNode==$parent){
+				$parent->removeChild($user);
+				$this->sync=True;
+				return True;
+			}
+		return False;
+	
+	}
+	
+	function getUser($userid){
 		$users=$this->document->getElementsByTagName('users');
 		$users=$users->item(0);
 		if($users->hasAttribute('path'))
@@ -52,7 +64,7 @@ class StoreXML {
 		}
 	}
 	
-	function saveUser($user){
+	function putUser($user){
 		if($parent=$this->document->getElementsByTagName('users')->item(0)){
 			$old=$this->document->getElementById($user->getAttribute('id'));
 			$the=$this->document->importNode($user,true);
@@ -62,23 +74,18 @@ class StoreXML {
 			}
 			else
 				$parent->appendChild($the);
-			$this->hasChanged=True;
+			$this->sync=True;
 			return True;
 		}
 		return False;
 	}
 	
-	function removeUser($user_id){
-		$parent=$this->document->getElementsByTagName('users')->item(0);
-		$user=$this->document->getElementById($user_id);
-		if($parent&&$user)
-			if($user->parentNode==$parent){
-				$parent->removeChild($user);
-				$this->hasChanged=True;
-				return true;
-			}
-		return false;
-	
+	function updateUser($user){
+		if($old=$this->document->getElementById($user->getAttribute('id'))){
+			$old->parentNode->replaceChild($old,$user);
+			return True;
+		}
+		return False;
 	}
 	
 	function loadElement($parent_class,$element_id){

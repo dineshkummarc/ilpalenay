@@ -17,8 +17,7 @@ require_once 'wrappers/xml.php';
 
 class User {
 	
-	private $chunk;
-	public $hasChanged;
+	private $chunk, $id, $username, $creation_date, $last_login, $last_logout, $logged, $sessions;
 	
 	function __construct($user_chunk){
 		if(!$user_chunk) return False;
@@ -33,11 +32,11 @@ class User {
 		$this->sessions=Array();
 		for($i=0;$i<$sessions->length;$i++)
 			$this->sessions[$sessions->item($i)->getAttribute('id')]=new Session($sessions->item($i));
-		$this->hasChanged=False;
 	}
 	
-	function getSynced(){
+	function syncSource(){
 		if($this->hasChanged){
+			echo "syncing...";
 			$this->chunk->setAttribute('last_login',$this->last_login);
 			$this->chunk->setAttribute('last_logout',$this->last_logout);
 			$this->chunk->setAttribute('logged',$this->logged);
@@ -61,8 +60,7 @@ class User {
 		$this->logged=True;
 		$session_chunk=$this->createSession(Default_Session_Livetime);
 		$this->sessions[$session_chunk->getAttribute('id')]=new Session($session_chunk);
-		$this->hasChanged=True;
-		return False;
+		$this->chunk->appendChild($session_chunk);
 	}
 	
 	function createSession($livetime){
@@ -110,15 +108,15 @@ class Session {
 
 class AAA {
 
-	private $thesource, $classdoc, $datasource;
+	private $thesource, $document, $datasource;
 	public $ok, $user, $session;
 
 	function __construct(){
 		$this->thesource=new DOMImplementation;
-		$this->classdoc=$this->thesource->createDocument();
+		$this->document=$this->thesource->createDocument();
 		$source=explode('://',AAA_Config);
 		if($source[0]=='file')
-			$this->datasource=new StoreXML($source[1]);
+			$this->datasource=new StoreXML($source[1],$this->document);
 		if(isset($_COOKIE[Cookie_ID_Name])&&isset($_COOKIE[Cookie_SID_Name]))
 			if($this->user=$this->loadUser($_COOKIE[Cookie_ID_Name]))
 				$this->continueSession($_COOKIE[Cookie_SID_Name]);
